@@ -1,0 +1,5 @@
+This is the folder where you should run your cmake build. The UNIX commands are:
+
+cd build
+cmake ..
+cmake --build .
