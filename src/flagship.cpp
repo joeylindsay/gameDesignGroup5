@@ -1,7 +1,7 @@
 //main file for the flagship enemy
 #include <flagship.hpp>
-#include <stdlib.h>
-#include <time.h>
+#include <cstdlib>
+#include <ctime>
 
 interceptors::flagship::flagship(){
 	using interceptors::flagship;
@@ -12,61 +12,61 @@ interceptors::flagship::flagship(){
     //flagship.loadFromFile("flagship.png");
     //enemySprite.setTexture(flagship);
 
-    path[0] = sf::Vector2f(position.x + 1, position.y);
-    path[1] = sf::Vector2f(position.x + 1, position.y);
-    path[2] = sf::Vector2f(position.x + 1, position.y + 1);
-    path[3] = sf::Vector2f(position.x + 1, position.y);
-    path[4] = sf::Vector2f(position.x + 1, position.y);
-    path[5] = sf::Vector2f(position.x + 1, position.y + 1);
-    path[6] = sf::Vector2f(position.x + 1, position.y);
-    path[7] = sf::Vector2f(position.x + 1, position.y);
-    path[8] = sf::Vector2f(position.x + 1, position.y + 1);
-    path[9] = sf::Vector2f(position.x + 1, position.y);
-
-    path[10] = sf::Vector2f(position.x + 1, position.y);
-    path[11] = sf::Vector2f(position.x + 1, position.y + 1);
-    path[12] = sf::Vector2f(position.x + 1, position.y);
-    path[13] = sf::Vector2f(position.x + 1, position.y);
-    path[14] = sf::Vector2f(position.x + 1, position.y + 1);
-    path[15] = sf::Vector2f(position.x + 1, position.y);
-    path[16] = sf::Vector2f(position.x + 1, position.y);
-    path[17] = sf::Vector2f(position.x + 1, position.y + 1);
-    path[18] = sf::Vector2f(position.x + 1, position.y);
-    path[19] = sf::Vector2f(position.x + 1, position.y);
-
-    path[20] = sf::Vector2f(position.x + 1, position.y + 1);
-    path[21] = sf::Vector2f(position.x + 1, position.y);
-    path[22] = sf::Vector2f(position.x + 1, position.y);
-    path[23] = sf::Vector2f(position.x + 1, position.y + 1);
-    path[24] = sf::Vector2f(position.x + 1, position.y);
-
-    path[25] = sf::Vector2f(position.x - 1, position.y);
-    path[26] = sf::Vector2f(position.x - 1, position.y - 1);
-    path[27] = sf::Vector2f(position.x - 1, position.y);
-    path[28] = sf::Vector2f(position.x - 1, position.y);
-    path[29] = sf::Vector2f(position.x - 1, position.y - 1);
-
-    path[30] = sf::Vector2f(position.x - 1, position.y);
-    path[31] = sf::Vector2f(position.x - 1, position.y);
-    path[32] = sf::Vector2f(position.x - 1, position.y - 1);
-    path[33] = sf::Vector2f(position.x - 1, position.y);
-    path[34] = sf::Vector2f(position.x - 1, position.y);
-    path[35] = sf::Vector2f(position.x - 1, position.y - 1);
-    path[36] = sf::Vector2f(position.x - 1, position.y);
-    path[37] = sf::Vector2f(position.x - 1, position.y);
-    path[38] = sf::Vector2f(position.x - 1, position.y - 1);
-    path[39] = sf::Vector2f(position.x - 1, position.y);
-
-    path[40] = sf::Vector2f(position.x - 1, position.y);
-    path[41] = sf::Vector2f(position.x - 1, position.y - 1);
-    path[42] = sf::Vector2f(position.x - 1, position.y);
-    path[43] = sf::Vector2f(position.x - 1, position.y);
-    path[44] = sf::Vector2f(position.x - 1, position.y - 1);
-    path[45] = sf::Vector2f(position.x - 1, position.y);
-    path[46] = sf::Vector2f(position.x - 1, position.y);
-    path[47] = sf::Vector2f(position.x - 1, position.y - 1);
-    path[48] = sf::Vector2f(position.x - 1, position.y);
-    path[49] = sf::Vector2f(position.x - 1, position.y);
+//    path[0] = sf::Vector2f(position.x + 1, position.y);
+//    path[1] = sf::Vector2f(position.x + 1, position.y);
+//    path[2] = sf::Vector2f(position.x + 1, position.y + 1);
+//    path[3] = sf::Vector2f(position.x + 1, position.y);
+//    path[4] = sf::Vector2f(position.x + 1, position.y);
+//    path[5] = sf::Vector2f(position.x + 1, position.y + 1);
+//    path[6] = sf::Vector2f(position.x + 1, position.y);
+//    path[7] = sf::Vector2f(position.x + 1, position.y);
+//    path[8] = sf::Vector2f(position.x + 1, position.y + 1);
+//    path[9] = sf::Vector2f(position.x + 1, position.y);
+//
+//    path[10] = sf::Vector2f(position.x + 1, position.y);
+//    path[11] = sf::Vector2f(position.x + 1, position.y + 1);
+//    path[12] = sf::Vector2f(position.x + 1, position.y);
+//    path[13] = sf::Vector2f(position.x + 1, position.y);
+//    path[14] = sf::Vector2f(position.x + 1, position.y + 1);
+//    path[15] = sf::Vector2f(position.x + 1, position.y);
+//    path[16] = sf::Vector2f(position.x + 1, position.y);
+//    path[17] = sf::Vector2f(position.x + 1, position.y + 1);
+//    path[18] = sf::Vector2f(position.x + 1, position.y);
+//    path[19] = sf::Vector2f(position.x + 1, position.y);
+//
+//    path[20] = sf::Vector2f(position.x + 1, position.y + 1);
+//    path[21] = sf::Vector2f(position.x + 1, position.y);
+//    path[22] = sf::Vector2f(position.x + 1, position.y);
+//    path[23] = sf::Vector2f(position.x + 1, position.y + 1);
+//    path[24] = sf::Vector2f(position.x + 1, position.y);
+//
+//    path[25] = sf::Vector2f(position.x - 1, position.y);
+//    path[26] = sf::Vector2f(position.x - 1, position.y - 1);
+//    path[27] = sf::Vector2f(position.x - 1, position.y);
+//    path[28] = sf::Vector2f(position.x - 1, position.y);
+//    path[29] = sf::Vector2f(position.x - 1, position.y - 1);
+//
+//    path[30] = sf::Vector2f(position.x - 1, position.y);
+//    path[31] = sf::Vector2f(position.x - 1, position.y);
+//    path[32] = sf::Vector2f(position.x - 1, position.y - 1);
+//    path[33] = sf::Vector2f(position.x - 1, position.y);
+//    path[34] = sf::Vector2f(position.x - 1, position.y);
+//    path[35] = sf::Vector2f(position.x - 1, position.y - 1);
+//    path[36] = sf::Vector2f(position.x - 1, position.y);
+//    path[37] = sf::Vector2f(position.x - 1, position.y);
+//    path[38] = sf::Vector2f(position.x - 1, position.y - 1);
+//    path[39] = sf::Vector2f(position.x - 1, position.y);
+//
+//    path[40] = sf::Vector2f(position.x - 1, position.y);
+//    path[41] = sf::Vector2f(position.x - 1, position.y - 1);
+//    path[42] = sf::Vector2f(position.x - 1, position.y);
+//    path[43] = sf::Vector2f(position.x - 1, position.y);
+//    path[44] = sf::Vector2f(position.x - 1, position.y - 1);
+//    path[45] = sf::Vector2f(position.x - 1, position.y);
+//    path[46] = sf::Vector2f(position.x - 1, position.y);
+//    path[47] = sf::Vector2f(position.x - 1, position.y - 1);
+//    path[48] = sf::Vector2f(position.x - 1, position.y);
+//    path[49] = sf::Vector2f(position.x - 1, position.y);
 
     fireSteps[0] = 4;
     fireSteps[1] = 14;
