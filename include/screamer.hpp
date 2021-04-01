@@ -7,6 +7,7 @@ of vectors that will apply overtime to its current position.*/
 #define SCREAMER_HPP
 
 #include <SFML/Graphics.hpp>
+#include <bullet.hpp>
 
 namespace interceptors
 {
@@ -17,11 +18,11 @@ class screamer {
 		//for when the enemy is killed by the player
 		void death();
 		//for when the enemy flies offscreen
-		void despawn();
+		//void despawn();
 		//get the current position of the enemy
 		sf::Vector2f getPosition();
 		//set the position of the enemy
-		void setPosition();
+		void setPosition(float a, float b);
 		//function for determining when the enemy fires
 		void shoot();
 		//function for when the enemy takes a hit
