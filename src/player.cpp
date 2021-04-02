@@ -5,45 +5,72 @@
 using interceptors::player;
 
 interceptors::player::player(){
-	//TODO
+	m_Health = 100;
+	m_Speed = 200;
+
+	m_PlayerTexture.loadFromFile("../assets/interceptorsprite.png");
+	m_PlayerSprite.setTexture(m_PlayerTexture);
+
+	// m_PlayerSprite.setOrigin(25,100);
 }
 
-void interceptors::player::setPosition(){
-	//TODO
+void interceptors::player::setPosition(sf::RenderWindow& window){
+	m_PlayerPosition.x = window.getSize().x/2;
+	m_PlayerPosition.y = window.getSize().y;
 }
-sf::FloatRect interceptors::player::getPosition(){
-	//TODO
+
+sf::Vector2f interceptors::player::getPosition(){
+	return m_PlayerPosition;
 }
 
 sf::Sprite interceptors::player::getPlayer(){
-	//TODO
+	return m_PlayerSprite;
 }
 
-void interceptors::player::moveLeft(){
-	//TODO
+void interceptors::player::moveLeft(float deltaMS){
+	if (m_PlayerPosition.x > 50)
+		m_PlayerPosition.x -= m_Speed * deltaMS;
+
+	m_PlayerSprite.setPosition(m_PlayerPosition);
 }
-void interceptors::player::moveRight(){
-	//TODO
+
+void interceptors::player::moveRight(sf::RenderWindow& window, float deltaMS){
+	if (m_PlayerPosition.x < window.getSize().x - 50)
+		m_PlayerPosition.x += m_Speed * deltaMS;
+
+	m_PlayerSprite.setPosition(m_PlayerPosition);
 }
-void interceptors::player::moveUp(){
-	//TODO
+
+void interceptors::player::moveUp(float deltaMS){
+	if (m_PlayerPosition.y > 150)
+		m_PlayerPosition.y -= m_Speed * deltaMS;
+
+	m_PlayerSprite.setPosition(m_PlayerPosition);
 }
-void interceptors::player::moveDown(){
-	//TODO
+
+void interceptors::player::moveDown(sf::RenderWindow& window, float deltaMS){
+	if (m_PlayerPosition.y < window.getSize().y - 150)
+		m_PlayerPosition.y += m_Speed * deltaMS;
+
+	m_PlayerSprite.setPosition(m_PlayerPosition);
 }
 
 int interceptors::player::getHealth(){
-	//TODO
+	return m_Health;
 }
-void interceptors::player::setHealth(){
-	//TODO
+
+void interceptors::player::setHealth(int health){
+	m_Health = health;
 }
         
-void interceptors::player::hit(){
-	//TODO
+void interceptors::player::gotHit(){
+	m_Health -= 10;
 }
 		
 //function to check if player special ability is ready for use
 bool interceptors::player::isTimeStopReady(){
-	//TODO
+	if (timeStopCooldown = 0)
+		return true;
+	else
+		return false;
 }
