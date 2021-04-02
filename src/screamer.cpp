@@ -129,7 +129,7 @@ void interceptors::screamer::shoot(){
 void interceptors::screamer::takeHit(){
 	using interceptors::screamer;
 	//TODO
-    health -= 1;
+    health--;
 }
 
 int interceptors::screamer::getHealth(){

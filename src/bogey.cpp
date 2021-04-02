@@ -145,7 +145,7 @@ void interceptors::bogey::shoot(){
 void interceptors::bogey::takeHit(){
 	using interceptors::bogey;
 	//TODO
-	health -= 1;
+	health--;
 }
 
 int interceptors::bogey::getHealth(){

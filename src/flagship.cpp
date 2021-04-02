@@ -118,7 +118,7 @@ void interceptors::flagship::shoot(){
 void interceptors::flagship::takeHit(){
 	using interceptors::flagship;
 	//TODO
-    health -= 1;
+    health--;
 }
 
 int interceptors::flagship::getHealth(){
