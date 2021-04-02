@@ -8,6 +8,7 @@ interceptors::screamer::screamer(){
 	//TODO
     health = 1;
     position = sf::Vector2f(0.0f, 100.0f);
+    pathPosition = 0;
     sf::Texture screamer;
     //screamer.loadFromFile("screamer.png");
     //enemySprite.setTexture(screamer);
@@ -128,7 +129,7 @@ void interceptors::screamer::shoot(){
 void interceptors::screamer::takeHit(){
 	using interceptors::screamer;
 	//TODO
-    health--;
+    health -= 1;
 }
 
 int interceptors::screamer::getHealth(){

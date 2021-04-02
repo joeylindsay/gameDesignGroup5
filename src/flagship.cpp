@@ -8,6 +8,7 @@ interceptors::flagship::flagship(){
 	//TODO
     health = 100;
     position = sf::Vector2f(50.0f, 0.0f);
+    pathPosition = 0;
     sf::Texture flagship;
     //flagship.loadFromFile("flagship.png");
     //enemySprite.setTexture(flagship);
@@ -117,7 +118,7 @@ void interceptors::flagship::shoot(){
 void interceptors::flagship::takeHit(){
 	using interceptors::flagship;
 	//TODO
-    health--;
+    health -= 1;
 }
 
 int interceptors::flagship::getHealth(){

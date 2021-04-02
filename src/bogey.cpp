@@ -8,6 +8,7 @@ interceptors::bogey::bogey(){
 	//TODO
 	health = 3;
     position = sf::Vector2f(0.0f, 0.0f);
+    pathPosition = 0;
     sf::Texture bogey;
     //bogey.loadFromFile("bogey.png");
     //enemySprite.setTexture(bogey);
@@ -144,7 +145,7 @@ void interceptors::bogey::shoot(){
 void interceptors::bogey::takeHit(){
 	using interceptors::bogey;
 	//TODO
-	health--;
+	health -= 1;
 }
 
 int interceptors::bogey::getHealth(){
