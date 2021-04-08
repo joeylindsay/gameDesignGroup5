@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -g  -rdynamic CMakeFiles/driver.dir/bin/driver.cpp.o  -o driver  -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network libinterceptors_core.a -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network 

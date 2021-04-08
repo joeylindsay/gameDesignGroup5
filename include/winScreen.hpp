@@ -17,7 +17,7 @@ namespace interceptors
 
         private:
             int score;
-			sf::Sprite winScreenSprite;
+	    sf::Sprite winScreenSprite;
     };
 }
 

@@ -10,6 +10,7 @@ class player
     private:
         sf::Vector2f m_PlayerPosition;
         sf::Sprite m_PlayerSprite;
+        sf::Texture m_PlayerTexture;
 
         int m_Health;
         float m_Speed;
@@ -21,22 +22,20 @@ class player
 
     public:
         player();
-        sf::CircleShape m_Player;
 
-        void setPosition();
-        sf::FloatRect getPosition();
-
+        void setPosition(sf::RenderWindow& window);
+        sf::Vector2f getPosition();
         sf::Sprite getPlayer();
 
-        void moveLeft();
-        void moveRight();
-        void moveUp();
-        void moveDown();
+        void moveLeft(float deltaMS);
+        void moveRight(sf::RenderWindow& window, float deltaMS);
+        void moveUp(float deltaMS);
+        void moveDown(sf::RenderWindow& window, float deltaMS);
 
         int getHealth();
-        void setHealth();
+        void setHealth(int health);
         
-        void hit();
+        void gotHit();
 		
 		//function to check if player special ability is ready for use
 		bool isTimeStopReady();

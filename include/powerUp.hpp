@@ -12,22 +12,19 @@ class powerUp
 {
     public:
         powerUp(int type);
-        void spawn();
+        void spawn(sf::RenderWindow& window);
         sf::FloatRect getPosition();
-        sf::Sprite getPlayer();
+        sf::Sprite getPowerUp();
         bool isSpawned();
         int apply();
         
     private:
         sf::Sprite m_Sprite;
+        sf::Texture m_Texture;
+
         int m_Type;
         bool m_Spawned;
         float m_timeSinceSpawn;
-        float m_timeSinceDeSpawn;
-        float m_SecondsToAppear; 
-        float m_SecondsToWait;
-
-    
 };
 }
 
