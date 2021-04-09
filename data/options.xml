@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<options>
+    <volume>20</volume>
+    <moveup>Up</moveup>
+    <movedown>Down</movedown>
+    <moveleft>Left</moveleft>
+    <moveright>Right</moveright>
+    <shoot>Space</shoot>
+    <m_scale>1</m_scale>
+    <m_winsizeX>800</m_winsizeX>
+    <m_winsizeY>600</m_winsizeY>
+</options>
