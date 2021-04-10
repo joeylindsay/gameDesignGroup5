@@ -7,6 +7,8 @@
 #define PLAYERVIEW_HPP
 
 #include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
+
 #include <player.hpp>
 #include <aiView.hpp>
 #include <bullet.hpp>
@@ -30,7 +32,10 @@ namespace interceptors
 			//detect collisions between the player and bullets
 			int* detectCollisions();
 			
-			//redraws the entire screen with all sprites on it
+			//function to resize the view when the user changes the screen size
+			void resizeView();
+			
+			//redraws the player
 			void draw();
 		
 		private:
@@ -48,6 +53,15 @@ namespace interceptors
 			
 			//pointer to the list of bogeys
 			screamer* screamerP;
+			
+			//variable to store the player view
+			sf::View m_playerView;
+			
+			//create the background sprite
+			sf::Sprite m_backgroundSprite;
+			
+			//save the texture for the background sprite
+			static sf::Texture m_backgroundSpriteTex;
 	};
 }
 #endif

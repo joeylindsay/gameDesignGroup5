@@ -10,15 +10,15 @@ class player
     private:
         sf::Vector2f m_PlayerPosition;
         sf::Sprite m_PlayerSprite;
-        sf::Texture m_PlayerTexture;
+        static sf::Texture m_PlayerTexture;
 
         int m_Health;
         float m_Speed;
 		
-		//the delay for the player's time stop ability
-		int timeStopCooldown;
-		//true if time stop is ready
-		bool timeStopReady;
+	//the delay for the player's time stop ability
+	int timeStopCooldown;
+	//true if time stop is ready
+	bool timeStopReady;
 
     public:
         player();

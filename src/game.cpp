@@ -1,11 +1,13 @@
 //main game loop file
 #include <game.hpp>
+#include <iostream>
 
 //instantiate static member variables
 sf::Uint32 interceptors::game::m_state;
-sf::Time interceptors::game::gameSpeed;
 sf::RenderWindow interceptors::game::m_window;
-            	
+//setup the game running time
+sf::Time interceptors::game::gameSpeed = sf::seconds(0.0016f);
+
 interceptors::game::game(){
 	using interceptors::game;
 	
@@ -15,9 +17,6 @@ interceptors::game::game(){
 	
 	//instantiate the title state
 	m_state = state::s_title;
-	
-	//setup the game running time
-	sf::Time gameSpeed = sf::seconds(0.016f);
 	
 	//REMOVE THIS WHEN WE'RE DONE WITH THE TITLE SCREEN
 	//THIS LINE AUTOMATICALLY SHIFTS THE GAME LOGIC
@@ -94,12 +93,34 @@ void interceptors::game::levelOne(){
 	
 	//start the time elapsed clock
 	sf::Clock clock;
-	sf::Time elapsedTime = clock.getElapsedTime();
+	sf::Time elapsedTime;
 	
+	//create an event container
+	sf::Event event;
+	
+	//main game loop
 	while (m_state == state::s_levelOne){
-		if(elapsedTime>= gameSpeed){
+		elapsedTime = clock.getElapsedTime();
+		
+		//poll the window for events
+		while (m_window.pollEvent(event)){
+			switch (event.type){
+				//if they close the window, close the game
+				case sf::Event::Closed:
+				{
+					m_state = state::s_quit;
+				}break;
+				//if they resize the window, run the reisize functions
+				case sf::Event::Resized:
+				{
+					m_playerView.resizeView();
+				}break;
+			}
+		}
+		//update the game in real time
+		if(elapsedTime >= gameSpeed){
 			m_playerView.draw();
-			clock.restart();
+			elapsedTime = clock.restart();
 		}
 	}
 }
@@ -111,7 +132,8 @@ void interceptors::game::lose(){
 	using interceptors::game;
 	//TODO
 }
+//return true if the user quits the game
 bool interceptors::game::isQuitting(){
 	using interceptors::game;
-	//TODO
+	return m_state == state::s_quit;
 }

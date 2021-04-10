@@ -101,6 +101,8 @@ SFML/Graphics.hpp
 ../include/playerView.hpp
 SFML/Window.hpp
 -
+SFML/Graphics.hpp
+-
 player.hpp
 -
 aiView.hpp
