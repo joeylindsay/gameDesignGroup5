@@ -12,17 +12,17 @@ namespace interceptors
 class bullet{
 	public:
 		//set the position of the bullet
-		void setStartPosition();
+		void setStartPosition(float start_x, float start_y);
 		//set the direction in which the bullet should fire
-		void setFireDirection();
+		void setFireDirection(int direction);
 		//get the direction the bullet is facing
 		sf::Vector2f getFireDirection();
 		//spawn and fire the bullet
-		void fire();
+		void fire(float deltaMS);
 		//despawn the bullet (on edge of screen or on hit)
 		void despawn();
 		//set the bullet speed (for the machine gun power-up)
-		void setSpeed();
+		void setSpeed(float speed);
 		//get the hitbox of the bullet
 		sf::FloatRect getBulletHitbox();
 	
@@ -33,6 +33,8 @@ class bullet{
 		int b_direction;
 		//the bullet sprite
 		sf::Sprite b_sprite;
+		// the bullet texture
+		sf::Texture b_texture;
 		//the bullet speed
 		int b_speed;
 };
