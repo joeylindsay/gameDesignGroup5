@@ -1,4 +1,0 @@
-/home/joey/Documents/interceptors/build/CMakeFiles/rebuild_cache.dir
-/home/joey/Documents/interceptors/build/CMakeFiles/edit_cache.dir
-/home/joey/Documents/interceptors/build/CMakeFiles/driver.dir
-/home/joey/Documents/interceptors/build/CMakeFiles/interceptors_core.dir
