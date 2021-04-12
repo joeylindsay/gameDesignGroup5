@@ -4,6 +4,8 @@
 CMakeFiles/interceptors_core.dir/src/aiView.cpp.o: ../include/aiView.hpp
 CMakeFiles/interceptors_core.dir/src/aiView.cpp.o: ../include/bogey.hpp
 CMakeFiles/interceptors_core.dir/src/aiView.cpp.o: ../include/bullet.hpp
+CMakeFiles/interceptors_core.dir/src/aiView.cpp.o: ../include/bulletList.hpp
+CMakeFiles/interceptors_core.dir/src/aiView.cpp.o: ../include/bulletNode.hpp
 CMakeFiles/interceptors_core.dir/src/aiView.cpp.o: ../include/screamer.hpp
 CMakeFiles/interceptors_core.dir/src/aiView.cpp.o: ../src/aiView.cpp
 
@@ -13,12 +15,23 @@ CMakeFiles/interceptors_core.dir/src/bogey.cpp.o: ../src/bogey.cpp
 CMakeFiles/interceptors_core.dir/src/bullet.cpp.o: ../include/bullet.hpp
 CMakeFiles/interceptors_core.dir/src/bullet.cpp.o: ../src/bullet.cpp
 
+CMakeFiles/interceptors_core.dir/src/bulletList.cpp.o: ../include/bullet.hpp
+CMakeFiles/interceptors_core.dir/src/bulletList.cpp.o: ../include/bulletList.hpp
+CMakeFiles/interceptors_core.dir/src/bulletList.cpp.o: ../include/bulletNode.hpp
+CMakeFiles/interceptors_core.dir/src/bulletList.cpp.o: ../src/bulletList.cpp
+
+CMakeFiles/interceptors_core.dir/src/bulletNode.cpp.o: ../include/bullet.hpp
+CMakeFiles/interceptors_core.dir/src/bulletNode.cpp.o: ../include/bulletNode.hpp
+CMakeFiles/interceptors_core.dir/src/bulletNode.cpp.o: ../src/bulletNode.cpp
+
 CMakeFiles/interceptors_core.dir/src/flagship.cpp.o: ../include/flagship.hpp
 CMakeFiles/interceptors_core.dir/src/flagship.cpp.o: ../src/flagship.cpp
 
 CMakeFiles/interceptors_core.dir/src/game.cpp.o: ../include/aiView.hpp
 CMakeFiles/interceptors_core.dir/src/game.cpp.o: ../include/bogey.hpp
 CMakeFiles/interceptors_core.dir/src/game.cpp.o: ../include/bullet.hpp
+CMakeFiles/interceptors_core.dir/src/game.cpp.o: ../include/bulletList.hpp
+CMakeFiles/interceptors_core.dir/src/game.cpp.o: ../include/bulletNode.hpp
 CMakeFiles/interceptors_core.dir/src/game.cpp.o: ../include/flagship.hpp
 CMakeFiles/interceptors_core.dir/src/game.cpp.o: ../include/game.hpp
 CMakeFiles/interceptors_core.dir/src/game.cpp.o: ../include/levelOne.hpp
@@ -56,6 +69,8 @@ CMakeFiles/interceptors_core.dir/src/player.cpp.o: ../src/player.cpp
 CMakeFiles/interceptors_core.dir/src/playerView.cpp.o: ../include/aiView.hpp
 CMakeFiles/interceptors_core.dir/src/playerView.cpp.o: ../include/bogey.hpp
 CMakeFiles/interceptors_core.dir/src/playerView.cpp.o: ../include/bullet.hpp
+CMakeFiles/interceptors_core.dir/src/playerView.cpp.o: ../include/bulletList.hpp
+CMakeFiles/interceptors_core.dir/src/playerView.cpp.o: ../include/bulletNode.hpp
 CMakeFiles/interceptors_core.dir/src/playerView.cpp.o: ../include/player.hpp
 CMakeFiles/interceptors_core.dir/src/playerView.cpp.o: ../include/playerView.hpp
 CMakeFiles/interceptors_core.dir/src/playerView.cpp.o: ../include/screamer.hpp

@@ -96,9 +96,35 @@ CMakeFiles/interceptors_core.dir/src/bullet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/interceptors_core.dir/src/bullet.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/joey/Documents/interceptors/src/bullet.cpp -o CMakeFiles/interceptors_core.dir/src/bullet.cpp.s
 
+CMakeFiles/interceptors_core.dir/src/bulletList.cpp.o: CMakeFiles/interceptors_core.dir/flags.make
+CMakeFiles/interceptors_core.dir/src/bulletList.cpp.o: ../src/bulletList.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/interceptors_core.dir/src/bulletList.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/interceptors_core.dir/src/bulletList.cpp.o -c /home/joey/Documents/interceptors/src/bulletList.cpp
+
+CMakeFiles/interceptors_core.dir/src/bulletList.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/interceptors_core.dir/src/bulletList.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/joey/Documents/interceptors/src/bulletList.cpp > CMakeFiles/interceptors_core.dir/src/bulletList.cpp.i
+
+CMakeFiles/interceptors_core.dir/src/bulletList.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/interceptors_core.dir/src/bulletList.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/joey/Documents/interceptors/src/bulletList.cpp -o CMakeFiles/interceptors_core.dir/src/bulletList.cpp.s
+
+CMakeFiles/interceptors_core.dir/src/bulletNode.cpp.o: CMakeFiles/interceptors_core.dir/flags.make
+CMakeFiles/interceptors_core.dir/src/bulletNode.cpp.o: ../src/bulletNode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/interceptors_core.dir/src/bulletNode.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/interceptors_core.dir/src/bulletNode.cpp.o -c /home/joey/Documents/interceptors/src/bulletNode.cpp
+
+CMakeFiles/interceptors_core.dir/src/bulletNode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/interceptors_core.dir/src/bulletNode.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/joey/Documents/interceptors/src/bulletNode.cpp > CMakeFiles/interceptors_core.dir/src/bulletNode.cpp.i
+
+CMakeFiles/interceptors_core.dir/src/bulletNode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/interceptors_core.dir/src/bulletNode.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/joey/Documents/interceptors/src/bulletNode.cpp -o CMakeFiles/interceptors_core.dir/src/bulletNode.cpp.s
+
 CMakeFiles/interceptors_core.dir/src/flagship.cpp.o: CMakeFiles/interceptors_core.dir/flags.make
 CMakeFiles/interceptors_core.dir/src/flagship.cpp.o: ../src/flagship.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/interceptors_core.dir/src/flagship.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/interceptors_core.dir/src/flagship.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/interceptors_core.dir/src/flagship.cpp.o -c /home/joey/Documents/interceptors/src/flagship.cpp
 
 CMakeFiles/interceptors_core.dir/src/flagship.cpp.i: cmake_force
@@ -111,7 +137,7 @@ CMakeFiles/interceptors_core.dir/src/flagship.cpp.s: cmake_force
 
 CMakeFiles/interceptors_core.dir/src/game.cpp.o: CMakeFiles/interceptors_core.dir/flags.make
 CMakeFiles/interceptors_core.dir/src/game.cpp.o: ../src/game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/interceptors_core.dir/src/game.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/interceptors_core.dir/src/game.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/interceptors_core.dir/src/game.cpp.o -c /home/joey/Documents/interceptors/src/game.cpp
 
 CMakeFiles/interceptors_core.dir/src/game.cpp.i: cmake_force
@@ -124,7 +150,7 @@ CMakeFiles/interceptors_core.dir/src/game.cpp.s: cmake_force
 
 CMakeFiles/interceptors_core.dir/src/levelOne.cpp.o: CMakeFiles/interceptors_core.dir/flags.make
 CMakeFiles/interceptors_core.dir/src/levelOne.cpp.o: ../src/levelOne.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/interceptors_core.dir/src/levelOne.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/interceptors_core.dir/src/levelOne.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/interceptors_core.dir/src/levelOne.cpp.o -c /home/joey/Documents/interceptors/src/levelOne.cpp
 
 CMakeFiles/interceptors_core.dir/src/levelOne.cpp.i: cmake_force
@@ -137,7 +163,7 @@ CMakeFiles/interceptors_core.dir/src/levelOne.cpp.s: cmake_force
 
 CMakeFiles/interceptors_core.dir/src/loseScreen.cpp.o: CMakeFiles/interceptors_core.dir/flags.make
 CMakeFiles/interceptors_core.dir/src/loseScreen.cpp.o: ../src/loseScreen.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/interceptors_core.dir/src/loseScreen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/interceptors_core.dir/src/loseScreen.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/interceptors_core.dir/src/loseScreen.cpp.o -c /home/joey/Documents/interceptors/src/loseScreen.cpp
 
 CMakeFiles/interceptors_core.dir/src/loseScreen.cpp.i: cmake_force
@@ -150,7 +176,7 @@ CMakeFiles/interceptors_core.dir/src/loseScreen.cpp.s: cmake_force
 
 CMakeFiles/interceptors_core.dir/src/menu.cpp.o: CMakeFiles/interceptors_core.dir/flags.make
 CMakeFiles/interceptors_core.dir/src/menu.cpp.o: ../src/menu.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/interceptors_core.dir/src/menu.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/interceptors_core.dir/src/menu.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/interceptors_core.dir/src/menu.cpp.o -c /home/joey/Documents/interceptors/src/menu.cpp
 
 CMakeFiles/interceptors_core.dir/src/menu.cpp.i: cmake_force
@@ -163,7 +189,7 @@ CMakeFiles/interceptors_core.dir/src/menu.cpp.s: cmake_force
 
 CMakeFiles/interceptors_core.dir/src/options.cpp.o: CMakeFiles/interceptors_core.dir/flags.make
 CMakeFiles/interceptors_core.dir/src/options.cpp.o: ../src/options.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/interceptors_core.dir/src/options.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/interceptors_core.dir/src/options.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/interceptors_core.dir/src/options.cpp.o -c /home/joey/Documents/interceptors/src/options.cpp
 
 CMakeFiles/interceptors_core.dir/src/options.cpp.i: cmake_force
@@ -176,7 +202,7 @@ CMakeFiles/interceptors_core.dir/src/options.cpp.s: cmake_force
 
 CMakeFiles/interceptors_core.dir/src/player.cpp.o: CMakeFiles/interceptors_core.dir/flags.make
 CMakeFiles/interceptors_core.dir/src/player.cpp.o: ../src/player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/interceptors_core.dir/src/player.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/interceptors_core.dir/src/player.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/interceptors_core.dir/src/player.cpp.o -c /home/joey/Documents/interceptors/src/player.cpp
 
 CMakeFiles/interceptors_core.dir/src/player.cpp.i: cmake_force
@@ -189,7 +215,7 @@ CMakeFiles/interceptors_core.dir/src/player.cpp.s: cmake_force
 
 CMakeFiles/interceptors_core.dir/src/playerView.cpp.o: CMakeFiles/interceptors_core.dir/flags.make
 CMakeFiles/interceptors_core.dir/src/playerView.cpp.o: ../src/playerView.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/interceptors_core.dir/src/playerView.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/interceptors_core.dir/src/playerView.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/interceptors_core.dir/src/playerView.cpp.o -c /home/joey/Documents/interceptors/src/playerView.cpp
 
 CMakeFiles/interceptors_core.dir/src/playerView.cpp.i: cmake_force
@@ -202,7 +228,7 @@ CMakeFiles/interceptors_core.dir/src/playerView.cpp.s: cmake_force
 
 CMakeFiles/interceptors_core.dir/src/powerUp.cpp.o: CMakeFiles/interceptors_core.dir/flags.make
 CMakeFiles/interceptors_core.dir/src/powerUp.cpp.o: ../src/powerUp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/interceptors_core.dir/src/powerUp.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/interceptors_core.dir/src/powerUp.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/interceptors_core.dir/src/powerUp.cpp.o -c /home/joey/Documents/interceptors/src/powerUp.cpp
 
 CMakeFiles/interceptors_core.dir/src/powerUp.cpp.i: cmake_force
@@ -215,7 +241,7 @@ CMakeFiles/interceptors_core.dir/src/powerUp.cpp.s: cmake_force
 
 CMakeFiles/interceptors_core.dir/src/screamer.cpp.o: CMakeFiles/interceptors_core.dir/flags.make
 CMakeFiles/interceptors_core.dir/src/screamer.cpp.o: ../src/screamer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/interceptors_core.dir/src/screamer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/interceptors_core.dir/src/screamer.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/interceptors_core.dir/src/screamer.cpp.o -c /home/joey/Documents/interceptors/src/screamer.cpp
 
 CMakeFiles/interceptors_core.dir/src/screamer.cpp.i: cmake_force
@@ -228,7 +254,7 @@ CMakeFiles/interceptors_core.dir/src/screamer.cpp.s: cmake_force
 
 CMakeFiles/interceptors_core.dir/src/winScreen.cpp.o: CMakeFiles/interceptors_core.dir/flags.make
 CMakeFiles/interceptors_core.dir/src/winScreen.cpp.o: ../src/winScreen.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/interceptors_core.dir/src/winScreen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/interceptors_core.dir/src/winScreen.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/interceptors_core.dir/src/winScreen.cpp.o -c /home/joey/Documents/interceptors/src/winScreen.cpp
 
 CMakeFiles/interceptors_core.dir/src/winScreen.cpp.i: cmake_force
@@ -244,6 +270,8 @@ interceptors_core_OBJECTS = \
 "CMakeFiles/interceptors_core.dir/src/aiView.cpp.o" \
 "CMakeFiles/interceptors_core.dir/src/bogey.cpp.o" \
 "CMakeFiles/interceptors_core.dir/src/bullet.cpp.o" \
+"CMakeFiles/interceptors_core.dir/src/bulletList.cpp.o" \
+"CMakeFiles/interceptors_core.dir/src/bulletNode.cpp.o" \
 "CMakeFiles/interceptors_core.dir/src/flagship.cpp.o" \
 "CMakeFiles/interceptors_core.dir/src/game.cpp.o" \
 "CMakeFiles/interceptors_core.dir/src/levelOne.cpp.o" \
@@ -262,6 +290,8 @@ interceptors_core_EXTERNAL_OBJECTS =
 libinterceptors_core.a: CMakeFiles/interceptors_core.dir/src/aiView.cpp.o
 libinterceptors_core.a: CMakeFiles/interceptors_core.dir/src/bogey.cpp.o
 libinterceptors_core.a: CMakeFiles/interceptors_core.dir/src/bullet.cpp.o
+libinterceptors_core.a: CMakeFiles/interceptors_core.dir/src/bulletList.cpp.o
+libinterceptors_core.a: CMakeFiles/interceptors_core.dir/src/bulletNode.cpp.o
 libinterceptors_core.a: CMakeFiles/interceptors_core.dir/src/flagship.cpp.o
 libinterceptors_core.a: CMakeFiles/interceptors_core.dir/src/game.cpp.o
 libinterceptors_core.a: CMakeFiles/interceptors_core.dir/src/levelOne.cpp.o
@@ -275,7 +305,7 @@ libinterceptors_core.a: CMakeFiles/interceptors_core.dir/src/screamer.cpp.o
 libinterceptors_core.a: CMakeFiles/interceptors_core.dir/src/winScreen.cpp.o
 libinterceptors_core.a: CMakeFiles/interceptors_core.dir/build.make
 libinterceptors_core.a: CMakeFiles/interceptors_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX static library libinterceptors_core.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/joey/Documents/interceptors/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX static library libinterceptors_core.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/interceptors_core.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/interceptors_core.dir/link.txt --verbose=$(VERBOSE)
 

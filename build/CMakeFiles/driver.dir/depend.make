@@ -4,6 +4,8 @@
 CMakeFiles/driver.dir/bin/driver.cpp.o: ../include/aiView.hpp
 CMakeFiles/driver.dir/bin/driver.cpp.o: ../include/bogey.hpp
 CMakeFiles/driver.dir/bin/driver.cpp.o: ../include/bullet.hpp
+CMakeFiles/driver.dir/bin/driver.cpp.o: ../include/bulletList.hpp
+CMakeFiles/driver.dir/bin/driver.cpp.o: ../include/bulletNode.hpp
 CMakeFiles/driver.dir/bin/driver.cpp.o: ../include/flagship.hpp
 CMakeFiles/driver.dir/bin/driver.cpp.o: ../include/game.hpp
 CMakeFiles/driver.dir/bin/driver.cpp.o: ../include/levelOne.hpp

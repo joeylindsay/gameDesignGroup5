@@ -22,23 +22,23 @@ class player
 
     public:
         player();
+        
+        float height;
+        float width;
 
-        void setPosition(sf::RenderWindow& window);
+        void setPosition(float x, float y);
         sf::Vector2f getPosition();
         sf::Sprite getPlayer();
 
-        void moveLeft(float deltaMS);
-        void moveRight(sf::RenderWindow& window, float deltaMS);
-        void moveUp(float deltaMS);
-        void moveDown(sf::RenderWindow& window, float deltaMS);
+        void move(float x, float y);
 
         int getHealth();
         void setHealth(int health);
         
         void gotHit();
 		
-		//function to check if player special ability is ready for use
-		bool isTimeStopReady();
+	//function to check if player special ability is ready for use
+	bool isTimeStopReady();
 };
 }
 #endif 

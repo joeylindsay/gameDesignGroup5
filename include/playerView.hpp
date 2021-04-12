@@ -21,7 +21,7 @@ namespace interceptors
 	{
 		public:
 			//basic player view constructor
-			playerView(bullet* bullets, sf::RenderWindow* playerWindow, aiView* m_aiView);
+			playerView(bulletList* bullets, sf::RenderWindow* playerWindow, aiView* m_aiView, player* playerP);
 			
 			//checks the player's health and updates the corresponding HUD element
 			void updateHealth();
@@ -43,10 +43,10 @@ namespace interceptors
 			sf::RenderWindow* playerWindowP;
 			
 			//pointer to the list of all onscreen bullets
-			bullet* bulletsP;
+			bulletList* bulletsP;
 			
 			//variable to store the player instance
-			player m_player;
+			player* playerP;
 			
 			//pointer to the list of screamers
 			bogey* bogeyP;
@@ -62,6 +62,15 @@ namespace interceptors
 			
 			//save the texture for the background sprite
 			static sf::Texture m_backgroundSpriteTex;
+			
+			//save the background texture height
+			int m_backgroundTexHeight;
+			
+			//save the view height
+			int m_playerViewHeight;
+			
+			//save the view width
+			int m_playerViewWidth;
 	};
 }
 #endif

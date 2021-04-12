@@ -6,6 +6,7 @@
 #define AIVIEW_HPP
 
 #include <bogey.hpp>
+#include <bulletList.hpp>
 #include <screamer.hpp>
 #include <bullet.hpp>
 
@@ -15,7 +16,7 @@ namespace interceptors
 	{
 		public:
 			//constructor. Adds a pointer to list of onscreen bullets
-			aiView(bullet* bullets);
+			aiView(bulletList* bullets);
 			
 			//adds a bogey to the list of bogeys onscreen
 			void addBogey(bogey newbogey);

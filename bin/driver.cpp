@@ -16,6 +16,8 @@
 #include <winScreen.hpp>
 #include <aiView.hpp>
 #include <playerView.hpp>
+#include <bulletNode.hpp>
+#include <bulletList.hpp>
 #include <game.hpp>
 
 

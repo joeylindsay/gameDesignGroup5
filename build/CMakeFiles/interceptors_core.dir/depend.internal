@@ -5,6 +5,8 @@ CMakeFiles/interceptors_core.dir/src/aiView.cpp.o
  ../include/aiView.hpp
  ../include/bogey.hpp
  ../include/bullet.hpp
+ ../include/bulletList.hpp
+ ../include/bulletNode.hpp
  ../include/screamer.hpp
  /home/joey/Documents/interceptors/src/aiView.cpp
 CMakeFiles/interceptors_core.dir/src/bogey.cpp.o
@@ -13,6 +15,15 @@ CMakeFiles/interceptors_core.dir/src/bogey.cpp.o
 CMakeFiles/interceptors_core.dir/src/bullet.cpp.o
  ../include/bullet.hpp
  /home/joey/Documents/interceptors/src/bullet.cpp
+CMakeFiles/interceptors_core.dir/src/bulletList.cpp.o
+ ../include/bullet.hpp
+ ../include/bulletList.hpp
+ ../include/bulletNode.hpp
+ /home/joey/Documents/interceptors/src/bulletList.cpp
+CMakeFiles/interceptors_core.dir/src/bulletNode.cpp.o
+ ../include/bullet.hpp
+ ../include/bulletNode.hpp
+ /home/joey/Documents/interceptors/src/bulletNode.cpp
 CMakeFiles/interceptors_core.dir/src/flagship.cpp.o
  ../include/flagship.hpp
  /home/joey/Documents/interceptors/src/flagship.cpp
@@ -20,6 +31,8 @@ CMakeFiles/interceptors_core.dir/src/game.cpp.o
  ../include/aiView.hpp
  ../include/bogey.hpp
  ../include/bullet.hpp
+ ../include/bulletList.hpp
+ ../include/bulletNode.hpp
  ../include/flagship.hpp
  ../include/game.hpp
  ../include/levelOne.hpp
@@ -57,6 +70,8 @@ CMakeFiles/interceptors_core.dir/src/playerView.cpp.o
  ../include/aiView.hpp
  ../include/bogey.hpp
  ../include/bullet.hpp
+ ../include/bulletList.hpp
+ ../include/bulletNode.hpp
  ../include/player.hpp
  ../include/playerView.hpp
  ../include/screamer.hpp

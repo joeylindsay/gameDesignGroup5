@@ -5,8 +5,11 @@
 //instantiate static member variables
 sf::Uint32 interceptors::game::m_state;
 sf::RenderWindow interceptors::game::m_window;
+sf::Texture interceptors::game::m_bulletTexture;
 //setup the game running time
 sf::Time interceptors::game::gameSpeed = sf::seconds(0.0016f);
+//setup the bullet gap time
+
 
 interceptors::game::game(){
 	using interceptors::game;
@@ -82,28 +85,48 @@ void interceptors::game::options(){
 void interceptors::game::levelOne(){
 	using interceptors::game;
 	
-	//list of all bullets on screen
-	bullet bullets [50];
+	//instantiate the player object
+	player m_player = player();
+	
+	//setup the bullet time gap
+	sf::Time bulletGap = sf::seconds(0.15f);
+	
+	//load the bullet texture
+	m_bulletTexture.loadFromFile("../assets/bullet.png");
+	
+	//create a linked list to contain all of the bullets onscreen
+	bulletList m_bulletList = bulletList();
+	bulletNode* curNode = m_bulletList.head;
 	
 	//instantiate an ai view
-	aiView m_aiView(bullets);
+	aiView m_aiView(&m_bulletList);
 		
 	//instantiate a player view
-	playerView m_playerView(bullets, &m_window, &m_aiView);
+	playerView m_playerView(&m_bulletList, &m_window, &m_aiView, &m_player);
 	
-	//start the time elapsed clock
+	//start the necessary game clocks
 	sf::Clock clock;
+	sf::Clock bulletClock;
 	sf::Time elapsedTime;
+	sf::Time elapsedBulletTime;
 	
 	//create an event container
 	sf::Event event;
 	
+	//movement vector
+	sf::Vector2f movementVector;
+	
 	//main game loop
 	while (m_state == state::s_levelOne){
+		//update the times
 		elapsedTime = clock.getElapsedTime();
+		elapsedBulletTime = bulletClock.getElapsedTime();
 		
+		//reset the bullet node
+		curNode = m_bulletList.head;
+				
 		//poll the window for events
-		while (m_window.pollEvent(event)){
+		if (m_window.pollEvent(event)){
 			switch (event.type){
 				//if they close the window, close the game
 				case sf::Event::Closed:
@@ -117,8 +140,41 @@ void interceptors::game::levelOne(){
 				}break;
 			}
 		}
+		
 		//update the game in real time
 		if(elapsedTime >= gameSpeed){
+			//We check each key pressed and add them to a movment vector
+			//move up
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
+				movementVector.y = -3.0f;
+			//move down
+			} if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+				movementVector.y += 3.0f;
+			//move left
+			} if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+				movementVector.x = -3.0f;
+			//move right
+			} if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+				movementVector.x += 3.0f;
+			} 
+			m_player.move(movementVector.x, movementVector.y);
+			movementVector.x = 0.0f;
+			movementVector.y = 0.0f;
+			
+			//spawn bullets
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && elapsedBulletTime >= bulletGap){
+				m_bulletList.pushNode(&m_bulletTexture, 5.0f, m_player.getPosition());
+				//debug linked list m_bulletList.toConsole();
+				elapsedBulletTime = bulletClock.restart();
+			}
+			
+			//update the position of all the bullets onscreen
+			while (curNode->next != NULL){
+				curNode->m_bullet.move();
+				curNode = curNode->next;
+			}
+			
+			//draw the view
 			m_playerView.draw();
 			elapsedTime = clock.restart();
 		}

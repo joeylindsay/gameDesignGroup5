@@ -14,15 +14,22 @@ interceptors::player::player(){
 	m_PlayerSprite.setTexture(m_PlayerTexture);
 	
 	//move the player's origin to the center of the texture
-	m_PlayerSprite.setOrigin(m_PlayerTexture.getSize().x / 2.0, m_PlayerTexture.getSize().y / 2.0);
+	m_PlayerSprite.setOrigin(m_PlayerTexture.getSize().x / 2.0f, m_PlayerTexture.getSize().y / 2.0f);
 	//scale the sprite. This is the default, and will update on a window resize event
 	m_PlayerSprite.scale(0.2f, 0.2f);
+	//set the player height
+	height = m_PlayerSprite.getGlobalBounds().height;
+	width = m_PlayerSprite.getGlobalBounds().width;
 }	
 
-void interceptors::player::setPosition(sf::RenderWindow& window){
+void interceptors::player::setPosition(float x, float y){
 	using interceptors::player;
-	m_PlayerPosition.x = window.getSize().x/2;
-	m_PlayerPosition.y = window.getSize().y;
+	//save the local position coordinates
+	m_PlayerPosition.x = x;
+	m_PlayerPosition.y = y;
+	
+	//apply them to the player sprite
+	m_PlayerSprite.setPosition(x,y);
 }
 
 sf::Vector2f interceptors::player::getPosition(){
@@ -35,36 +42,11 @@ sf::Sprite interceptors::player::getPlayer(){
 	return m_PlayerSprite;
 }
 
-void interceptors::player::moveLeft(float deltaMS){
+void interceptors::player::move(float x, float y){
 	using interceptors::player;
-	if (m_PlayerPosition.x > 50)
-		m_PlayerPosition.x -= m_Speed * deltaMS;
-
-	m_PlayerSprite.setPosition(m_PlayerPosition);
-}
-
-void interceptors::player::moveRight(sf::RenderWindow& window, float deltaMS){
-	using interceptors::player;
-	if (m_PlayerPosition.x < window.getSize().x - 50)
-		m_PlayerPosition.x += m_Speed * deltaMS;
-
-	m_PlayerSprite.setPosition(m_PlayerPosition);
-}
-
-void interceptors::player::moveUp(float deltaMS){
-	using interceptors::player;
-	if (m_PlayerPosition.y > 150)
-		m_PlayerPosition.y -= m_Speed * deltaMS;
-
-	m_PlayerSprite.setPosition(m_PlayerPosition);
-}
-
-void interceptors::player::moveDown(sf::RenderWindow& window, float deltaMS){
-	using interceptors::player;
-	if (m_PlayerPosition.y < window.getSize().y - 150)
-		m_PlayerPosition.y += m_Speed * deltaMS;
-
-	m_PlayerSprite.setPosition(m_PlayerPosition);
+	m_PlayerPosition.x += x;
+	m_PlayerPosition.y += y;
+	m_PlayerSprite.move(x, y);
 }
 
 int interceptors::player::getHealth(){

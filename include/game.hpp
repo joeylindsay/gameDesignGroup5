@@ -15,6 +15,8 @@ that implement different behavior and parts of the game.*/
 #include <options.hpp>
 #include <powerUp.hpp>
 #include <winScreen.hpp>
+#include <bulletList.hpp>
+#include <bulletNode.hpp>
 #include <aiView.hpp>
 #include <playerView.hpp>
 
@@ -58,7 +60,8 @@ namespace interceptors
 		static sf::Time gameSpeed;
 		//the main window that we render in
             	static sf::RenderWindow m_window;
-		
+            	//bullet texture
+            	static sf::Texture m_bulletTexture;
     };
 }
 

@@ -244,6 +244,60 @@ src/bullet.cpp.s:
 	$(MAKE) -f CMakeFiles/interceptors_core.dir/build.make CMakeFiles/interceptors_core.dir/src/bullet.cpp.s
 .PHONY : src/bullet.cpp.s
 
+src/bulletList.o: src/bulletList.cpp.o
+
+.PHONY : src/bulletList.o
+
+# target to build an object file
+src/bulletList.cpp.o:
+	$(MAKE) -f CMakeFiles/interceptors_core.dir/build.make CMakeFiles/interceptors_core.dir/src/bulletList.cpp.o
+.PHONY : src/bulletList.cpp.o
+
+src/bulletList.i: src/bulletList.cpp.i
+
+.PHONY : src/bulletList.i
+
+# target to preprocess a source file
+src/bulletList.cpp.i:
+	$(MAKE) -f CMakeFiles/interceptors_core.dir/build.make CMakeFiles/interceptors_core.dir/src/bulletList.cpp.i
+.PHONY : src/bulletList.cpp.i
+
+src/bulletList.s: src/bulletList.cpp.s
+
+.PHONY : src/bulletList.s
+
+# target to generate assembly for a file
+src/bulletList.cpp.s:
+	$(MAKE) -f CMakeFiles/interceptors_core.dir/build.make CMakeFiles/interceptors_core.dir/src/bulletList.cpp.s
+.PHONY : src/bulletList.cpp.s
+
+src/bulletNode.o: src/bulletNode.cpp.o
+
+.PHONY : src/bulletNode.o
+
+# target to build an object file
+src/bulletNode.cpp.o:
+	$(MAKE) -f CMakeFiles/interceptors_core.dir/build.make CMakeFiles/interceptors_core.dir/src/bulletNode.cpp.o
+.PHONY : src/bulletNode.cpp.o
+
+src/bulletNode.i: src/bulletNode.cpp.i
+
+.PHONY : src/bulletNode.i
+
+# target to preprocess a source file
+src/bulletNode.cpp.i:
+	$(MAKE) -f CMakeFiles/interceptors_core.dir/build.make CMakeFiles/interceptors_core.dir/src/bulletNode.cpp.i
+.PHONY : src/bulletNode.cpp.i
+
+src/bulletNode.s: src/bulletNode.cpp.s
+
+.PHONY : src/bulletNode.s
+
+# target to generate assembly for a file
+src/bulletNode.cpp.s:
+	$(MAKE) -f CMakeFiles/interceptors_core.dir/build.make CMakeFiles/interceptors_core.dir/src/bulletNode.cpp.s
+.PHONY : src/bulletNode.cpp.s
+
 src/flagship.o: src/flagship.cpp.o
 
 .PHONY : src/flagship.o
@@ -563,6 +617,12 @@ help:
 	@echo "... src/bullet.o"
 	@echo "... src/bullet.i"
 	@echo "... src/bullet.s"
+	@echo "... src/bulletList.o"
+	@echo "... src/bulletList.i"
+	@echo "... src/bulletList.s"
+	@echo "... src/bulletNode.o"
+	@echo "... src/bulletNode.i"
+	@echo "... src/bulletNode.s"
 	@echo "... src/flagship.o"
 	@echo "... src/flagship.i"
 	@echo "... src/flagship.s"

@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/interceptors_core.dir/src/aiView.cpp.o"
   "CMakeFiles/interceptors_core.dir/src/bogey.cpp.o"
   "CMakeFiles/interceptors_core.dir/src/bullet.cpp.o"
+  "CMakeFiles/interceptors_core.dir/src/bulletList.cpp.o"
+  "CMakeFiles/interceptors_core.dir/src/bulletNode.cpp.o"
   "CMakeFiles/interceptors_core.dir/src/flagship.cpp.o"
   "CMakeFiles/interceptors_core.dir/src/game.cpp.o"
   "CMakeFiles/interceptors_core.dir/src/levelOne.cpp.o"

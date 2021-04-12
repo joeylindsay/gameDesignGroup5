@@ -9,6 +9,8 @@
 ../include/aiView.hpp
 bogey.hpp
 -
+bulletList.hpp
+-
 screamer.hpp
 -
 bullet.hpp
@@ -20,6 +22,18 @@ SFML/Graphics.hpp
 
 ../include/bullet.hpp
 SFML/Graphics.hpp
+-
+
+../include/bulletList.hpp
+bullet.hpp
+-
+bulletNode.hpp
+-
+SFML/Graphics.hpp
+-
+
+../include/bulletNode.hpp
+bullet.hpp
 -
 
 ../include/flagship.hpp
@@ -46,6 +60,10 @@ options.hpp
 powerUp.hpp
 -
 winScreen.hpp
+-
+bulletList.hpp
+-
+bulletNode.hpp
 -
 aiView.hpp
 -
@@ -158,6 +176,10 @@ winScreen.hpp
 aiView.hpp
 -
 playerView.hpp
+-
+bulletNode.hpp
+-
+bulletList.hpp
 -
 game.hpp
 -

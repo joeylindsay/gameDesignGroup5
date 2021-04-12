@@ -2,7 +2,7 @@
 
 #include<aiView.hpp>
 
-interceptors::aiView::aiView(bullet* bullets){
+interceptors::aiView::aiView(bulletList* bullets){
 	using interceptors::aiView;
 	//TODO
 }
