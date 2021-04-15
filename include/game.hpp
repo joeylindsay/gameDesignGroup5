@@ -39,6 +39,7 @@ namespace interceptors
            	static void levelOne();
             	static void win();
            	static void lose();
+           	static void pauseGame(playerView m_playerView);
 		static bool isQuitting();
 			
 		//enumeration of the states
@@ -62,6 +63,8 @@ namespace interceptors
             	static sf::RenderWindow m_window;
             	//bullet texture
             	static sf::Texture m_bulletTexture;
+            	//pause boolean
+            	static bool isPaused;
     };
 }
 

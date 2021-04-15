@@ -14,7 +14,7 @@ class bullet{
 		//dummy constructor to make the compiler happy
 		bullet();
 		//the main constructor
-		bullet(sf::Texture* bulletTex, int speed, sf::Vector2f position);
+		bullet(sf::Texture* bulletTex, int speed, float x, float y);
 		//set the position of the bullet
 		void setPosition(float start_x, float start_y);
 		//get the position of the bullet

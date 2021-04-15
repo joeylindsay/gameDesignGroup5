@@ -21,12 +21,12 @@ interceptors::bulletList::bulletList(){
 }
 
 //push a new bullet to the start of the list
-void interceptors::bulletList::pushNode(sf::Texture* bulletTex, int speed, sf::Vector2f position){
+void interceptors::bulletList::pushNode(sf::Texture* bulletTex, int speed, float x, float y){
 	using interceptors::bulletList;
 	
 	//initialize the new node
 	bulletNode* newNode = new bulletNode();
-	newNode->m_bullet = bullet(bulletTex, speed, position);
+	newNode->m_bullet = bullet(bulletTex, speed, x, y);
 	
 	//add the node onto the list
 	newNode->next = head->next;

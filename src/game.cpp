@@ -8,8 +8,8 @@ sf::RenderWindow interceptors::game::m_window;
 sf::Texture interceptors::game::m_bulletTexture;
 //setup the game running time
 sf::Time interceptors::game::gameSpeed = sf::seconds(0.0016f);
-//setup the bullet gap time
-
+//setup the pause boolean
+bool interceptors::game::isPaused = false;
 
 interceptors::game::game(){
 	using interceptors::game;
@@ -63,7 +63,6 @@ void interceptors::game::run(){
 		{
 			options();
 		} break;
-		
 		default:
 			std::cerr<<"The game encountered an unexpected error"<<std::endl;
 			m_state = state::s_quit;
@@ -103,6 +102,9 @@ void interceptors::game::levelOne(){
 		
 	//instantiate a player view
 	playerView m_playerView(&m_bulletList, &m_window, &m_aiView, &m_player);
+	
+	//call the resize function to correct screen stretching
+	m_playerView.resizeView();
 	
 	//start the necessary game clocks
 	sf::Clock clock;
@@ -148,22 +150,31 @@ void interceptors::game::levelOne(){
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
 				movementVector.y = -3.0f;
 			//move down
-			} if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+			} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
 				movementVector.y += 3.0f;
+			} 
 			//move left
-			} if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 				movementVector.x = -3.0f;
 			//move right
-			} if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+			} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 				movementVector.x += 3.0f;
 			} 
+			
+			//halve the speed for diagonal movement
+			if (movementVector.x != 0.0f && movementVector.y != 0.0f){
+				movementVector.x = movementVector.x/1.5f;
+				movementVector.y = movementVector.y/1.5f;
+			}
+			
+			//apply the movement
 			m_player.move(movementVector.x, movementVector.y);
 			movementVector.x = 0.0f;
 			movementVector.y = 0.0f;
 			
 			//spawn bullets
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && elapsedBulletTime >= bulletGap){
-				m_bulletList.pushNode(&m_bulletTexture, 5.0f, m_player.getPosition());
+				m_bulletList.pushNode(&m_bulletTexture, 5.0f, (m_player.getPosition().x - 2.5f), (m_player.getPosition().y + 8.0f));
 				//debug linked list m_bulletList.toConsole();
 				elapsedBulletTime = bulletClock.restart();
 			}
@@ -174,12 +185,55 @@ void interceptors::game::levelOne(){
 				curNode = curNode->next;
 			}
 			
+			//check for a pause input
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+				isPaused = true;
+				
+				//wait until the user lifts up from the escape key
+				while (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape));
+				
+				while (isPaused){
+					pauseGame(m_playerView);
+				}
+			} 
 			//draw the view
 			m_playerView.draw();
 			elapsedTime = clock.restart();
 		}
 	}
 }
+
+void interceptors::game::pauseGame(playerView m_playerView){
+	using interceptors::game;
+	//create an event container
+	sf::Event event;
+	
+	//check for window events
+	if (m_window.pollEvent(event)){
+		switch (event.type){
+			//if they close the window, close the game
+			case sf::Event::Closed:
+			{
+				m_state = state::s_quit;
+				isPaused = false;
+			}break;
+			//resize the window
+			case sf::Event::Resized:
+			{
+				m_playerView.resizeView();
+				m_playerView.draw();
+			}break;
+		}
+	}
+	
+	//check if the user is trying to leave the paused state
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+		//wait until the user lifts up from the escape key
+		while (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape));
+		isPaused = false;
+	}
+}
+
 void interceptors::game::win(){
 	using interceptors::game;
 	//TODO

@@ -16,7 +16,7 @@ class bulletList{
 		//base constructor
 		bulletList();
 		//add a new node
-		void pushNode(sf::Texture* bulletTex, int speed, sf::Vector2f position);
+		void pushNode(sf::Texture* bulletTex, int speed, float x, float y);
 		//remove a node
 		void popNode(int pos);
 		//the head node

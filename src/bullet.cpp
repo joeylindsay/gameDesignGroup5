@@ -7,15 +7,15 @@ interceptors::bullet::bullet(){}
 
 //main constructor. Sets up a bullet with a pointer to the texture (to avoid constantly
 //reloading from file), its desired speed, and its desired position
-interceptors::bullet::bullet(sf::Texture* bulletTex, int speed, sf::Vector2f position){
+interceptors::bullet::bullet(sf::Texture* bulletTex, int speed, float x, float y){
 	using interceptors::bullet;
 	//set the texture
 	b_sprite.setTexture(*bulletTex);
 	
 	//set the position
-	b_position.x = position.x;
-	b_position.y = position.y;
-	b_sprite.setPosition(position);
+	b_position.x = x;
+	b_position.y = y;
+	b_sprite.setPosition(x, y);
 	
 	//set the origin
 	b_sprite.setOrigin(bulletTex->getSize().x/2.5, bulletTex->getSize().y);

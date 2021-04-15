@@ -66,11 +66,9 @@ namespace interceptors
 			//save the background texture height
 			int m_backgroundTexHeight;
 			
-			//save the view height
-			int m_playerViewHeight;
+			//boolean to check if the view loops on this iteration
+			bool loopBool;
 			
-			//save the view width
-			int m_playerViewWidth;
 	};
 }
 #endif
