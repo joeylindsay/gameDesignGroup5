@@ -9,6 +9,7 @@ player in this menu*/
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <iostream>
+#include <stdlib.h>
 
 namespace interceptors
 {
@@ -17,22 +18,27 @@ namespace interceptors
 		public:
 			//base constructor, will setup the whole menu and draw it to screen
 			options();
+			void handleInput(sf::Event event);
 			//function to show the options on the main window passed by the game file
 			void show(sf::RenderWindow& window);
 			
 		
 		private:
-			int volume;
-			sf::Uint32 moveup;
-			sf::Uint32 movedown;
-			sf::Uint32 moveleft;
-			sf::Uint32 moveright;
-			sf::Uint32 shoot;
+			float volume;
+			std::string volumeup;
+            std::string volumedown;
+
+			std::string moveup;
+            std::string movedown;
+            std::string moveleft;
+            std::string moveright;
+
+            std::string shoot;
 			
 			//window drawing variables
 			float m_scale;
-           		float m_winsizeX;
-            		float m_winsizeY;
+			float m_winsizeX;
+			float m_winsizeY;
 			sf::Sprite optionsSprite;
 	};
 }
