@@ -7,6 +7,7 @@ of vectors that will apply overtime to its current position.*/
 #define BOGEY_HPP
 
 #include <SFML/Graphics.hpp>
+#include <bulletList.hpp>
 
 namespace interceptors
 {
@@ -17,13 +18,13 @@ class bogey {
 		//for when the enemy is killed by the player
 		void death();
 		//for when the enemy flies offscreen
-		void despawn();
+		//void despawn();
 		//get the current position of the enemy
 		sf::Vector2f getPosition();
 		//set the position of the enemy
-		void setPosition();
+		void setPosition(float a, float b);
 		//function for determining when the enemy fires
-		void shoot();
+		void shoot(sf::Texture* bulletTex, int speed, float x, float y, bulletList *bulletList);
 		//function for when the enemy takes a hit
 		void takeHit();
 		//function for retrieving the health of the enemy
