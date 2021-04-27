@@ -14,11 +14,9 @@ namespace interceptors
 class bogey {
 	public:
 		//draw the enemy onto the screen (spawn)
-		bogey();
+		bogey(sf::RenderWindow& window);
 		//for when the enemy is killed by the player
 		void death();
-		//for when the enemy flies offscreen
-		//void despawn();
 		//get the current position of the enemy
 		sf::Vector2f getPosition();
 		//set the position of the enemy
@@ -39,6 +37,8 @@ class bogey {
 		int health;
 		//vector recording the enemy's current position
 		sf::Vector2f position;
+        //vector recording size of window, used in determining degree of motion
+        sf::Vector2u window_size;
 		/*array of vectors indicating the path that the enemy is supposed to follow.
 		my thinking is that since the enemies are going to follow 
 		set paths with random noise, we don't need a set speed. We can use an array

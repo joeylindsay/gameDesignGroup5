@@ -14,11 +14,9 @@ namespace interceptors
 class flagship {
 	public:
 		//draw the enemy onto the screen (spawn)
-		flagship();
+		flagship(sf::RenderWindow& window);
 		//for when the enemy is killed by the player
 		void death();
-		//for when the enemy flies offscreen
-		//void despawn();
 		//get the current position of the enemy
 		sf::Vector2f getPosition();
 		//set the position of the enemy
@@ -42,6 +40,8 @@ class flagship {
 		int health;
 		//vector recording the enemy's current position
 		sf::Vector2f position;
+		//vector recording size of window, used in determining degree of motion
+        sf::Vector2u window_size;
 		/*array of vectors indicating the path that the enemy is supposed to follow.
 		my thinking is that since the enemies are going to follow 
 		set paths with random noise, we don't need a set speed. We can use an array
@@ -51,7 +51,7 @@ class flagship {
 		sf::Vector2f path [50];
 		//fire steps are a list of positions inside of the path list during which
 		//the flagship will fire
-		int fireSteps [5];
+		int fireSteps [10];
 		//pathPosition is the current position in the movement path
 		int pathPosition;
 		//the enemy sprite

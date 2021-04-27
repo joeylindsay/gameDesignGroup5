@@ -14,7 +14,7 @@ namespace interceptors
 class screamer {
 	public:
 		//draw the enemy onto the screen (spawn)
-		screamer();
+		screamer(sf::RenderWindow& window);
 		//for when the enemy is killed by the player
 		void death();
 		//for when the enemy flies offscreen
@@ -41,6 +41,8 @@ class screamer {
 		int health;
 		//vector recording the enemy's current position
 		sf::Vector2f position;
+        //vector recording size of window, used in determining degree of motion
+        sf::Vector2u window_size;
 		/*array of vectors indicating the path that the enemy is supposed to follow.
 		my thinking is that since the enemies are going to follow 
 		set paths with random noise, we don't need a set speed. We can use an array
@@ -50,7 +52,7 @@ class screamer {
 		sf::Vector2f path [50];
 		//fire steps are a list of positions inside of the path list during which
 		//the screamer will fire
-		int fireSteps [5];
+		int fireSteps [8];
 		//pathPosition is the current position in the movement path
 		int pathPosition;
 		//the enemy sprite

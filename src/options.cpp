@@ -12,14 +12,11 @@ using namespace std;
 
 interceptors::options::options() {
 	using interceptors::options;
-	//TODO
+
     volume = 20;
-    m_scale = 1;
-    m_winsizeX = 800;
-    m_winsizeY = 600;
 
     sf::Texture option;
-    option.loadFromFile("../assets/interceptorsprite.png");
+    option.loadFromFile("../assets/interceptorsprite.png"); // replace with correct option sprite file
     optionsSprite.setTexture(option);
 
     rapidxml::xml_document<> doc;
@@ -98,7 +95,7 @@ void interceptors::options::handleInput(sf::Event event) {
 
 void interceptors::options::show(sf::RenderWindow& window) {
 	using interceptors::options;
-	//TODO
+
 	sf::Text up_button;
     sf::Text down_button;
     sf::Text left_button;
@@ -146,6 +143,8 @@ void interceptors::options::show(sf::RenderWindow& window) {
     volume_level.setFont(style);
     volume_level.setColor(sf::Color::Red);
     volume_level.setPosition(200, 450);
+
+    optionsSprite.setPosition(200, 150);
 
     window.clear(sf::Color::Black);
     window.display();

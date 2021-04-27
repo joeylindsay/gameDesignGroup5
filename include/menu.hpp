@@ -14,6 +14,7 @@ namespace interceptors
 		public:
 			//base constructor, will setup the whole menu and draw it to screen
 			menu();
+            void handleInput(sf::Event event);
 			//function to show the menu on the main window passed by the game file
 			void show(sf::RenderWindow& window);
 			
