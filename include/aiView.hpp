@@ -1,53 +1,34 @@
-//header for the creation and management of the aiView class
-//this is simply a list of sprites on screen and the necessary
-//logic to complete the collision detection and movement
+/// \file AIView.hpp
+/// \author Rui Hou, Joey Lindsay, Harrison Keen, Kathy Ngo
+/// \brief Header file for the AIView class
+/// \date 2021-04-02
 
-#ifndef AIVIEW_HPP
-#define AIVIEW_HPP
+#pragma once
 
-#include <bogey.hpp>
-#include <bulletList.hpp>
-#include <screamer.hpp>
-#include <bullet.hpp>
+#include "GameView.hpp"
+#include "EnemyType.hpp"
+#include "SceneNode.hpp"
+#include "PlayerAircraft.hpp"
+#include "Command.hpp"
+#include <SFML/Graphics.hpp>
 
-namespace interceptors
+/// AI's view on the game. Use AI's strategyes to control the enemys.
+class AIView : public GameView
 {
-	class aiView
-	{
-		public:
-			//constructor. Adds a pointer to list of onscreen bullets
-			aiView(bulletList* bullets);
-			
-			//adds a bogey to the list of bogeys onscreen
-			void addBogey(bogey newbogey);
-			
-			//adds a screamer to the list of screamers onscreen
-			void addScreamer(screamer newscreamer);
-			
-			//a function to detect collisions between the sprites.
-			//Naiive implementation is fine for our purposes -- check collision between
-			//each bullet and each enemy. Returns a list of enemy sprite indecies
-			//to remove
-			int* detectCollisions();
-			
-			//a function to step each enemy along its set movement path
-			void moveEnemies();
-			
-			//function to get the list of bogeys
-			bogey* getBogeyList();
-			
-			//funciton to get the list of screamers
-			screamer* getScreamerList();
-		
-		private:
-			//list of all the bogeys onscreen
-		 	bogey bogeysOnscreen [50];
-		 	
-		 	//list of all the screamers onscreen
-		 	screamer screamersOnscreen [50];
-		 	
-			//pointer to the list of all onscreen bullets
-			bullet* bullets;
-	};
-}
-#endif
+public:
+    AIView(SceneNode*& enemies, PlayerAircraft*& player, SceneNode*& bullets);
+    void update(sf::Time dt, GameStateID state, const sf::FloatRect& worldBounds, std::vector<Command>& commandQueue) override;
+private:
+    struct SpawnSchedule {
+        EnemyType type;
+        sf::Vector2f position;
+    };
+    void updateEnemy(SceneNode* cur, std::vector<Command>& commandQueue);
+    /// schedule on when to place which enemy into the game world. Should be sorted in descending order in y.
+    std::vector<SpawnSchedule> _schedule;
+    /// iterator pointing to the next enemy to spawn in the schedule. 
+    std::vector<SpawnSchedule>::iterator _nextToSpawn;
+    SceneNode*& _enemies;
+    SceneNode*& _bullets;
+    PlayerAircraft*& _player;
+};

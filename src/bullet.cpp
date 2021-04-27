@@ -1,63 +1,21 @@
-//this is the main bullet file
+#include "Bullet.hpp"
+#include <SFML/Graphics.hpp>
 
-#include <bullet.hpp>
-
-//dummy constructor to make the compiler happy
-interceptors::bullet::bullet(){}
-
-//main constructor. Sets up a bullet with a pointer to the texture (to avoid constantly
-//reloading from file), its desired speed, and its desired position
-interceptors::bullet::bullet(sf::Texture* bulletTex, int speed, float x, float y){
-	using interceptors::bullet;
-	//set the texture
-	b_sprite.setTexture(*bulletTex);
-	
-	//set the position
-	b_position.x = x;
-	b_position.y = y;
-	b_sprite.setPosition(x, y);
-	
-	//set the origin
-	b_sprite.setOrigin(bulletTex->getSize().x/2.5, bulletTex->getSize().y);
-	
-	//set direction and speed
-	b_direction = 0;
-	b_speed = speed;
+Bullet::Bullet(sf::Texture& texture, int power, float verticalVelocity)
+    : SceneNode(texture)
+    , _power { power }
+{
+    _velocity.y = verticalVelocity;
+    sf::FloatRect bounds { _sprite.getLocalBounds()};
+    _sprite.setOrigin(bounds.width / 2.0f, bounds.height / 2.0f);
 }
 
-//set the position of the bullet
-void interceptors::bullet::setPosition(float start_x, float start_y){
-	using interceptors::bullet;
-	b_position.x = start_x;
-	b_position.y = start_y;
+void Bullet::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const
+{
+    target.draw(_sprite, states);
 }
 
-//set the position of the bullet
-sf::Vector2f interceptors::bullet::getPosition(){
-	using interceptors::bullet;
-	return b_position;
+int Bullet::getDamageValue() const
+{
+    return _power;
 }
-
-//set the direction in which the bullet should fire
-void interceptors::bullet::setDirection(float angle){
-	using interceptors::bullet;
-	b_direction = angle;
-	b_sprite.setRotation(angle);
-}
-
-//spawn and fire the bullet
-void interceptors::bullet::move(){
-	using interceptors::bullet;
-	// move bullet up
-	b_position.y -= b_speed;
-	//b_position.x += b_speed;
-
-	b_sprite.setPosition(b_position);
-}
-
-//get the hitbox of the bullet
-sf::FloatRect interceptors::bullet::getBulletHitbox(){
-	using interceptors::bullet;
-	return b_sprite.getGlobalBounds();
-}
-

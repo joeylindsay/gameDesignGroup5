@@ -1,79 +1,55 @@
-/*definition of the game class. This is a simple state machine
-that keeps track of the game state. It plugs in different game states
-that implement different behavior and parts of the game.*/
+/**
+ * @file Game.hpp
+ * @author Rui Hou, Harrison Keen, Joey Lindsay, Kathy Ngo 
+ * @brief Header file for Game class
+ * @date 2021-03-24
+ */
 
-#ifndef GAME_HPP
-#define GAME_HPP
+#pragma once
 
-#include <iostream>
+#include "Context.hpp"
+#include "Command.hpp"
+#include "GameStateID.hpp"
+#include "GameView.hpp"
+#include "PlayerAircraft.hpp"
+#include "SceneNode.hpp"
 #include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
-#include <bullet.hpp>
-#include <levelOne.hpp>
-#include <loseScreen.hpp>
-#include <menu.hpp>
-#include <options.hpp>
-#include <powerUp.hpp>
-#include <winScreen.hpp>
-#include <bulletList.hpp>
-#include <bulletNode.hpp>
-#include <aiView.hpp>
-#include <playerView.hpp>
+#include <vector>
 
-namespace interceptors
-
-{
-    class game
-    {
-        public:
-            	game();
-
-    	private:
-		//the main screen updating functions
-		//calls a draw option on the level state at the rate of the game speed
-            	static void run();
-		//different functions for each state
-		static void title();
-            	static void menu();
-            	static void options();
-           	static void levelOne();
-            	static void win();
-           	static void lose();
-           	static void pauseGame(playerView m_playerView);
-		static bool isQuitting();
-			
-		//enumeration of the states
-           	enum state
-            	{
-            		s_title,
-                	s_menu,
-                	s_options,
-                	s_levelOne,
-                	s_win,
-                	s_lose,
-                	s_quit
-            	};
-
-        private:
-		//the current game state
-            	static sf::Uint32 m_state;
-		//speed of the game, otherwise known as the deltams
-		static sf::Time gameSpeed;
-		//the main window that we render in
-            	static sf::RenderWindow m_window;
-            	//bullet texture
-            	static sf::Texture m_bulletTexture;
-            	//pause boolean
-            	static bool isPaused;
+/**
+ * @brief Implements the actual Interceptors game.
+ */
+class Game {
+public:
+    enum class SceneLayer {
+        Background,
+        Bullets,
+        Enemies,
+        Player,
+        LayerCount
     };
-}
+    Game(Context& context, std::vector<sf::Event>& eventQueue);
+    /// Logical update
+    /// \param dt Time of current frame
+    void update(sf::Time dt);
+    void changeState(GameStateID newState);
 
-//check for player input and spawn player's bullets
-//move ai and spawn ai bullets
-//move bullets
-//check collisions with ai and bullets (return indecies of sprites popped)
-//check collisions with player and bullets
-//spawn enemies
-//redraw screen
-
-#endif
+private:
+    void buildScene();
+    void cleanUp();
+    sf::FloatRect getViewBounds() const;
+    sf::FloatRect getWorldBounds() const;
+    void collisionDetection();
+    GameStateID _state { GameStateID::Menu };
+    std::vector<std::unique_ptr<GameView>> _viewList;
+    Context& _context;
+    SceneNode _sceneGraph { };
+    std::vector<SceneNode*> _sceneGraphLayers;
+    sf::Vector2i _worldSize { 768, 1024 };
+    int _maxHeight { 50000 };
+    std::vector<sf::Event>& _eventQueue;
+    PlayerAircraft* player_craft;
+    float _scrollSpeed = -50.0f;
+    sf::View _world;
+    sf::Vector2f _spawnPosition;
+};

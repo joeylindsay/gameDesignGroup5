@@ -1,249 +1,192 @@
-//main game loop file
-#include <game.hpp>
-#include <iostream>
+/**
+ * @file Game.cpp
+ * @author 
+ * @brief Game class
+ * @date 2021-03-24
+ */
 
-//instantiate static member variables
-sf::Uint32 interceptors::game::m_state;
-sf::RenderWindow interceptors::game::m_window;
-sf::Texture interceptors::game::m_bulletTexture;
-//setup the game running time
-sf::Time interceptors::game::gameSpeed = sf::seconds(0.0016f);
-//setup the pause boolean
-bool interceptors::game::isPaused = false;
+#include "Game.hpp"
+#include "AIView.hpp"
+#include "Context.hpp"
+#include "EnemyType.hpp"
+#include "MenuView.hpp"
+#include "PendingChange.hpp"
+#include "PlayerAircraft.hpp"
+#include "PlayerView.hpp"
+#include "SceneNode.hpp"
+#include "Screamer.hpp"
+#include "SpriteNode.hpp"
+#include <SFML/Graphics.hpp>
+#include <queue>
 
-interceptors::game::game(){
-	using interceptors::game;
-	
-	//setup the main game window
-	sf::VideoMode mode = sf::VideoMode::getDesktopMode();
-	m_window.create(mode, "interceptors");
-	
-	//instantiate the title state
-	m_state = state::s_title;
-	
-	//REMOVE THIS WHEN WE'RE DONE WITH THE TITLE SCREEN
-	//THIS LINE AUTOMATICALLY SHIFTS THE GAME LOGIC
-	//DIRECTLY INTO THE MAIN GAME WITH NO TITLE
-	m_state = state::s_levelOne;
-	
-	//start the run loop
-	while(!isQuitting()){
-		run();
-	}
-	m_window.close();
-}
+Game::Game(Context& context, std::vector<sf::Event>& eventQueue)
+    : _context { context }
+    , _eventQueue { eventQueue }
+    , _sceneGraphLayers(static_cast<size_t>(SceneLayer::LayerCount))
+    , _world { context.window.getDefaultView() }
+    , _spawnPosition { _world.getSize().x / 2.0f, _maxHeight - _world.getSize().y / 2.0f }
+{
+    _world.setCenter(_spawnPosition);
 
-//a simple switch statement to run each of the different
-//state functions
-void interceptors::game::run(){
-	using interceptors::game;
-	switch(m_state)
-	{
-		case state::s_title:
-		{
-			title();
-		} break;
-		case state::s_menu:
-		{
-			menu();
-		} break;
-		case state::s_levelOne:
-		{
-			levelOne();
-		} break;
-		case state::s_win:
-		{
-			win();
-		} break;
-		case state::s_lose:
-		{
-			lose();
-		} break;
-		case state::s_options:
-		{
-			options();
-		} break;
-		default:
-			std::cerr<<"The game encountered an unexpected error"<<std::endl;
-			m_state = state::s_quit;
-	}
-}
-//different functions for each state
-void interceptors::game::title(){
-	using interceptors::game;
-	//TODO
-}
-void interceptors::game::menu(){
-	using interceptors::game;
-	//TODO
-}
-void interceptors::game::options(){
-	using interceptors::game;
-	//TODO
-}
-void interceptors::game::levelOne(){
-	using interceptors::game;
-	
-	//instantiate the player object
-	player m_player = player();
-	
-	//setup the bullet time gap
-	sf::Time bulletGap = sf::seconds(0.15f);
-	
-	//load the bullet texture
-	m_bulletTexture.loadFromFile("../assets/bullet.png");
-	
-	//create a linked list to contain all of the bullets onscreen
-	bulletList m_bulletList = bulletList();
-	bulletNode* curNode = m_bulletList.head;
-	
-	//instantiate an ai view
-	aiView m_aiView(&m_bulletList);
-		
-	//instantiate a player view
-	playerView m_playerView(&m_bulletList, &m_window, &m_aiView, &m_player);
-	
-	//call the resize function to correct screen stretching
-	m_playerView.resizeView();
-	
-	//start the necessary game clocks
-	sf::Clock clock;
-	sf::Clock bulletClock;
-	sf::Time elapsedTime;
-	sf::Time elapsedBulletTime;
-	
-	//create an event container
-	sf::Event event;
-	
-	//movement vector
-	sf::Vector2f movementVector;
-	
-	//main game loop
-	while (m_state == state::s_levelOne){
-		//update the times
-		elapsedTime = clock.getElapsedTime();
-		elapsedBulletTime = bulletClock.getElapsedTime();
-		
-		//reset the bullet node
-		curNode = m_bulletList.head;
-				
-		//poll the window for events
-		if (m_window.pollEvent(event)){
-			switch (event.type){
-				//if they close the window, close the game
-				case sf::Event::Closed:
-				{
-					m_state = state::s_quit;
-				}break;
-				//if they resize the window, run the reisize functions
-				case sf::Event::Resized:
-				{
-					m_playerView.resizeView();
-				}break;
-			}
-		}
-		
-		//update the game in real time
-		if(elapsedTime >= gameSpeed){
-			//We check each key pressed and add them to a movment vector
-			//move up
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
-				movementVector.y = -3.0f;
-			//move down
-			} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-				movementVector.y += 3.0f;
-			} 
-			//move left
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-				movementVector.x = -3.0f;
-			//move right
-			} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-				movementVector.x += 3.0f;
-			} 
-			
-			//halve the speed for diagonal movement
-			if (movementVector.x != 0.0f && movementVector.y != 0.0f){
-				movementVector.x = movementVector.x/1.5f;
-				movementVector.y = movementVector.y/1.5f;
-			}
-			
-			//apply the movement
-			m_player.move(movementVector.x, movementVector.y);
-			movementVector.x = 0.0f;
-			movementVector.y = 0.0f;
-			
-			//spawn bullets
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && elapsedBulletTime >= bulletGap){
-				m_bulletList.pushNode(&m_bulletTexture, 5.0f, (m_player.getPosition().x - 2.5f), (m_player.getPosition().y + 8.0f));
-				//debug linked list m_bulletList.toConsole();
-				elapsedBulletTime = bulletClock.restart();
-			}
-			
-			//update the position of all the bullets onscreen
-			while (curNode->next != NULL){
-				curNode->m_bullet.move();
-				curNode = curNode->next;
-			}
-			
-			//check for a pause input
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-				isPaused = true;
-				
-				//wait until the user lifts up from the escape key
-				while (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape));
-				
-				while (isPaused){
-					pauseGame(m_playerView);
-				}
-			} 
-			//draw the view
-			m_playerView.draw();
-			elapsedTime = clock.restart();
-		}
-	}
+    buildScene();
+
+    // Register views
+    _viewList.emplace_back(std::make_unique<PlayerView>(_context, _sceneGraph, _world, eventQueue, _maxHeight, player_craft));
+    _viewList.emplace_back(std::make_unique<MenuView>(_context));
+    _viewList.emplace_back(std::make_unique<AIView>(_sceneGraphLayers[static_cast<size_t>(SceneLayer::Enemies)], player_craft, _sceneGraphLayers[static_cast<size_t>(SceneLayer::Bullets)]));
 }
 
-void interceptors::game::pauseGame(playerView m_playerView){
-	using interceptors::game;
-	//create an event container
-	sf::Event event;
-	
-	//check for window events
-	if (m_window.pollEvent(event)){
-		switch (event.type){
-			//if they close the window, close the game
-			case sf::Event::Closed:
-			{
-				m_state = state::s_quit;
-				isPaused = false;
-			}break;
-			//resize the window
-			case sf::Event::Resized:
-			{
-				m_playerView.resizeView();
-				m_playerView.draw();
-			}break;
-		}
-	}
-	
-	//check if the user is trying to leave the paused state
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
-		//wait until the user lifts up from the escape key
-		while (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape));
-		isPaused = false;
-	}
+void Game::changeState(GameStateID newState)
+{
+    _state = newState;
 }
 
-void interceptors::game::win(){
-	using interceptors::game;
-	//TODO
+void Game::update(sf::Time dt)
+{
+    // state specifics
+    switch (_state) {
+    case GameStateID::Menu:
+        for (auto event : _eventQueue)
+            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Enter) {
+                changeState(GameStateID::Play);
+                break;
+            }
+        break;
+    case GameStateID::Play:
+        _world.move(0.0f, -50.0f * dt.asSeconds());
+        _context.window.setView(_world);
+
+        if (player_craft->isDestoryed())
+            changeState(GameStateID::Over);
+        break;
+    case GameStateID::Pause:
+        break;
+    case GameStateID::Over:
+        break;
+    default:
+        break;
+    }
+
+    // update all views
+    std::vector<Command> commandQueue;
+    for (auto& view : _viewList)
+        view->update(dt, _state, getViewBounds(), commandQueue);
+    _context.window.display();
+    
+    // complete requested commands
+    std::vector<PendingChange> changeQueue;
+    _sceneGraphLayers[static_cast<size_t>(SceneLayer::Enemies)]->resetVelocity();
+    _sceneGraphLayers[static_cast<size_t>(SceneLayer::Player)]->resetVelocity();
+    for (auto& cmd : commandQueue)
+        switch (cmd.type) {
+        case Command::Type::MoveLeft:
+            cmd.entity->setUnitVelocity(-1, 0);
+            break;
+        case Command::Type::MoveRight:
+            cmd.entity->setUnitVelocity(1, 0);
+            break;
+        case Command::Type::MoveUp:
+            cmd.entity->setUnitVelocity(0, -1);
+            break;
+        case Command::Type::MoveDown:
+            cmd.entity->setUnitVelocity(0, 1);
+            break;
+        case Command::Type::Fire:
+            static_cast<Aircraft*>(cmd.entity)->fire(changeQueue);
+            break;
+        case Command::Type::AddEnemy: {
+            std::unique_ptr<SceneNode> newNode;
+            switch (cmd.newEnemyType) {
+            case EnemyType::Screamer:
+                newNode = std::make_unique<Screamer>(_context.textures);
+                break;
+            default:
+                break;
+            }
+            newNode->setPosition(cmd.position);
+            _sceneGraphLayers[static_cast<size_t>(SceneLayer::Enemies)]->attach(std::move(newNode));
+        } break;
+
+        default:
+            break;
+        }
+
+    // Apply pending changes
+    for (auto& change : changeQueue)
+        switch (change.type) {
+        case PendingChange::Type::AddBullet:
+            for (auto& newBullet : change.newBullets)
+                _sceneGraphLayers[static_cast<size_t>(SceneLayer::Bullets)]->attach(std::move(newBullet));
+            break;
+
+        default:
+            break;
+        }
+
+    _sceneGraphLayers[static_cast<size_t>(SceneLayer::Enemies)]->adaptVelocity();
+    _sceneGraphLayers[static_cast<size_t>(SceneLayer::Player)]->adaptVelocity();
+
+    collisionDetection();
+    _sceneGraph.update(dt);
+    cleanUp();
 }
-void interceptors::game::lose(){
-	using interceptors::game;
-	//TODO
+
+void Game::buildScene()
+{
+    // Attatch the subroots for the layers
+    for (auto& layer : _sceneGraphLayers) {
+        auto node { std::make_unique<SceneNode>() };
+        layer = node.get();
+        _sceneGraph.attach(std::move(node));
+    }
+
+    // Attatch background
+    sf::Texture& jungleBackground = _context.textures.get(TextureHolder::ID::JungleBackground);
+    jungleBackground.setRepeated(true);
+    auto background { std::make_unique<SpriteNode>(jungleBackground, sf::IntRect { 0, 0, _worldSize.x, _maxHeight + _worldSize.y }) };
+    background->setPosition(sf::Vector2f { 0.0f, -static_cast<float>(_worldSize.y) });
+    _sceneGraphLayers[static_cast<size_t>(SceneLayer::Background)]->attach(std::move(background));
+
+    // Attach player
+    auto playerAircraft = std::make_unique<PlayerAircraft>(_context.textures, _scrollSpeed);
+    playerAircraft->setPosition(_spawnPosition);
+    player_craft = playerAircraft.get();
+    _sceneGraphLayers[static_cast<size_t>(SceneLayer::Player)]->attach(std::move(playerAircraft));
 }
-//return true if the user quits the game
-bool interceptors::game::isQuitting(){
-	using interceptors::game;
-	return m_state == state::s_quit;
+
+void Game::cleanUp()
+{
+    _sceneGraphLayers[static_cast<size_t>(SceneLayer::Enemies)]->cleanUp(getWorldBounds());
+    _sceneGraphLayers[static_cast<size_t>(SceneLayer::Bullets)]->cleanUp(getWorldBounds());
+}
+
+sf::FloatRect Game::getViewBounds() const
+{
+    return sf::FloatRect { _world.getCenter() - _world.getSize() / 2.0f, _world.getSize() };
+}
+
+sf::FloatRect Game::getWorldBounds() const
+{
+    sf::FloatRect view { getViewBounds() };
+    view.top -= 100.0f;
+    view.height += 100.0f;
+    return view;
+}
+
+void Game::collisionDetection()
+{
+    // between bullet and others
+    for (auto& bullet : _sceneGraphLayers[static_cast<size_t>(SceneLayer::Bullets)]->getChildren()) {
+        // player bullet. check for enemys.
+        if (bullet->getVelocity().y < 0) {
+            for (auto& enemy : _sceneGraphLayers[static_cast<size_t>(SceneLayer::Enemies)]->getChildren())
+                if (enemy->checkCollision(bullet->getBoundingRect(), bullet->getDamageValue())) {
+                    bullet->destroy();
+                }
+        } else { // bullet from enemy. check for player
+            if (player_craft->checkCollision(bullet->getBoundingRect(), bullet->getDamageValue())) {
+                bullet->destroy();
+            }
+        }
+    }
 }
