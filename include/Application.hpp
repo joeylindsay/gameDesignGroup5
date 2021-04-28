@@ -19,7 +19,7 @@ public:
     void run();
 
 private:
-    sf::RenderWindow _window { sf::VideoMode { 768, 1024 }, "Interceptors", sf::Style::Close };
+    sf::RenderWindow _window {sf::VideoMode::getDesktopMode(), "Interceptors"};
     TextureHolder _textures;
     FontHolder _fonts;
     Context _context;

@@ -23,6 +23,8 @@ void Application::run()
             if (event.type == sf::Event::Closed) {
                 _window.close();
                 break;
+            } else if (event.type == sf::Event::Resized){
+            	_gameLogic.resize();
             }
             _eventQueue.push_back(event);
         }

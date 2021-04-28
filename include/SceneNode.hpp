@@ -31,17 +31,17 @@ public:
     void adaptVelocity();
     /// Get a bounding box in world coordinates.
     sf::FloatRect getBoundingRect() const;
-    /// Clean up out of sight or distroyed nodes.
+    /// Clean up out of sight or destroyed nodes.
     void cleanUp(const sf::FloatRect& worldBounds);
     /// Returns the world transformation
     sf::Transform getWorldTransform() const;
-    /// Mark node as destoryed
+    /// Mark node as destroyed
     void destroy();
     /// Deal damage to this node.
     virtual void damage(int damagePt);
     /// Check if this node collides with rhs. If so, deal the damage
     bool checkCollision(const sf::FloatRect& rhs, int damageValue);
-    bool isDestoryed() const;
+    bool isDestroyed() const;
     /// Returns the damage this node would deal to others if collides
     virtual int getDamageValue() const;
     int _unitVelocity;
@@ -53,5 +53,5 @@ protected:
     std::list<std::unique_ptr<SceneNode>> _children;
     SceneNode* _parent { nullptr };
     sf::Vector2f _velocity { 0.0f, 0.0f };
-    bool _distroyed { false };
+    bool _destroyed { false };
 };

@@ -90,7 +90,7 @@ void SceneNode::cleanUp(const sf::FloatRect& worldBounds)
     std::vector<decltype(_children.begin())> toRemove;
 
     for (auto iter = _children.begin(); iter != _children.end(); iter = std::next(iter))
-        if ((*iter)->isDestoryed() || !(*iter)->getBoundingRect().intersects(worldBounds))
+        if ((*iter)->isDestroyed() || !(*iter)->getBoundingRect().intersects(worldBounds))
             toRemove.push_back(iter);
     
     for (auto iter : toRemove) {
@@ -130,12 +130,12 @@ sf::Vector2f SceneNode::getVelocity() const
 
 void SceneNode::destroy()
 {
-    _distroyed = true;
+    _destroyed = true;
 }
 
-bool SceneNode::isDestoryed() const
+bool SceneNode::isDestroyed() const
 {
-    return _distroyed;
+    return _destroyed;
 }
 
 bool SceneNode::checkCollision(const sf::FloatRect& rhs, int damageValue)
