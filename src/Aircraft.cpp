@@ -45,3 +45,10 @@ int Aircraft::getHealth() const
 {
     return _health;
 }
+
+const sf::Vector2i& Aircraft::getNextStep()
+{
+    const sf::Vector2i& step = _steps[_curStep];
+    _curStep = (_curStep + 1) % _steps.size();
+    return step;
+}

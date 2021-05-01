@@ -15,6 +15,7 @@
 #include "PlayerView.hpp"
 #include "SceneNode.hpp"
 #include "Screamer.hpp"
+#include "Bogey.hpp"
 #include "SpriteNode.hpp"
 #include <SFML/Graphics.hpp>
 #include <queue>
@@ -99,6 +100,9 @@ void Game::update(sf::Time dt)
             switch (cmd.newEnemyType) {
             case EnemyType::Screamer:
                 newNode = std::make_unique<Screamer>(_context.textures);
+                break;
+            case EnemyType::Bogey:
+                newNode = std::make_unique<Bogey>(_context.textures);
                 break;
             default:
                 break;

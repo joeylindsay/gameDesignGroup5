@@ -13,13 +13,14 @@ AIView::AIView(SceneNode*& enemies, PlayerAircraft*& player, SceneNode*& bullets
     , _enemies { enemies }
     , _bullets { bullets }
     , _player { player }
-{
+{   
+
     _schedule = std::vector<SpawnSchedule> {
         { EnemyType::Screamer, { 300.0f, 48900.0f }},
-        { EnemyType::Screamer, { 600.0f, 48900.0f }},
-        { EnemyType::Screamer, { 200.0f, 48800.0f }},
-        { EnemyType::Screamer, { 700.0f, 48800.0f }},
-        { EnemyType::Screamer, { 400.0f, 48000.0f }}
+        { EnemyType::Bogey,    { 600.0f, 48800.0f }},
+        { EnemyType::Screamer, { 200.0f, 48600.0f }},
+        { EnemyType::Screamer, { 700.0f, 48600.0f }},
+        { EnemyType::Bogey,    { 400.0f, 48500.0f }},
     };
     _nextToSpawn = _schedule.begin();
 }
@@ -39,4 +40,18 @@ void AIView::update(sf::Time dt, GameStateID state, const sf::FloatRect& worldBo
 void AIView::updateEnemy(SceneNode* cur, std::vector<Command>& commandQueue)
 {
     commandQueue.emplace_back(Command::Type::Fire, cur);
+
+    Aircraft* cur_aircraft = dynamic_cast<Aircraft*>(cur);
+    const sf::Vector2i& nextStep = cur_aircraft->getNextStep();
+    
+    if (nextStep.x == 1)
+        commandQueue.emplace_back(Command::Type::MoveRight, cur);
+    else if (nextStep.x == -1)
+        commandQueue.emplace_back(Command::Type::MoveLeft, cur);
+
+    if (nextStep.y == 1)
+        commandQueue.emplace_back(Command::Type::MoveDown, cur);
+    else if (nextStep.y == -1)
+        commandQueue.emplace_back(Command::Type::MoveUp, cur);
+    
 }
