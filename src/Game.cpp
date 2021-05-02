@@ -21,7 +21,7 @@ Game::Game(Context& context, std::vector<sf::Event>& eventQueue)
     // Register views
     _viewList.emplace_back(std::make_unique<PlayerView>(_context, _sceneGraph, _world, eventQueue, _maxHeight, player_craft));
     _viewList.emplace_back(std::make_unique<AIView>(_sceneGraphLayers[static_cast<size_t>(SceneLayer::Enemies)], player_craft, _sceneGraphLayers[static_cast<size_t>(SceneLayer::Bullets)]));
-    _viewList.emplace_back(std::make_unique<MenuView>(_context));
+    _viewList.emplace_back(std::make_unique<MenuView>(_context, _world));
     _viewList.emplace_back(std::make_unique<OptionsView>(_context, _world));
 }
 
@@ -39,11 +39,26 @@ void Game::update(sf::Time dt)
     // state specifics
     switch (_state) {
     case GameStateID::Menu:
-        for (auto event : _eventQueue)
-            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Enter) {
-                changeState(GameStateID::Play);
-                break;
-            }
+        _context.window.setView(_world);
+    	//update the last view on the list, the options view
+    	//no command queue processing is necessary, because the options view
+    	//handles all input internally, since it requires such different i/o
+    	_viewList.at(2)->update(dt, _state, getViewBounds(), commandQueue);
+    	//display changes
+    	_context.window.display();
+    	//execute commands, these will only be state changes
+    	for (auto& cmd : commandQueue){
+    		switch (cmd.type){
+    			case Command::Type::Options:
+    				changeState(GameStateID::Options);
+    				break;
+    			case Command::Type::Play:
+    				changeState(GameStateID::Play);
+    				break;
+    			default:
+    				break;
+    		}
+    	}
         break;
         
     case GameStateID::Play:
