@@ -13,7 +13,8 @@ public:
     MenuView(Context& context, sf::View& view);
     //function to update the screen
     void update(sf::Time dt, GameStateID state, const sf::FloatRect& worldBounds, std::vector<Command>& commandQueue) override;
-	
+	//dummy function
+	void remapKeys() override;
 private:
 	//function to capture mouse input
 	void handleInput(std::vector<Command>& commandQueue);

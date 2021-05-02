@@ -14,8 +14,9 @@ OptionsView::OptionsView(Context& context, sf::View& world)
     , _left_button { "", _context.fonts.get(FontHolder::ID::Arial), 24}
     , _right_button { "", _context.fonts.get(FontHolder::ID::Arial), 24}
     , _shoot_button { "", _context.fonts.get(FontHolder::ID::Arial), 24}
+    , _back_button { "BACK", _context.fonts.get(FontHolder::ID::Arcade), 55}
     , _optionsSprite { _context.textures.get(TextureHolder::ID::Cockpit) }
-    
+    , _keyPressSprite { _context.textures.get(TextureHolder::ID::keyPressPrompt) }
 {
 	//read in the xml file
     rapidxml::xml_document<> doc;
@@ -42,13 +43,23 @@ OptionsView::OptionsView(Context& context, sf::View& world)
     node = node->next_sibling();
     _stringVec.push_back(node->value());
     
-    //set the positions of the options onscreen
+    //set the positions of the onscreen elements
     _up_button.setPosition(_view.getCenter().x - 200, _view.getCenter().y);
     _down_button.setPosition(_view.getCenter().x - 200, _view.getCenter().y + 75);
     _left_button.setPosition(_view.getCenter().x + 75, _view.getCenter().y);
     _right_button.setPosition(_view.getCenter().x + 75, _view.getCenter().y + 75);
     _shoot_button.setPosition(_view.getCenter().x - 65, _view.getCenter().y + 150);
+    _back_button.setPosition(_view.getCenter().x - 475, _view.getCenter().y + 380);
     _optionsSprite.setPosition(0, _view.getCenter().y - (_view.getSize().y/2));
+    _keyPressSprite.setOrigin(220.0f, 220.0f);
+    _keyPressSprite.setPosition(_view.getCenter().x - 50, _view.getCenter().y);
+    
+    //setup the back button rectangle; since it's text cannot change, does not need to be updated dynamically
+    _backRect.setSize(sf::Vector2f(_back_button.getGlobalBounds().width + 10, _back_button.getGlobalBounds().height + 10));
+    _backRect.setPosition(_back_button.getPosition() + sf::Vector2f(-3, 20));
+    _backRect.setFillColor(sf::Color::Red);
+    _backRect.setOutlineColor(sf::Color::White);
+    _backRect.setOutlineThickness(2);
     
     //cleanup memory
     doc.clear();
@@ -65,7 +76,12 @@ void OptionsView::handleInput(std::vector<Command>& commandQueue) {
 		//get and map the mouse position
 		sf::Vector2i pixelPos = sf::Mouse::getPosition(_context.window);
 		sf::Vector2f worldPos = _context.window.mapPixelToCoords(pixelPos);
-
+		
+		//check if the user clicked within the back rectangle
+		if (_backRect.getGlobalBounds().contains(worldPos)){
+			commandQueue.push_back(Command { Command::Type::Menu });
+		}
+		
 		//check to see if the user clicked inside of one of the keybinding rectangles
 		for (auto& rect : recVec){
 			if (rect.second.getGlobalBounds().contains(worldPos)){
@@ -73,6 +89,9 @@ void OptionsView::handleInput(std::vector<Command>& commandQueue) {
 				//but we're already popping the event queue in the application layer, so this looping ridiculousness was the only way}
 				bool loop = true;
 				
+				_context.window.draw(_keyPressSprite);
+				_context.window.display();
+				//prompt the user to enter a key
 				while (loop){
 					for (int keyCode = 0; keyCode <= sf::Keyboard::KeyCount; keyCode++){
 						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyCode))){
@@ -186,9 +205,13 @@ void OptionsView::update(sf::Time dt, GameStateID state, const sf::FloatRect& wo
 	_context.window.draw(_rightRect);
 	_context.window.draw(_shootRect);
 	_context.window.draw(_shootRect);
+	_context.window.draw(_backRect);
 	_context.window.draw(_up_button);
     _context.window.draw(_down_button);
     _context.window.draw(_left_button);
     _context.window.draw(_right_button);
-    _context.window.draw(_shoot_button);   	
+    _context.window.draw(_shoot_button);
+    _context.window.draw(_back_button);   	
 }
+//dummy function
+void OptionsView::remapKeys(){}

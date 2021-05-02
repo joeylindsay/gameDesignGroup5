@@ -147,6 +147,19 @@ void Game::update(sf::Time dt)
     	_viewList.back()->update(dt, _state, getViewBounds(), commandQueue);
     	//display changes
     	_context.window.display();
+    	//execute commands, these will only be state changes
+    	if (!sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+    		for (auto& cmd : commandQueue){
+    			switch (cmd.type){
+    				case Command::Type::Menu:
+    					_viewList.front()->remapKeys();
+    					changeState(GameStateID::Menu);
+    					break;
+    				default:
+    					break;
+    			}
+    		}
+    	}
     	break;
     default:
         break;

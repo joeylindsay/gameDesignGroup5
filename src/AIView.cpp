@@ -40,3 +40,6 @@ void AIView::updateEnemy(SceneNode* cur, std::vector<Command>& commandQueue)
 {
     commandQueue.emplace_back(Command::Type::Fire, cur);
 }
+
+//dummy function
+void AIView::remapKeys(){}
