@@ -2,7 +2,6 @@
 
 #include "Context.hpp"
 #include "Command.hpp"
-#include "Game.hpp"
 #include "GameStateID.hpp"
 #include "GameView.hpp"
 #include <SFML/Graphics.hpp>

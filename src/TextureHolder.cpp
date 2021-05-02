@@ -11,7 +11,8 @@ TextureHolder::TextureHolder()
         "interceptor_aircraft.png",
         "bullet.png",
         "enemy_bullet.png",
-        "screamer.png"
+        "screamer.png",
+        "cockpit.png"
     };
     for (int i { 0 }; i < textures.size(); ++i)
         if (!textures[i].loadFromFile("../assets/" + filenames[i]))

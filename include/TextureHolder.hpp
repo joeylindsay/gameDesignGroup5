@@ -14,6 +14,7 @@ public:
         Bullet,
         EnemyBullet,
         Screamer,
+        Cockpit,
         IDSize
     };
     /// Returns a reference to the texture by ID.

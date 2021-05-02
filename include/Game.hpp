@@ -11,10 +11,21 @@
 #include "Command.hpp"
 #include "GameStateID.hpp"
 #include "GameView.hpp"
-#include "PlayerAircraft.hpp"
 #include "SceneNode.hpp"
+#include "AIView.hpp"
+#include "EnemyType.hpp"
+#include "MenuView.hpp"
+#include "PendingChange.hpp"
+#include "PlayerAircraft.hpp"
+#include "PlayerView.hpp"
+#include "OptionsView.hpp"
+#include "SceneNode.hpp"
+#include "Screamer.hpp"
+#include "SpriteNode.hpp"
 #include <SFML/Graphics.hpp>
+#include <queue>
 #include <vector>
+#include <iostream>
 
 /**
  * @brief Implements the actual Interceptors game.

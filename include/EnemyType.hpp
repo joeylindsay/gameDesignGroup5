@@ -1,5 +1,7 @@
 #pragma once
 
 enum class EnemyType {
-    Screamer
+    Screamer,
+    Bogey,
+    Flagship
 };

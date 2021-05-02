@@ -15,6 +15,7 @@ struct Command {
         Fire,
         TimeStop,
         AddEnemy,
+        Pause,
     };
     Command(Type type, SceneNode* entity);
     Type type;

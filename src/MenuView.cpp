@@ -1,5 +1,4 @@
 #include "MenuView.hpp"
-#include "Context.hpp"
 
 MenuView::MenuView(Context& context)
     : GameView {}

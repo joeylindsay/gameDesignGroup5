@@ -7,14 +7,17 @@
 #include "GameView.hpp"
 #include "PlayerAircraft.hpp"
 #include "SceneNode.hpp"
+#include "SpriteNode.hpp"
 #include <SFML/Graphics.hpp>
 #include <map>
+#include "../RapidXML/rapidxml_ext.hpp"
 
 class PlayerView : public GameView
 {
 public:
     PlayerView(Context& context, SceneNode& sceneGraph, sf::View& world, std::vector<sf::Event>& eventQueue, int maxHeight, PlayerAircraft*& playerAircraft);
     void update(sf::Time dt, GameStateID state, const sf::FloatRect& worldBounds, std::vector<Command>& commandQueue) override;
+    void remapKeys();
 
 private:
     void render(sf::Time dt, GameStateID state);
