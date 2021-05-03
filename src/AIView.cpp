@@ -39,6 +39,20 @@ void AIView::update(sf::Time dt, GameStateID state, const sf::FloatRect& worldBo
 void AIView::updateEnemy(SceneNode* cur, std::vector<Command>& commandQueue)
 {
     commandQueue.emplace_back(Command::Type::Fire, cur);
+
+    Aircraft* cur_aircraft = dynamic_cast<Aircraft*>(cur);
+    const sf::Vector2i& nextStep = cur_aircraft->getNextStep();
+    
+    if (nextStep.x == 1)
+        commandQueue.emplace_back(Command::Type::MoveRight, cur);
+    else if (nextStep.x == -1)
+        commandQueue.emplace_back(Command::Type::MoveLeft, cur);
+
+    if (nextStep.y == 1)
+        commandQueue.emplace_back(Command::Type::MoveDown, cur);
+    else if (nextStep.y == -1)
+        commandQueue.emplace_back(Command::Type::MoveUp, cur);
+    
 }
 
 //dummy function

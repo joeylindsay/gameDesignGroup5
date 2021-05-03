@@ -101,6 +101,9 @@ void Game::update(sf::Time dt)
             		case EnemyType::Screamer:
                 		newNode = std::make_unique<Screamer>(_context.textures);
                 		break;
+                	case EnemyType::Bogey:
+                		newNode = std::make_unique<Bogey>(_context.textures);
+                		break;
             		default:
                	 	break;
             	}

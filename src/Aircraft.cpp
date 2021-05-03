@@ -45,3 +45,16 @@ int Aircraft::getHealth() const
 {
     return _health;
 }
+
+const sf::Vector2i& Aircraft::getNextStep()
+{
+    const sf::Vector2i& step = _steps[_curStep];
+    if (count % 200 == 0) 
+        _curStep = (_curStep + 1) % _steps.size();
+
+    if (count > 1000)
+        count = 0;
+
+    count++;
+    return step;
+}

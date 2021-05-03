@@ -21,6 +21,7 @@
 #include "OptionsView.hpp"
 #include "SceneNode.hpp"
 #include "Screamer.hpp"
+#include "Bogey.hpp"
 #include "SpriteNode.hpp"
 #include <SFML/Graphics.hpp>
 #include <queue>

@@ -8,12 +8,76 @@ Screamer::Screamer(TextureHolder& textures)
     : Aircraft { textures.get(TextureHolder::ID::Screamer), sf::IntRect { 0, 0, 100, 108 } }
     , _bulletTexture { textures.get(TextureHolder::ID::EnemyBullet) }
 {
-    _unitVelocity = 300.0f;
+    _unitVelocity = 200.0f;
     _fireInterval = sf::seconds(0.4f);
-    _health = 40;
+    _health = 20;
 
     sf::FloatRect bounds { _sprite.getLocalBounds()};
     _sprite.setOrigin(bounds.width / 2.0f, bounds.height / 2.0f);
+
+    _steps = {
+        {  1,  0 },
+        {  1,  1 },
+        {  1,  0 },
+        {  1, -1 },
+        {  1,  0 },
+
+        {  1,  0 },
+        {  1, -1 },
+        {  1,  0 },
+        {  1,  1 },
+        {  1,  0 },
+
+        {  0,  1 },
+        { -1,  1 },
+        {  0,  1 },
+        {  1,  1 },
+        {  0,  1 },
+
+        { -1,  0 },
+        { -1, -1 },
+        { -1,  0 },
+        { -1,  1 },
+        { -1,  0 },
+
+        { -1,  0 },
+        { -1,  1 },
+        { -1,  0 },
+        { -1, -1 },
+        { -1,  0 },
+
+        {  0,  1 },
+        {  1,  1 },
+        {  0,  1 },
+        { -1,  1 },
+        {  0,  1 },
+
+        {  1,  0 },
+        {  1, -1 },
+        {  1,  0 },
+        {  1,  1 },
+        {  1,  0 },
+
+        {  1,  0 },
+        {  1,  1 },
+        {  1,  0 },
+        {  1, -1 },
+        {  1,  0 },
+
+        {  1,  0 },
+        {  1, -1 },
+        {  0, -1 },
+        { -1, -1 },
+        { -1,  0 },
+
+        { -1,  1 },
+        {  0,  1 },
+        {  1,  1 },
+        {  1,  1 },
+        {  0,  1 },
+
+
+    };
 }
 
 void Screamer::fireAction(std::vector<PendingChange>& changeQueue)

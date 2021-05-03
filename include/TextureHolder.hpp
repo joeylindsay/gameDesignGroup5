@@ -16,6 +16,7 @@ public:
         Screamer,
         Cockpit,
         keyPressPrompt,
+        Bogey,
         IDSize
     };
     /// Returns a reference to the texture by ID.

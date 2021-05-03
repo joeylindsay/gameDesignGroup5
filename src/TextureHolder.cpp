@@ -13,7 +13,8 @@ TextureHolder::TextureHolder()
         "enemy_bullet.png",
         "screamer.png",
         "cockpit.png",
-        "keyPressPrompt.png"
+        "keyPressPrompt.png",
+        "bogey.png"
     };
     for (int i { 0 }; i < textures.size(); ++i)
         if (!textures[i].loadFromFile("../assets/" + filenames[i]))
