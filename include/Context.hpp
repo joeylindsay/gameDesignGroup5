@@ -7,9 +7,10 @@
 
 struct Context
 {
-    Context(sf::RenderWindow& window, TextureHolder& textures, FontHolder& fonts, KeyStringMapping& keyMap);
+    Context(sf::RenderWindow& window, TextureHolder& textures, FontHolder& fonts, KeyStringMapping& keyMap, int& score);
     sf::RenderWindow& window;
     TextureHolder& textures;
     FontHolder& fonts;
     KeyStringMapping& keyMap;
+    int& score;
 };

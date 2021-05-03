@@ -6,7 +6,7 @@
 #include "Application.hpp"
 
 Application::Application()
-    : _context { _window, _textures, _fonts, _keyMap }
+    : _context { _window, _textures, _fonts, _keyMap, _score }
     , _gameLogic { _context, _eventQueue }
 {
 }

@@ -29,4 +29,5 @@ private:
     PlayerAircraft*& _playerAircraft;
     Context& _context;
     sf::Text _playerHealth;
+    sf::Text _score;
 };

@@ -8,6 +8,7 @@ PlayerView::PlayerView(Context& context, SceneNode& sceneGraph, sf::View& world,
     , _eventQueue { eventQueue }
     , _playerAircraft { playerAircraft }
     , _playerHealth { "", _context.fonts.get(FontHolder::ID::Arcade) }
+    , _score { std::to_string(_context.score), _context.fonts.get(FontHolder::ID::Arcade), 55}
 {
     //pause key is immutable
     keyMapping[sf::Keyboard::Escape] = Command::Type::Pause;
@@ -17,6 +18,9 @@ PlayerView::PlayerView(Context& context, SceneNode& sceneGraph, sf::View& world,
     
    	//set the player size
     _playerHealth.setCharacterSize(30);
+    
+    //set the initial location of the score text
+    _score.setPosition(_world.getCenter().x - 525, _world.getCenter().y - 550);
 }
 
 void PlayerView::update(sf::Time dt, GameStateID state, const sf::FloatRect& worldBounds, std::vector<Command>& commandQueue)
@@ -27,12 +31,19 @@ void PlayerView::update(sf::Time dt, GameStateID state, const sf::FloatRect& wor
 
 void PlayerView::render(sf::Time dt, GameStateID state)
 {
+	//draw all of the enemies and the player to the string
     _context.window.draw(_sceneGraph);
 
+	//draw the player's health
     sf::Vector2f pos { _playerAircraft->getBoundingRect().left, _playerAircraft->getBoundingRect().top + 100.0f };
     _playerHealth.setString("HP: " + std::to_string(_playerAircraft->getHealth()));
     _playerHealth.setPosition(pos);
     _context.window.draw(_playerHealth);
+    
+    //draw the score
+    _score.setString(std::to_string(_context.score));
+    _score.move(0.0f, -50.0f * dt.asSeconds());
+    _context.window.draw(_score);
 }
 
 void PlayerView::processInput(std::vector<Command>& commandQueue)

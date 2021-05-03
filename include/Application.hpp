@@ -26,5 +26,6 @@ private:
     Context _context;
     Game _gameLogic;
     KeyStringMapping _keyMap;
+    int _score = 0;
     std::vector<sf::Event> _eventQueue;
 };

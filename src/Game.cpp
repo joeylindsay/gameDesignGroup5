@@ -20,9 +20,9 @@ Game::Game(Context& context, std::vector<sf::Event>& eventQueue)
 
     // Register views
     _viewList.emplace_back(std::make_unique<PlayerView>(_context, _sceneGraph, _world, eventQueue, _maxHeight, player_craft));
-    _viewList.emplace_back(std::make_unique<AIView>(_sceneGraphLayers[static_cast<size_t>(SceneLayer::Enemies)], player_craft, _sceneGraphLayers[static_cast<size_t>(SceneLayer::Bullets)]));
     _viewList.emplace_back(std::make_unique<MenuView>(_context, _world));
     _viewList.emplace_back(std::make_unique<OptionsView>(_context, _world));
+    _viewList.emplace_back(std::make_unique<AIView>(_sceneGraphLayers[static_cast<size_t>(SceneLayer::Enemies)], player_craft, _sceneGraphLayers[static_cast<size_t>(SceneLayer::Bullets)]));
 }
 
 void Game::changeState(GameStateID newState)
@@ -43,7 +43,7 @@ void Game::update(sf::Time dt)
     	//update the last view on the list, the options view
     	//no command queue processing is necessary, because the options view
     	//handles all input internally, since it requires such different i/o
-    	_viewList.at(2)->update(dt, _state, getViewBounds(), commandQueue);
+    	_viewList.at(1)->update(dt, _state, getViewBounds(), commandQueue);
     	//display changes
     	_context.window.display();
     	//execute commands, these will only be state changes
@@ -63,12 +63,12 @@ void Game::update(sf::Time dt)
         
     case GameStateID::Play:
     	//scroll the world view and update the screen accordingly
-        _world.move(0.0f, -50.0f * dt.asSeconds());
+        _world.move(0.0f, _scrollSpeed * dt.asSeconds());
         _context.window.setView(_world);
         
-        //update the first and second views, the player and AI views
+        //update the player and AI views
 		_viewList.front()->update(dt, _state, getViewBounds(), commandQueue);
-		_viewList.at(1)->update(dt, _state, getViewBounds(), commandQueue);
+		_viewList.back()->update(dt, _state, getViewBounds(), commandQueue);
     	_context.window.display();
     
     	//if the player is dead, go to game over
@@ -99,10 +99,10 @@ void Game::update(sf::Time dt)
             	std::unique_ptr<SceneNode> newNode;
             	switch (cmd.newEnemyType) {
             		case EnemyType::Screamer:
-                		newNode = std::make_unique<Screamer>(_context.textures);
+                		newNode = std::make_unique<Screamer>(_context);
                 		break;
                 	case EnemyType::Bogey:
-                		newNode = std::make_unique<Bogey>(_context.textures);
+                		newNode = std::make_unique<Bogey>(_context);
                 		break;
             		default:
                	 	break;
@@ -135,6 +135,7 @@ void Game::update(sf::Time dt)
     	collisionDetection();
     	_sceneGraph.update(dt);
     	cleanUp();
+    	
         break;
         
     case GameStateID::Pause:
@@ -147,7 +148,7 @@ void Game::update(sf::Time dt)
     	//update the last view on the list, the options view
     	//no command queue processing is necessary, because the options view
     	//handles all input internally, since it requires such different i/o
-    	_viewList.back()->update(dt, _state, getViewBounds(), commandQueue);
+    	_viewList.at(2)->update(dt, _state, getViewBounds(), commandQueue);
     	//display changes
     	_context.window.display();
     	//execute commands, these will only be state changes
@@ -186,7 +187,7 @@ void Game::buildScene()
     _sceneGraphLayers[static_cast<size_t>(SceneLayer::Background)]->attach(std::move(background));
 
     // Attach player
-    auto playerAircraft = std::make_unique<PlayerAircraft>(_context.textures, _scrollSpeed);
+    auto playerAircraft = std::make_unique<PlayerAircraft>(_scrollSpeed, _context);
     playerAircraft->setPosition(_spawnPosition);
     player_craft = playerAircraft.get();
     _sceneGraphLayers[static_cast<size_t>(SceneLayer::Player)]->attach(std::move(playerAircraft));

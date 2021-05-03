@@ -8,13 +8,14 @@
 #include "PendingChange.hpp"
 #include "SceneNode.hpp"
 #include "TextureHolder.hpp"
+#include "Context.hpp"
 #include <SFML/Graphics.hpp>
 #include <vector>
 
 /// Super class for all aircrafts.
 class Aircraft : public SceneNode {
 public:
-    Aircraft(sf::Texture& texture, const sf::IntRect& sizeRect);
+    Aircraft(sf::Texture& texture, const sf::IntRect& sizeRect, Context& context);
     /// Check if within fire interval. If so, issue fire command.
     void fire(std::vector<PendingChange>& changeQueue);
     /// Concrete fire commands.
@@ -36,4 +37,6 @@ protected:
     // Enemy path
     std::vector<sf::Vector2i> _steps;
     int _curStep { 0 };
+    //container to hold the reference to context
+    Context& _context;
 };
