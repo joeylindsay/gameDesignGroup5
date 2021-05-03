@@ -56,191 +56,303 @@ include CMakeFiles/gameDesignGroup5_core.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/gameDesignGroup5_core.dir/flags.make
 
-CMakeFiles/gameDesignGroup5_core.dir/src/bogey.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
-CMakeFiles/gameDesignGroup5_core.dir/src/bogey.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
-CMakeFiles/gameDesignGroup5_core.dir/src/bogey.cpp.obj: ../src/bogey.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/bogey.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\bogey.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\bogey.cpp
+CMakeFiles/gameDesignGroup5_core.dir/src/AIView.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
+CMakeFiles/gameDesignGroup5_core.dir/src/AIView.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
+CMakeFiles/gameDesignGroup5_core.dir/src/AIView.cpp.obj: ../src/AIView.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/AIView.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\AIView.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\AIView.cpp
 
-CMakeFiles/gameDesignGroup5_core.dir/src/bogey.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/bogey.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\bogey.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\bogey.cpp.i
+CMakeFiles/gameDesignGroup5_core.dir/src/AIView.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/AIView.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\AIView.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\AIView.cpp.i
 
-CMakeFiles/gameDesignGroup5_core.dir/src/bogey.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/bogey.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\bogey.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\bogey.cpp.s
+CMakeFiles/gameDesignGroup5_core.dir/src/AIView.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/AIView.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\AIView.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\AIView.cpp.s
 
-CMakeFiles/gameDesignGroup5_core.dir/src/bullet.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
-CMakeFiles/gameDesignGroup5_core.dir/src/bullet.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
-CMakeFiles/gameDesignGroup5_core.dir/src/bullet.cpp.obj: ../src/bullet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/bullet.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\bullet.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\bullet.cpp
+CMakeFiles/gameDesignGroup5_core.dir/src/Aircraft.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
+CMakeFiles/gameDesignGroup5_core.dir/src/Aircraft.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
+CMakeFiles/gameDesignGroup5_core.dir/src/Aircraft.cpp.obj: ../src/Aircraft.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/Aircraft.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\Aircraft.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\Aircraft.cpp
 
-CMakeFiles/gameDesignGroup5_core.dir/src/bullet.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/bullet.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\bullet.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\bullet.cpp.i
+CMakeFiles/gameDesignGroup5_core.dir/src/Aircraft.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/Aircraft.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\Aircraft.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\Aircraft.cpp.i
 
-CMakeFiles/gameDesignGroup5_core.dir/src/bullet.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/bullet.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\bullet.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\bullet.cpp.s
+CMakeFiles/gameDesignGroup5_core.dir/src/Aircraft.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/Aircraft.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\Aircraft.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\Aircraft.cpp.s
 
-CMakeFiles/gameDesignGroup5_core.dir/src/flagship.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
-CMakeFiles/gameDesignGroup5_core.dir/src/flagship.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
-CMakeFiles/gameDesignGroup5_core.dir/src/flagship.cpp.obj: ../src/flagship.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/flagship.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\flagship.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\flagship.cpp
+CMakeFiles/gameDesignGroup5_core.dir/src/Application.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
+CMakeFiles/gameDesignGroup5_core.dir/src/Application.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
+CMakeFiles/gameDesignGroup5_core.dir/src/Application.cpp.obj: ../src/Application.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/Application.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\Application.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\Application.cpp
 
-CMakeFiles/gameDesignGroup5_core.dir/src/flagship.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/flagship.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\flagship.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\flagship.cpp.i
+CMakeFiles/gameDesignGroup5_core.dir/src/Application.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/Application.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\Application.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\Application.cpp.i
 
-CMakeFiles/gameDesignGroup5_core.dir/src/flagship.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/flagship.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\flagship.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\flagship.cpp.s
+CMakeFiles/gameDesignGroup5_core.dir/src/Application.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/Application.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\Application.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\Application.cpp.s
 
-CMakeFiles/gameDesignGroup5_core.dir/src/levelOne.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
-CMakeFiles/gameDesignGroup5_core.dir/src/levelOne.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
-CMakeFiles/gameDesignGroup5_core.dir/src/levelOne.cpp.obj: ../src/levelOne.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/levelOne.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\levelOne.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\levelOne.cpp
+CMakeFiles/gameDesignGroup5_core.dir/src/Bullet.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
+CMakeFiles/gameDesignGroup5_core.dir/src/Bullet.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
+CMakeFiles/gameDesignGroup5_core.dir/src/Bullet.cpp.obj: ../src/Bullet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/Bullet.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\Bullet.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\Bullet.cpp
 
-CMakeFiles/gameDesignGroup5_core.dir/src/levelOne.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/levelOne.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\levelOne.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\levelOne.cpp.i
+CMakeFiles/gameDesignGroup5_core.dir/src/Bullet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/Bullet.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\Bullet.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\Bullet.cpp.i
 
-CMakeFiles/gameDesignGroup5_core.dir/src/levelOne.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/levelOne.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\levelOne.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\levelOne.cpp.s
+CMakeFiles/gameDesignGroup5_core.dir/src/Bullet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/Bullet.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\Bullet.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\Bullet.cpp.s
 
-CMakeFiles/gameDesignGroup5_core.dir/src/loseScreen.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
-CMakeFiles/gameDesignGroup5_core.dir/src/loseScreen.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
-CMakeFiles/gameDesignGroup5_core.dir/src/loseScreen.cpp.obj: ../src/loseScreen.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/loseScreen.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\loseScreen.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\loseScreen.cpp
+CMakeFiles/gameDesignGroup5_core.dir/src/Command.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
+CMakeFiles/gameDesignGroup5_core.dir/src/Command.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
+CMakeFiles/gameDesignGroup5_core.dir/src/Command.cpp.obj: ../src/Command.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/Command.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\Command.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\Command.cpp
 
-CMakeFiles/gameDesignGroup5_core.dir/src/loseScreen.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/loseScreen.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\loseScreen.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\loseScreen.cpp.i
+CMakeFiles/gameDesignGroup5_core.dir/src/Command.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/Command.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\Command.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\Command.cpp.i
 
-CMakeFiles/gameDesignGroup5_core.dir/src/loseScreen.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/loseScreen.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\loseScreen.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\loseScreen.cpp.s
+CMakeFiles/gameDesignGroup5_core.dir/src/Command.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/Command.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\Command.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\Command.cpp.s
 
-CMakeFiles/gameDesignGroup5_core.dir/src/menu.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
-CMakeFiles/gameDesignGroup5_core.dir/src/menu.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
-CMakeFiles/gameDesignGroup5_core.dir/src/menu.cpp.obj: ../src/menu.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/menu.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\menu.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\menu.cpp
+CMakeFiles/gameDesignGroup5_core.dir/src/Context.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
+CMakeFiles/gameDesignGroup5_core.dir/src/Context.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
+CMakeFiles/gameDesignGroup5_core.dir/src/Context.cpp.obj: ../src/Context.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/Context.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\Context.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\Context.cpp
 
-CMakeFiles/gameDesignGroup5_core.dir/src/menu.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/menu.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\menu.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\menu.cpp.i
+CMakeFiles/gameDesignGroup5_core.dir/src/Context.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/Context.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\Context.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\Context.cpp.i
 
-CMakeFiles/gameDesignGroup5_core.dir/src/menu.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/menu.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\menu.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\menu.cpp.s
+CMakeFiles/gameDesignGroup5_core.dir/src/Context.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/Context.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\Context.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\Context.cpp.s
 
-CMakeFiles/gameDesignGroup5_core.dir/src/options.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
-CMakeFiles/gameDesignGroup5_core.dir/src/options.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
-CMakeFiles/gameDesignGroup5_core.dir/src/options.cpp.obj: ../src/options.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/options.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\options.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\options.cpp
+CMakeFiles/gameDesignGroup5_core.dir/src/FontHolder.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
+CMakeFiles/gameDesignGroup5_core.dir/src/FontHolder.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
+CMakeFiles/gameDesignGroup5_core.dir/src/FontHolder.cpp.obj: ../src/FontHolder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/FontHolder.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\FontHolder.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\FontHolder.cpp
 
-CMakeFiles/gameDesignGroup5_core.dir/src/options.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/options.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\options.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\options.cpp.i
+CMakeFiles/gameDesignGroup5_core.dir/src/FontHolder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/FontHolder.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\FontHolder.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\FontHolder.cpp.i
 
-CMakeFiles/gameDesignGroup5_core.dir/src/options.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/options.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\options.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\options.cpp.s
+CMakeFiles/gameDesignGroup5_core.dir/src/FontHolder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/FontHolder.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\FontHolder.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\FontHolder.cpp.s
 
-CMakeFiles/gameDesignGroup5_core.dir/src/player.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
-CMakeFiles/gameDesignGroup5_core.dir/src/player.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
-CMakeFiles/gameDesignGroup5_core.dir/src/player.cpp.obj: ../src/player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/player.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\player.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\player.cpp
+CMakeFiles/gameDesignGroup5_core.dir/src/Game.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
+CMakeFiles/gameDesignGroup5_core.dir/src/Game.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
+CMakeFiles/gameDesignGroup5_core.dir/src/Game.cpp.obj: ../src/Game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/Game.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\Game.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\Game.cpp
 
-CMakeFiles/gameDesignGroup5_core.dir/src/player.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/player.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\player.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\player.cpp.i
+CMakeFiles/gameDesignGroup5_core.dir/src/Game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/Game.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\Game.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\Game.cpp.i
 
-CMakeFiles/gameDesignGroup5_core.dir/src/player.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/player.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\player.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\player.cpp.s
+CMakeFiles/gameDesignGroup5_core.dir/src/Game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/Game.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\Game.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\Game.cpp.s
 
-CMakeFiles/gameDesignGroup5_core.dir/src/powerUp.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
-CMakeFiles/gameDesignGroup5_core.dir/src/powerUp.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
-CMakeFiles/gameDesignGroup5_core.dir/src/powerUp.cpp.obj: ../src/powerUp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/powerUp.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\powerUp.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\powerUp.cpp
+CMakeFiles/gameDesignGroup5_core.dir/src/GameView.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
+CMakeFiles/gameDesignGroup5_core.dir/src/GameView.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
+CMakeFiles/gameDesignGroup5_core.dir/src/GameView.cpp.obj: ../src/GameView.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/GameView.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\GameView.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\GameView.cpp
 
-CMakeFiles/gameDesignGroup5_core.dir/src/powerUp.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/powerUp.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\powerUp.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\powerUp.cpp.i
+CMakeFiles/gameDesignGroup5_core.dir/src/GameView.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/GameView.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\GameView.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\GameView.cpp.i
 
-CMakeFiles/gameDesignGroup5_core.dir/src/powerUp.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/powerUp.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\powerUp.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\powerUp.cpp.s
+CMakeFiles/gameDesignGroup5_core.dir/src/GameView.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/GameView.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\GameView.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\GameView.cpp.s
 
-CMakeFiles/gameDesignGroup5_core.dir/src/screamer.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
-CMakeFiles/gameDesignGroup5_core.dir/src/screamer.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
-CMakeFiles/gameDesignGroup5_core.dir/src/screamer.cpp.obj: ../src/screamer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/screamer.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\screamer.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\screamer.cpp
+CMakeFiles/gameDesignGroup5_core.dir/src/KeyStringMapping.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
+CMakeFiles/gameDesignGroup5_core.dir/src/KeyStringMapping.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
+CMakeFiles/gameDesignGroup5_core.dir/src/KeyStringMapping.cpp.obj: ../src/KeyStringMapping.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/KeyStringMapping.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\KeyStringMapping.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\KeyStringMapping.cpp
 
-CMakeFiles/gameDesignGroup5_core.dir/src/screamer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/screamer.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\screamer.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\screamer.cpp.i
+CMakeFiles/gameDesignGroup5_core.dir/src/KeyStringMapping.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/KeyStringMapping.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\KeyStringMapping.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\KeyStringMapping.cpp.i
 
-CMakeFiles/gameDesignGroup5_core.dir/src/screamer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/screamer.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\screamer.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\screamer.cpp.s
+CMakeFiles/gameDesignGroup5_core.dir/src/KeyStringMapping.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/KeyStringMapping.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\KeyStringMapping.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\KeyStringMapping.cpp.s
 
-CMakeFiles/gameDesignGroup5_core.dir/src/winScreen.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
-CMakeFiles/gameDesignGroup5_core.dir/src/winScreen.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
-CMakeFiles/gameDesignGroup5_core.dir/src/winScreen.cpp.obj: ../src/winScreen.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/winScreen.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\winScreen.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\winScreen.cpp
+CMakeFiles/gameDesignGroup5_core.dir/src/MenuView.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
+CMakeFiles/gameDesignGroup5_core.dir/src/MenuView.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
+CMakeFiles/gameDesignGroup5_core.dir/src/MenuView.cpp.obj: ../src/MenuView.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/MenuView.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\MenuView.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\MenuView.cpp
 
-CMakeFiles/gameDesignGroup5_core.dir/src/winScreen.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/winScreen.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\winScreen.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\winScreen.cpp.i
+CMakeFiles/gameDesignGroup5_core.dir/src/MenuView.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/MenuView.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\MenuView.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\MenuView.cpp.i
 
-CMakeFiles/gameDesignGroup5_core.dir/src/winScreen.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/winScreen.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\winScreen.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\winScreen.cpp.s
+CMakeFiles/gameDesignGroup5_core.dir/src/MenuView.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/MenuView.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\MenuView.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\MenuView.cpp.s
+
+CMakeFiles/gameDesignGroup5_core.dir/src/OptionsView.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
+CMakeFiles/gameDesignGroup5_core.dir/src/OptionsView.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
+CMakeFiles/gameDesignGroup5_core.dir/src/OptionsView.cpp.obj: ../src/OptionsView.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/OptionsView.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\OptionsView.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\OptionsView.cpp
+
+CMakeFiles/gameDesignGroup5_core.dir/src/OptionsView.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/OptionsView.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\OptionsView.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\OptionsView.cpp.i
+
+CMakeFiles/gameDesignGroup5_core.dir/src/OptionsView.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/OptionsView.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\OptionsView.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\OptionsView.cpp.s
+
+CMakeFiles/gameDesignGroup5_core.dir/src/PendingChange.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
+CMakeFiles/gameDesignGroup5_core.dir/src/PendingChange.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
+CMakeFiles/gameDesignGroup5_core.dir/src/PendingChange.cpp.obj: ../src/PendingChange.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/PendingChange.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\PendingChange.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\PendingChange.cpp
+
+CMakeFiles/gameDesignGroup5_core.dir/src/PendingChange.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/PendingChange.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\PendingChange.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\PendingChange.cpp.i
+
+CMakeFiles/gameDesignGroup5_core.dir/src/PendingChange.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/PendingChange.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\PendingChange.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\PendingChange.cpp.s
+
+CMakeFiles/gameDesignGroup5_core.dir/src/PlayerAircraft.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
+CMakeFiles/gameDesignGroup5_core.dir/src/PlayerAircraft.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
+CMakeFiles/gameDesignGroup5_core.dir/src/PlayerAircraft.cpp.obj: ../src/PlayerAircraft.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/PlayerAircraft.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\PlayerAircraft.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\PlayerAircraft.cpp
+
+CMakeFiles/gameDesignGroup5_core.dir/src/PlayerAircraft.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/PlayerAircraft.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\PlayerAircraft.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\PlayerAircraft.cpp.i
+
+CMakeFiles/gameDesignGroup5_core.dir/src/PlayerAircraft.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/PlayerAircraft.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\PlayerAircraft.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\PlayerAircraft.cpp.s
+
+CMakeFiles/gameDesignGroup5_core.dir/src/PlayerView.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
+CMakeFiles/gameDesignGroup5_core.dir/src/PlayerView.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
+CMakeFiles/gameDesignGroup5_core.dir/src/PlayerView.cpp.obj: ../src/PlayerView.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/PlayerView.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\PlayerView.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\PlayerView.cpp
+
+CMakeFiles/gameDesignGroup5_core.dir/src/PlayerView.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/PlayerView.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\PlayerView.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\PlayerView.cpp.i
+
+CMakeFiles/gameDesignGroup5_core.dir/src/PlayerView.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/PlayerView.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\PlayerView.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\PlayerView.cpp.s
+
+CMakeFiles/gameDesignGroup5_core.dir/src/SceneNode.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
+CMakeFiles/gameDesignGroup5_core.dir/src/SceneNode.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
+CMakeFiles/gameDesignGroup5_core.dir/src/SceneNode.cpp.obj: ../src/SceneNode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/SceneNode.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\SceneNode.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\SceneNode.cpp
+
+CMakeFiles/gameDesignGroup5_core.dir/src/SceneNode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/SceneNode.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\SceneNode.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\SceneNode.cpp.i
+
+CMakeFiles/gameDesignGroup5_core.dir/src/SceneNode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/SceneNode.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\SceneNode.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\SceneNode.cpp.s
+
+CMakeFiles/gameDesignGroup5_core.dir/src/SpriteNode.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
+CMakeFiles/gameDesignGroup5_core.dir/src/SpriteNode.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
+CMakeFiles/gameDesignGroup5_core.dir/src/SpriteNode.cpp.obj: ../src/SpriteNode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/SpriteNode.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\SpriteNode.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\SpriteNode.cpp
+
+CMakeFiles/gameDesignGroup5_core.dir/src/SpriteNode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/SpriteNode.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\SpriteNode.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\SpriteNode.cpp.i
+
+CMakeFiles/gameDesignGroup5_core.dir/src/SpriteNode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/SpriteNode.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\SpriteNode.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\SpriteNode.cpp.s
+
+CMakeFiles/gameDesignGroup5_core.dir/src/TextureHolder.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/flags.make
+CMakeFiles/gameDesignGroup5_core.dir/src/TextureHolder.cpp.obj: CMakeFiles/gameDesignGroup5_core.dir/includes_CXX.rsp
+CMakeFiles/gameDesignGroup5_core.dir/src/TextureHolder.cpp.obj: ../src/TextureHolder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/gameDesignGroup5_core.dir/src/TextureHolder.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\gameDesignGroup5_core.dir\src\TextureHolder.cpp.obj -c C:\Users\hylan\CLionProjects\gameDesignGroup5\src\TextureHolder.cpp
+
+CMakeFiles/gameDesignGroup5_core.dir/src/TextureHolder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gameDesignGroup5_core.dir/src/TextureHolder.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hylan\CLionProjects\gameDesignGroup5\src\TextureHolder.cpp > CMakeFiles\gameDesignGroup5_core.dir\src\TextureHolder.cpp.i
+
+CMakeFiles/gameDesignGroup5_core.dir/src/TextureHolder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gameDesignGroup5_core.dir/src/TextureHolder.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hylan\CLionProjects\gameDesignGroup5\src\TextureHolder.cpp -o CMakeFiles\gameDesignGroup5_core.dir\src\TextureHolder.cpp.s
 
 # Object files for target gameDesignGroup5_core
 gameDesignGroup5_core_OBJECTS = \
-"CMakeFiles/gameDesignGroup5_core.dir/src/bogey.cpp.obj" \
-"CMakeFiles/gameDesignGroup5_core.dir/src/bullet.cpp.obj" \
-"CMakeFiles/gameDesignGroup5_core.dir/src/flagship.cpp.obj" \
-"CMakeFiles/gameDesignGroup5_core.dir/src/levelOne.cpp.obj" \
-"CMakeFiles/gameDesignGroup5_core.dir/src/loseScreen.cpp.obj" \
-"CMakeFiles/gameDesignGroup5_core.dir/src/menu.cpp.obj" \
-"CMakeFiles/gameDesignGroup5_core.dir/src/options.cpp.obj" \
-"CMakeFiles/gameDesignGroup5_core.dir/src/player.cpp.obj" \
-"CMakeFiles/gameDesignGroup5_core.dir/src/powerUp.cpp.obj" \
-"CMakeFiles/gameDesignGroup5_core.dir/src/screamer.cpp.obj" \
-"CMakeFiles/gameDesignGroup5_core.dir/src/winScreen.cpp.obj"
+"CMakeFiles/gameDesignGroup5_core.dir/src/AIView.cpp.obj" \
+"CMakeFiles/gameDesignGroup5_core.dir/src/Aircraft.cpp.obj" \
+"CMakeFiles/gameDesignGroup5_core.dir/src/Application.cpp.obj" \
+"CMakeFiles/gameDesignGroup5_core.dir/src/Bullet.cpp.obj" \
+"CMakeFiles/gameDesignGroup5_core.dir/src/Command.cpp.obj" \
+"CMakeFiles/gameDesignGroup5_core.dir/src/Context.cpp.obj" \
+"CMakeFiles/gameDesignGroup5_core.dir/src/FontHolder.cpp.obj" \
+"CMakeFiles/gameDesignGroup5_core.dir/src/Game.cpp.obj" \
+"CMakeFiles/gameDesignGroup5_core.dir/src/GameView.cpp.obj" \
+"CMakeFiles/gameDesignGroup5_core.dir/src/KeyStringMapping.cpp.obj" \
+"CMakeFiles/gameDesignGroup5_core.dir/src/MenuView.cpp.obj" \
+"CMakeFiles/gameDesignGroup5_core.dir/src/OptionsView.cpp.obj" \
+"CMakeFiles/gameDesignGroup5_core.dir/src/PendingChange.cpp.obj" \
+"CMakeFiles/gameDesignGroup5_core.dir/src/PlayerAircraft.cpp.obj" \
+"CMakeFiles/gameDesignGroup5_core.dir/src/PlayerView.cpp.obj" \
+"CMakeFiles/gameDesignGroup5_core.dir/src/SceneNode.cpp.obj" \
+"CMakeFiles/gameDesignGroup5_core.dir/src/SpriteNode.cpp.obj" \
+"CMakeFiles/gameDesignGroup5_core.dir/src/TextureHolder.cpp.obj"
 
 # External object files for target gameDesignGroup5_core
 gameDesignGroup5_core_EXTERNAL_OBJECTS =
 
-libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/bogey.cpp.obj
-libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/bullet.cpp.obj
-libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/flagship.cpp.obj
-libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/levelOne.cpp.obj
-libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/loseScreen.cpp.obj
-libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/menu.cpp.obj
-libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/options.cpp.obj
-libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/player.cpp.obj
-libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/powerUp.cpp.obj
-libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/screamer.cpp.obj
-libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/winScreen.cpp.obj
+libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/AIView.cpp.obj
+libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/Aircraft.cpp.obj
+libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/Application.cpp.obj
+libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/Bullet.cpp.obj
+libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/Command.cpp.obj
+libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/Context.cpp.obj
+libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/FontHolder.cpp.obj
+libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/Game.cpp.obj
+libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/GameView.cpp.obj
+libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/KeyStringMapping.cpp.obj
+libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/MenuView.cpp.obj
+libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/OptionsView.cpp.obj
+libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/PendingChange.cpp.obj
+libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/PlayerAircraft.cpp.obj
+libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/PlayerView.cpp.obj
+libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/SceneNode.cpp.obj
+libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/SpriteNode.cpp.obj
+libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/src/TextureHolder.cpp.obj
 libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/build.make
 libgameDesignGroup5_core.a: CMakeFiles/gameDesignGroup5_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX static library libgameDesignGroup5_core.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX static library libgameDesignGroup5_core.a"
 	$(CMAKE_COMMAND) -P CMakeFiles\gameDesignGroup5_core.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\gameDesignGroup5_core.dir\link.txt --verbose=$(VERBOSE)
 

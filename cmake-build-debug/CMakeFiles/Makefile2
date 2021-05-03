@@ -53,13 +53,13 @@ CMAKE_BINARY_DIR = C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-deb
 
 # The main recursive "all" target.
 all: CMakeFiles/gameDesignGroup5_core.dir/all
-all: CMakeFiles/game.dir/all
+all: CMakeFiles/Interceptors.dir/all
 
 .PHONY : all
 
 # The main recursive "clean" target.
 clean: CMakeFiles/gameDesignGroup5_core.dir/clean
-clean: CMakeFiles/game.dir/clean
+clean: CMakeFiles/Interceptors.dir/clean
 
 .PHONY : clean
 
@@ -75,12 +75,12 @@ preinstall:
 CMakeFiles/gameDesignGroup5_core.dir/all:
 	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/depend
 	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14 "Built target gameDesignGroup5_core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21 "Built target gameDesignGroup5_core"
 .PHONY : CMakeFiles/gameDesignGroup5_core.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/gameDesignGroup5_core.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles 19
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/gameDesignGroup5_core.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/gameDesignGroup5_core.dir/rule
@@ -96,31 +96,31 @@ CMakeFiles/gameDesignGroup5_core.dir/clean:
 .PHONY : CMakeFiles/gameDesignGroup5_core.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/game.dir
+# Target rules for target CMakeFiles/Interceptors.dir
 
 # All Build rule for target.
-CMakeFiles/game.dir/all: CMakeFiles/gameDesignGroup5_core.dir/all
-	$(MAKE) -f CMakeFiles\game.dir\build.make CMakeFiles/game.dir/depend
-	$(MAKE) -f CMakeFiles\game.dir\build.make CMakeFiles/game.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target game"
-.PHONY : CMakeFiles/game.dir/all
+CMakeFiles/Interceptors.dir/all: CMakeFiles/gameDesignGroup5_core.dir/all
+	$(MAKE) -f CMakeFiles\Interceptors.dir\build.make CMakeFiles/Interceptors.dir/depend
+	$(MAKE) -f CMakeFiles\Interceptors.dir\build.make CMakeFiles/Interceptors.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target Interceptors"
+.PHONY : CMakeFiles/Interceptors.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/game.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles 14
-	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/game.dir/all
+CMakeFiles/Interceptors.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles 21
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/Interceptors.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/game.dir/rule
+.PHONY : CMakeFiles/Interceptors.dir/rule
 
 # Convenience name for target.
-game: CMakeFiles/game.dir/rule
+Interceptors: CMakeFiles/Interceptors.dir/rule
 
-.PHONY : game
+.PHONY : Interceptors
 
 # clean rule for target.
-CMakeFiles/game.dir/clean:
-	$(MAKE) -f CMakeFiles\game.dir\build.make CMakeFiles/game.dir/clean
-.PHONY : CMakeFiles/game.dir/clean
+CMakeFiles/Interceptors.dir/clean:
+	$(MAKE) -f CMakeFiles\Interceptors.dir\build.make CMakeFiles/Interceptors.dir/clean
+.PHONY : CMakeFiles/Interceptors.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

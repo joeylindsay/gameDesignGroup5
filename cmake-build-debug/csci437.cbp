@@ -65,32 +65,18 @@
 					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="game">
-				<Option output="C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/game.exe" prefix_auto="0" extension_auto="0"/>
+			<Target title="rebuild_cache">
 				<Option working_dir="C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="C:/Users/hylan/CLionProjects/gameDesignGroup5/include"/>
-					<Add directory="C:/Users/hylan/Downloads/SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit/SFML-2.5.1/include"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.3.0/../../../../include/c++/8.3.0"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.3.0/../../../../include/c++/8.3.0/x86_64-w64-mingw32"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.3.0/../../../../include/c++/8.3.0/backward"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.3.0/include"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.3.0/../../../../include"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.3.0/include-fixed"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.3.0/../../../../x86_64-w64-mingw32/include"/>
-				</Compiler>
+				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Makefile&quot;  VERBOSE=1 game"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
 					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="game/fast">
-				<Option output="C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/game.exe" prefix_auto="0" extension_auto="0"/>
+			<Target title="Interceptors">
+				<Option output="C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Interceptors.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -107,7 +93,31 @@
 					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.3.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Makefile&quot;  VERBOSE=1 game/fast"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Makefile&quot;  VERBOSE=1 Interceptors"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Interceptors/fast">
+				<Option output="C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Interceptors.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/hylan/CLionProjects/gameDesignGroup5/include"/>
+					<Add directory="C:/Users/hylan/Downloads/SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit/SFML-2.5.1/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.3.0/../../../../include/c++/8.3.0"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.3.0/../../../../include/c++/8.3.0/x86_64-w64-mingw32"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.3.0/../../../../include/c++/8.3.0/backward"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.3.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.3.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.3.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.3.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Makefile&quot;  VERBOSE=1 Interceptors/fast"/>
 					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -123,51 +133,62 @@
 					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/hylan/CLionProjects/gameDesignGroup5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 		</Build>
-		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/bin/game.cpp">
-			<Option target="game"/>
+		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/bin/Interceptors.cpp">
+			<Option target="Interceptors"/>
 		</Unit>
-		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/bogey.cpp">
+		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/AIView.cpp">
 			<Option target="gameDesignGroup5_core"/>
 		</Unit>
-		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/bullet.cpp">
+		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/Aircraft.cpp">
 			<Option target="gameDesignGroup5_core"/>
 		</Unit>
-		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/flagship.cpp">
+		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/Application.cpp">
 			<Option target="gameDesignGroup5_core"/>
 		</Unit>
-		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/levelOne.cpp">
+		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/Bullet.cpp">
 			<Option target="gameDesignGroup5_core"/>
 		</Unit>
-		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/loseScreen.cpp">
+		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/Command.cpp">
 			<Option target="gameDesignGroup5_core"/>
 		</Unit>
-		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/menu.cpp">
+		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/Context.cpp">
 			<Option target="gameDesignGroup5_core"/>
 		</Unit>
-		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/options.cpp">
+		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/FontHolder.cpp">
 			<Option target="gameDesignGroup5_core"/>
 		</Unit>
-		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/player.cpp">
+		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/Game.cpp">
 			<Option target="gameDesignGroup5_core"/>
 		</Unit>
-		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/powerUp.cpp">
+		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/GameView.cpp">
 			<Option target="gameDesignGroup5_core"/>
 		</Unit>
-		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/screamer.cpp">
+		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/KeyStringMapping.cpp">
 			<Option target="gameDesignGroup5_core"/>
 		</Unit>
-		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/winScreen.cpp">
+		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/MenuView.cpp">
+			<Option target="gameDesignGroup5_core"/>
+		</Unit>
+		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/OptionsView.cpp">
+			<Option target="gameDesignGroup5_core"/>
+		</Unit>
+		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/PendingChange.cpp">
+			<Option target="gameDesignGroup5_core"/>
+		</Unit>
+		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/PlayerAircraft.cpp">
+			<Option target="gameDesignGroup5_core"/>
+		</Unit>
+		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/PlayerView.cpp">
+			<Option target="gameDesignGroup5_core"/>
+		</Unit>
+		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/SceneNode.cpp">
+			<Option target="gameDesignGroup5_core"/>
+		</Unit>
+		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/SpriteNode.cpp">
+			<Option target="gameDesignGroup5_core"/>
+		</Unit>
+		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/src/TextureHolder.cpp">
 			<Option target="gameDesignGroup5_core"/>
 		</Unit>
 		<Unit filename="C:/Users/hylan/CLionProjects/gameDesignGroup5/CMakeLists.txt">

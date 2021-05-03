@@ -55,17 +55,6 @@ CMAKE_BINARY_DIR = C:\Users\hylan\CLionProjects\gameDesignGroup5\cmake-build-deb
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2019.3.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -76,6 +65,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	"C:\Program Files\JetBrains\CLion 2019.3.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -123,341 +123,530 @@ gameDesignGroup5_core/fast:
 .PHONY : gameDesignGroup5_core/fast
 
 #=============================================================================
-# Target rules for targets named game
+# Target rules for targets named Interceptors
 
 # Build rule for target.
-game: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 game
-.PHONY : game
+Interceptors: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 Interceptors
+.PHONY : Interceptors
 
 # fast build rule for target.
-game/fast:
-	$(MAKE) -f CMakeFiles\game.dir\build.make CMakeFiles/game.dir/build
-.PHONY : game/fast
+Interceptors/fast:
+	$(MAKE) -f CMakeFiles\Interceptors.dir\build.make CMakeFiles/Interceptors.dir/build
+.PHONY : Interceptors/fast
 
-bin/game.obj: bin/game.cpp.obj
+bin/Interceptors.obj: bin/Interceptors.cpp.obj
 
-.PHONY : bin/game.obj
-
-# target to build an object file
-bin/game.cpp.obj:
-	$(MAKE) -f CMakeFiles\game.dir\build.make CMakeFiles/game.dir/bin/game.cpp.obj
-.PHONY : bin/game.cpp.obj
-
-bin/game.i: bin/game.cpp.i
-
-.PHONY : bin/game.i
-
-# target to preprocess a source file
-bin/game.cpp.i:
-	$(MAKE) -f CMakeFiles\game.dir\build.make CMakeFiles/game.dir/bin/game.cpp.i
-.PHONY : bin/game.cpp.i
-
-bin/game.s: bin/game.cpp.s
-
-.PHONY : bin/game.s
-
-# target to generate assembly for a file
-bin/game.cpp.s:
-	$(MAKE) -f CMakeFiles\game.dir\build.make CMakeFiles/game.dir/bin/game.cpp.s
-.PHONY : bin/game.cpp.s
-
-src/bogey.obj: src/bogey.cpp.obj
-
-.PHONY : src/bogey.obj
+.PHONY : bin/Interceptors.obj
 
 # target to build an object file
-src/bogey.cpp.obj:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/bogey.cpp.obj
-.PHONY : src/bogey.cpp.obj
+bin/Interceptors.cpp.obj:
+	$(MAKE) -f CMakeFiles\Interceptors.dir\build.make CMakeFiles/Interceptors.dir/bin/Interceptors.cpp.obj
+.PHONY : bin/Interceptors.cpp.obj
 
-src/bogey.i: src/bogey.cpp.i
+bin/Interceptors.i: bin/Interceptors.cpp.i
 
-.PHONY : src/bogey.i
+.PHONY : bin/Interceptors.i
 
 # target to preprocess a source file
-src/bogey.cpp.i:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/bogey.cpp.i
-.PHONY : src/bogey.cpp.i
+bin/Interceptors.cpp.i:
+	$(MAKE) -f CMakeFiles\Interceptors.dir\build.make CMakeFiles/Interceptors.dir/bin/Interceptors.cpp.i
+.PHONY : bin/Interceptors.cpp.i
 
-src/bogey.s: src/bogey.cpp.s
+bin/Interceptors.s: bin/Interceptors.cpp.s
 
-.PHONY : src/bogey.s
+.PHONY : bin/Interceptors.s
 
 # target to generate assembly for a file
-src/bogey.cpp.s:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/bogey.cpp.s
-.PHONY : src/bogey.cpp.s
+bin/Interceptors.cpp.s:
+	$(MAKE) -f CMakeFiles\Interceptors.dir\build.make CMakeFiles/Interceptors.dir/bin/Interceptors.cpp.s
+.PHONY : bin/Interceptors.cpp.s
 
-src/bullet.obj: src/bullet.cpp.obj
+src/AIView.obj: src/AIView.cpp.obj
 
-.PHONY : src/bullet.obj
+.PHONY : src/AIView.obj
 
 # target to build an object file
-src/bullet.cpp.obj:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/bullet.cpp.obj
-.PHONY : src/bullet.cpp.obj
+src/AIView.cpp.obj:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/AIView.cpp.obj
+.PHONY : src/AIView.cpp.obj
 
-src/bullet.i: src/bullet.cpp.i
+src/AIView.i: src/AIView.cpp.i
 
-.PHONY : src/bullet.i
+.PHONY : src/AIView.i
 
 # target to preprocess a source file
-src/bullet.cpp.i:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/bullet.cpp.i
-.PHONY : src/bullet.cpp.i
+src/AIView.cpp.i:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/AIView.cpp.i
+.PHONY : src/AIView.cpp.i
 
-src/bullet.s: src/bullet.cpp.s
+src/AIView.s: src/AIView.cpp.s
 
-.PHONY : src/bullet.s
+.PHONY : src/AIView.s
 
 # target to generate assembly for a file
-src/bullet.cpp.s:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/bullet.cpp.s
-.PHONY : src/bullet.cpp.s
+src/AIView.cpp.s:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/AIView.cpp.s
+.PHONY : src/AIView.cpp.s
 
-src/flagship.obj: src/flagship.cpp.obj
+src/Aircraft.obj: src/Aircraft.cpp.obj
 
-.PHONY : src/flagship.obj
+.PHONY : src/Aircraft.obj
 
 # target to build an object file
-src/flagship.cpp.obj:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/flagship.cpp.obj
-.PHONY : src/flagship.cpp.obj
+src/Aircraft.cpp.obj:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/Aircraft.cpp.obj
+.PHONY : src/Aircraft.cpp.obj
 
-src/flagship.i: src/flagship.cpp.i
+src/Aircraft.i: src/Aircraft.cpp.i
 
-.PHONY : src/flagship.i
+.PHONY : src/Aircraft.i
 
 # target to preprocess a source file
-src/flagship.cpp.i:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/flagship.cpp.i
-.PHONY : src/flagship.cpp.i
+src/Aircraft.cpp.i:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/Aircraft.cpp.i
+.PHONY : src/Aircraft.cpp.i
 
-src/flagship.s: src/flagship.cpp.s
+src/Aircraft.s: src/Aircraft.cpp.s
 
-.PHONY : src/flagship.s
+.PHONY : src/Aircraft.s
 
 # target to generate assembly for a file
-src/flagship.cpp.s:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/flagship.cpp.s
-.PHONY : src/flagship.cpp.s
+src/Aircraft.cpp.s:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/Aircraft.cpp.s
+.PHONY : src/Aircraft.cpp.s
 
-src/levelOne.obj: src/levelOne.cpp.obj
+src/Application.obj: src/Application.cpp.obj
 
-.PHONY : src/levelOne.obj
+.PHONY : src/Application.obj
 
 # target to build an object file
-src/levelOne.cpp.obj:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/levelOne.cpp.obj
-.PHONY : src/levelOne.cpp.obj
+src/Application.cpp.obj:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/Application.cpp.obj
+.PHONY : src/Application.cpp.obj
 
-src/levelOne.i: src/levelOne.cpp.i
+src/Application.i: src/Application.cpp.i
 
-.PHONY : src/levelOne.i
+.PHONY : src/Application.i
 
 # target to preprocess a source file
-src/levelOne.cpp.i:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/levelOne.cpp.i
-.PHONY : src/levelOne.cpp.i
+src/Application.cpp.i:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/Application.cpp.i
+.PHONY : src/Application.cpp.i
 
-src/levelOne.s: src/levelOne.cpp.s
+src/Application.s: src/Application.cpp.s
 
-.PHONY : src/levelOne.s
+.PHONY : src/Application.s
 
 # target to generate assembly for a file
-src/levelOne.cpp.s:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/levelOne.cpp.s
-.PHONY : src/levelOne.cpp.s
+src/Application.cpp.s:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/Application.cpp.s
+.PHONY : src/Application.cpp.s
 
-src/loseScreen.obj: src/loseScreen.cpp.obj
+src/Bullet.obj: src/Bullet.cpp.obj
 
-.PHONY : src/loseScreen.obj
+.PHONY : src/Bullet.obj
 
 # target to build an object file
-src/loseScreen.cpp.obj:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/loseScreen.cpp.obj
-.PHONY : src/loseScreen.cpp.obj
+src/Bullet.cpp.obj:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/Bullet.cpp.obj
+.PHONY : src/Bullet.cpp.obj
 
-src/loseScreen.i: src/loseScreen.cpp.i
+src/Bullet.i: src/Bullet.cpp.i
 
-.PHONY : src/loseScreen.i
+.PHONY : src/Bullet.i
 
 # target to preprocess a source file
-src/loseScreen.cpp.i:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/loseScreen.cpp.i
-.PHONY : src/loseScreen.cpp.i
+src/Bullet.cpp.i:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/Bullet.cpp.i
+.PHONY : src/Bullet.cpp.i
 
-src/loseScreen.s: src/loseScreen.cpp.s
+src/Bullet.s: src/Bullet.cpp.s
 
-.PHONY : src/loseScreen.s
+.PHONY : src/Bullet.s
 
 # target to generate assembly for a file
-src/loseScreen.cpp.s:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/loseScreen.cpp.s
-.PHONY : src/loseScreen.cpp.s
+src/Bullet.cpp.s:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/Bullet.cpp.s
+.PHONY : src/Bullet.cpp.s
 
-src/menu.obj: src/menu.cpp.obj
+src/Command.obj: src/Command.cpp.obj
 
-.PHONY : src/menu.obj
+.PHONY : src/Command.obj
 
 # target to build an object file
-src/menu.cpp.obj:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/menu.cpp.obj
-.PHONY : src/menu.cpp.obj
+src/Command.cpp.obj:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/Command.cpp.obj
+.PHONY : src/Command.cpp.obj
 
-src/menu.i: src/menu.cpp.i
+src/Command.i: src/Command.cpp.i
 
-.PHONY : src/menu.i
+.PHONY : src/Command.i
 
 # target to preprocess a source file
-src/menu.cpp.i:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/menu.cpp.i
-.PHONY : src/menu.cpp.i
+src/Command.cpp.i:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/Command.cpp.i
+.PHONY : src/Command.cpp.i
 
-src/menu.s: src/menu.cpp.s
+src/Command.s: src/Command.cpp.s
 
-.PHONY : src/menu.s
+.PHONY : src/Command.s
 
 # target to generate assembly for a file
-src/menu.cpp.s:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/menu.cpp.s
-.PHONY : src/menu.cpp.s
+src/Command.cpp.s:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/Command.cpp.s
+.PHONY : src/Command.cpp.s
 
-src/options.obj: src/options.cpp.obj
+src/Context.obj: src/Context.cpp.obj
 
-.PHONY : src/options.obj
+.PHONY : src/Context.obj
 
 # target to build an object file
-src/options.cpp.obj:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/options.cpp.obj
-.PHONY : src/options.cpp.obj
+src/Context.cpp.obj:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/Context.cpp.obj
+.PHONY : src/Context.cpp.obj
 
-src/options.i: src/options.cpp.i
+src/Context.i: src/Context.cpp.i
 
-.PHONY : src/options.i
+.PHONY : src/Context.i
 
 # target to preprocess a source file
-src/options.cpp.i:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/options.cpp.i
-.PHONY : src/options.cpp.i
+src/Context.cpp.i:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/Context.cpp.i
+.PHONY : src/Context.cpp.i
 
-src/options.s: src/options.cpp.s
+src/Context.s: src/Context.cpp.s
 
-.PHONY : src/options.s
+.PHONY : src/Context.s
 
 # target to generate assembly for a file
-src/options.cpp.s:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/options.cpp.s
-.PHONY : src/options.cpp.s
+src/Context.cpp.s:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/Context.cpp.s
+.PHONY : src/Context.cpp.s
 
-src/player.obj: src/player.cpp.obj
+src/FontHolder.obj: src/FontHolder.cpp.obj
 
-.PHONY : src/player.obj
+.PHONY : src/FontHolder.obj
 
 # target to build an object file
-src/player.cpp.obj:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/player.cpp.obj
-.PHONY : src/player.cpp.obj
+src/FontHolder.cpp.obj:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/FontHolder.cpp.obj
+.PHONY : src/FontHolder.cpp.obj
 
-src/player.i: src/player.cpp.i
+src/FontHolder.i: src/FontHolder.cpp.i
 
-.PHONY : src/player.i
+.PHONY : src/FontHolder.i
 
 # target to preprocess a source file
-src/player.cpp.i:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/player.cpp.i
-.PHONY : src/player.cpp.i
+src/FontHolder.cpp.i:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/FontHolder.cpp.i
+.PHONY : src/FontHolder.cpp.i
 
-src/player.s: src/player.cpp.s
+src/FontHolder.s: src/FontHolder.cpp.s
 
-.PHONY : src/player.s
+.PHONY : src/FontHolder.s
 
 # target to generate assembly for a file
-src/player.cpp.s:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/player.cpp.s
-.PHONY : src/player.cpp.s
+src/FontHolder.cpp.s:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/FontHolder.cpp.s
+.PHONY : src/FontHolder.cpp.s
 
-src/powerUp.obj: src/powerUp.cpp.obj
+src/Game.obj: src/Game.cpp.obj
 
-.PHONY : src/powerUp.obj
+.PHONY : src/Game.obj
 
 # target to build an object file
-src/powerUp.cpp.obj:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/powerUp.cpp.obj
-.PHONY : src/powerUp.cpp.obj
+src/Game.cpp.obj:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/Game.cpp.obj
+.PHONY : src/Game.cpp.obj
 
-src/powerUp.i: src/powerUp.cpp.i
+src/Game.i: src/Game.cpp.i
 
-.PHONY : src/powerUp.i
+.PHONY : src/Game.i
 
 # target to preprocess a source file
-src/powerUp.cpp.i:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/powerUp.cpp.i
-.PHONY : src/powerUp.cpp.i
+src/Game.cpp.i:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/Game.cpp.i
+.PHONY : src/Game.cpp.i
 
-src/powerUp.s: src/powerUp.cpp.s
+src/Game.s: src/Game.cpp.s
 
-.PHONY : src/powerUp.s
+.PHONY : src/Game.s
 
 # target to generate assembly for a file
-src/powerUp.cpp.s:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/powerUp.cpp.s
-.PHONY : src/powerUp.cpp.s
+src/Game.cpp.s:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/Game.cpp.s
+.PHONY : src/Game.cpp.s
 
-src/screamer.obj: src/screamer.cpp.obj
+src/GameView.obj: src/GameView.cpp.obj
 
-.PHONY : src/screamer.obj
+.PHONY : src/GameView.obj
 
 # target to build an object file
-src/screamer.cpp.obj:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/screamer.cpp.obj
-.PHONY : src/screamer.cpp.obj
+src/GameView.cpp.obj:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/GameView.cpp.obj
+.PHONY : src/GameView.cpp.obj
 
-src/screamer.i: src/screamer.cpp.i
+src/GameView.i: src/GameView.cpp.i
 
-.PHONY : src/screamer.i
+.PHONY : src/GameView.i
 
 # target to preprocess a source file
-src/screamer.cpp.i:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/screamer.cpp.i
-.PHONY : src/screamer.cpp.i
+src/GameView.cpp.i:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/GameView.cpp.i
+.PHONY : src/GameView.cpp.i
 
-src/screamer.s: src/screamer.cpp.s
+src/GameView.s: src/GameView.cpp.s
 
-.PHONY : src/screamer.s
+.PHONY : src/GameView.s
 
 # target to generate assembly for a file
-src/screamer.cpp.s:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/screamer.cpp.s
-.PHONY : src/screamer.cpp.s
+src/GameView.cpp.s:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/GameView.cpp.s
+.PHONY : src/GameView.cpp.s
 
-src/winScreen.obj: src/winScreen.cpp.obj
+src/KeyStringMapping.obj: src/KeyStringMapping.cpp.obj
 
-.PHONY : src/winScreen.obj
+.PHONY : src/KeyStringMapping.obj
 
 # target to build an object file
-src/winScreen.cpp.obj:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/winScreen.cpp.obj
-.PHONY : src/winScreen.cpp.obj
+src/KeyStringMapping.cpp.obj:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/KeyStringMapping.cpp.obj
+.PHONY : src/KeyStringMapping.cpp.obj
 
-src/winScreen.i: src/winScreen.cpp.i
+src/KeyStringMapping.i: src/KeyStringMapping.cpp.i
 
-.PHONY : src/winScreen.i
+.PHONY : src/KeyStringMapping.i
 
 # target to preprocess a source file
-src/winScreen.cpp.i:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/winScreen.cpp.i
-.PHONY : src/winScreen.cpp.i
+src/KeyStringMapping.cpp.i:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/KeyStringMapping.cpp.i
+.PHONY : src/KeyStringMapping.cpp.i
 
-src/winScreen.s: src/winScreen.cpp.s
+src/KeyStringMapping.s: src/KeyStringMapping.cpp.s
 
-.PHONY : src/winScreen.s
+.PHONY : src/KeyStringMapping.s
 
 # target to generate assembly for a file
-src/winScreen.cpp.s:
-	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/winScreen.cpp.s
-.PHONY : src/winScreen.cpp.s
+src/KeyStringMapping.cpp.s:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/KeyStringMapping.cpp.s
+.PHONY : src/KeyStringMapping.cpp.s
+
+src/MenuView.obj: src/MenuView.cpp.obj
+
+.PHONY : src/MenuView.obj
+
+# target to build an object file
+src/MenuView.cpp.obj:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/MenuView.cpp.obj
+.PHONY : src/MenuView.cpp.obj
+
+src/MenuView.i: src/MenuView.cpp.i
+
+.PHONY : src/MenuView.i
+
+# target to preprocess a source file
+src/MenuView.cpp.i:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/MenuView.cpp.i
+.PHONY : src/MenuView.cpp.i
+
+src/MenuView.s: src/MenuView.cpp.s
+
+.PHONY : src/MenuView.s
+
+# target to generate assembly for a file
+src/MenuView.cpp.s:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/MenuView.cpp.s
+.PHONY : src/MenuView.cpp.s
+
+src/OptionsView.obj: src/OptionsView.cpp.obj
+
+.PHONY : src/OptionsView.obj
+
+# target to build an object file
+src/OptionsView.cpp.obj:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/OptionsView.cpp.obj
+.PHONY : src/OptionsView.cpp.obj
+
+src/OptionsView.i: src/OptionsView.cpp.i
+
+.PHONY : src/OptionsView.i
+
+# target to preprocess a source file
+src/OptionsView.cpp.i:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/OptionsView.cpp.i
+.PHONY : src/OptionsView.cpp.i
+
+src/OptionsView.s: src/OptionsView.cpp.s
+
+.PHONY : src/OptionsView.s
+
+# target to generate assembly for a file
+src/OptionsView.cpp.s:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/OptionsView.cpp.s
+.PHONY : src/OptionsView.cpp.s
+
+src/PendingChange.obj: src/PendingChange.cpp.obj
+
+.PHONY : src/PendingChange.obj
+
+# target to build an object file
+src/PendingChange.cpp.obj:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/PendingChange.cpp.obj
+.PHONY : src/PendingChange.cpp.obj
+
+src/PendingChange.i: src/PendingChange.cpp.i
+
+.PHONY : src/PendingChange.i
+
+# target to preprocess a source file
+src/PendingChange.cpp.i:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/PendingChange.cpp.i
+.PHONY : src/PendingChange.cpp.i
+
+src/PendingChange.s: src/PendingChange.cpp.s
+
+.PHONY : src/PendingChange.s
+
+# target to generate assembly for a file
+src/PendingChange.cpp.s:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/PendingChange.cpp.s
+.PHONY : src/PendingChange.cpp.s
+
+src/PlayerAircraft.obj: src/PlayerAircraft.cpp.obj
+
+.PHONY : src/PlayerAircraft.obj
+
+# target to build an object file
+src/PlayerAircraft.cpp.obj:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/PlayerAircraft.cpp.obj
+.PHONY : src/PlayerAircraft.cpp.obj
+
+src/PlayerAircraft.i: src/PlayerAircraft.cpp.i
+
+.PHONY : src/PlayerAircraft.i
+
+# target to preprocess a source file
+src/PlayerAircraft.cpp.i:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/PlayerAircraft.cpp.i
+.PHONY : src/PlayerAircraft.cpp.i
+
+src/PlayerAircraft.s: src/PlayerAircraft.cpp.s
+
+.PHONY : src/PlayerAircraft.s
+
+# target to generate assembly for a file
+src/PlayerAircraft.cpp.s:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/PlayerAircraft.cpp.s
+.PHONY : src/PlayerAircraft.cpp.s
+
+src/PlayerView.obj: src/PlayerView.cpp.obj
+
+.PHONY : src/PlayerView.obj
+
+# target to build an object file
+src/PlayerView.cpp.obj:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/PlayerView.cpp.obj
+.PHONY : src/PlayerView.cpp.obj
+
+src/PlayerView.i: src/PlayerView.cpp.i
+
+.PHONY : src/PlayerView.i
+
+# target to preprocess a source file
+src/PlayerView.cpp.i:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/PlayerView.cpp.i
+.PHONY : src/PlayerView.cpp.i
+
+src/PlayerView.s: src/PlayerView.cpp.s
+
+.PHONY : src/PlayerView.s
+
+# target to generate assembly for a file
+src/PlayerView.cpp.s:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/PlayerView.cpp.s
+.PHONY : src/PlayerView.cpp.s
+
+src/SceneNode.obj: src/SceneNode.cpp.obj
+
+.PHONY : src/SceneNode.obj
+
+# target to build an object file
+src/SceneNode.cpp.obj:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/SceneNode.cpp.obj
+.PHONY : src/SceneNode.cpp.obj
+
+src/SceneNode.i: src/SceneNode.cpp.i
+
+.PHONY : src/SceneNode.i
+
+# target to preprocess a source file
+src/SceneNode.cpp.i:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/SceneNode.cpp.i
+.PHONY : src/SceneNode.cpp.i
+
+src/SceneNode.s: src/SceneNode.cpp.s
+
+.PHONY : src/SceneNode.s
+
+# target to generate assembly for a file
+src/SceneNode.cpp.s:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/SceneNode.cpp.s
+.PHONY : src/SceneNode.cpp.s
+
+src/SpriteNode.obj: src/SpriteNode.cpp.obj
+
+.PHONY : src/SpriteNode.obj
+
+# target to build an object file
+src/SpriteNode.cpp.obj:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/SpriteNode.cpp.obj
+.PHONY : src/SpriteNode.cpp.obj
+
+src/SpriteNode.i: src/SpriteNode.cpp.i
+
+.PHONY : src/SpriteNode.i
+
+# target to preprocess a source file
+src/SpriteNode.cpp.i:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/SpriteNode.cpp.i
+.PHONY : src/SpriteNode.cpp.i
+
+src/SpriteNode.s: src/SpriteNode.cpp.s
+
+.PHONY : src/SpriteNode.s
+
+# target to generate assembly for a file
+src/SpriteNode.cpp.s:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/SpriteNode.cpp.s
+.PHONY : src/SpriteNode.cpp.s
+
+src/TextureHolder.obj: src/TextureHolder.cpp.obj
+
+.PHONY : src/TextureHolder.obj
+
+# target to build an object file
+src/TextureHolder.cpp.obj:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/TextureHolder.cpp.obj
+.PHONY : src/TextureHolder.cpp.obj
+
+src/TextureHolder.i: src/TextureHolder.cpp.i
+
+.PHONY : src/TextureHolder.i
+
+# target to preprocess a source file
+src/TextureHolder.cpp.i:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/TextureHolder.cpp.i
+.PHONY : src/TextureHolder.cpp.i
+
+src/TextureHolder.s: src/TextureHolder.cpp.s
+
+.PHONY : src/TextureHolder.s
+
+# target to generate assembly for a file
+src/TextureHolder.cpp.s:
+	$(MAKE) -f CMakeFiles\gameDesignGroup5_core.dir\build.make CMakeFiles/gameDesignGroup5_core.dir/src/TextureHolder.cpp.s
+.PHONY : src/TextureHolder.cpp.s
 
 # Help Target
 help:
@@ -466,45 +655,66 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... gameDesignGroup5_core
-	@echo ... game
-	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... bin/game.obj
-	@echo ... bin/game.i
-	@echo ... bin/game.s
-	@echo ... src/bogey.obj
-	@echo ... src/bogey.i
-	@echo ... src/bogey.s
-	@echo ... src/bullet.obj
-	@echo ... src/bullet.i
-	@echo ... src/bullet.s
-	@echo ... src/flagship.obj
-	@echo ... src/flagship.i
-	@echo ... src/flagship.s
-	@echo ... src/levelOne.obj
-	@echo ... src/levelOne.i
-	@echo ... src/levelOne.s
-	@echo ... src/loseScreen.obj
-	@echo ... src/loseScreen.i
-	@echo ... src/loseScreen.s
-	@echo ... src/menu.obj
-	@echo ... src/menu.i
-	@echo ... src/menu.s
-	@echo ... src/options.obj
-	@echo ... src/options.i
-	@echo ... src/options.s
-	@echo ... src/player.obj
-	@echo ... src/player.i
-	@echo ... src/player.s
-	@echo ... src/powerUp.obj
-	@echo ... src/powerUp.i
-	@echo ... src/powerUp.s
-	@echo ... src/screamer.obj
-	@echo ... src/screamer.i
-	@echo ... src/screamer.s
-	@echo ... src/winScreen.obj
-	@echo ... src/winScreen.i
-	@echo ... src/winScreen.s
+	@echo ... Interceptors
+	@echo ... edit_cache
+	@echo ... bin/Interceptors.obj
+	@echo ... bin/Interceptors.i
+	@echo ... bin/Interceptors.s
+	@echo ... src/AIView.obj
+	@echo ... src/AIView.i
+	@echo ... src/AIView.s
+	@echo ... src/Aircraft.obj
+	@echo ... src/Aircraft.i
+	@echo ... src/Aircraft.s
+	@echo ... src/Application.obj
+	@echo ... src/Application.i
+	@echo ... src/Application.s
+	@echo ... src/Bullet.obj
+	@echo ... src/Bullet.i
+	@echo ... src/Bullet.s
+	@echo ... src/Command.obj
+	@echo ... src/Command.i
+	@echo ... src/Command.s
+	@echo ... src/Context.obj
+	@echo ... src/Context.i
+	@echo ... src/Context.s
+	@echo ... src/FontHolder.obj
+	@echo ... src/FontHolder.i
+	@echo ... src/FontHolder.s
+	@echo ... src/Game.obj
+	@echo ... src/Game.i
+	@echo ... src/Game.s
+	@echo ... src/GameView.obj
+	@echo ... src/GameView.i
+	@echo ... src/GameView.s
+	@echo ... src/KeyStringMapping.obj
+	@echo ... src/KeyStringMapping.i
+	@echo ... src/KeyStringMapping.s
+	@echo ... src/MenuView.obj
+	@echo ... src/MenuView.i
+	@echo ... src/MenuView.s
+	@echo ... src/OptionsView.obj
+	@echo ... src/OptionsView.i
+	@echo ... src/OptionsView.s
+	@echo ... src/PendingChange.obj
+	@echo ... src/PendingChange.i
+	@echo ... src/PendingChange.s
+	@echo ... src/PlayerAircraft.obj
+	@echo ... src/PlayerAircraft.i
+	@echo ... src/PlayerAircraft.s
+	@echo ... src/PlayerView.obj
+	@echo ... src/PlayerView.i
+	@echo ... src/PlayerView.s
+	@echo ... src/SceneNode.obj
+	@echo ... src/SceneNode.i
+	@echo ... src/SceneNode.s
+	@echo ... src/SpriteNode.obj
+	@echo ... src/SpriteNode.i
+	@echo ... src/SpriteNode.s
+	@echo ... src/TextureHolder.obj
+	@echo ... src/TextureHolder.i
+	@echo ... src/TextureHolder.s
 .PHONY : help
 
 
