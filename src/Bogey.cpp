@@ -10,13 +10,47 @@ Bogey::Bogey(TextureHolder& textures)
 {
     _unitVelocity = 300.0f;
     _fireInterval = sf::seconds(0.4f);
-    _health = 20;
+    _health = 40;
 
     sf::FloatRect bounds { _sprite.getLocalBounds()};
     _sprite.setOrigin(bounds.width / 2.0f, bounds.height / 2.0f);
 
     _steps = { 
-        { rand() % 2 ? -1 : 1,  1},
+        {  1,  0 },
+        {  1,  0 },
+        {  1,  0 },
+        {  1,  0 },
+        {  1,  0 },
+
+        {  1,  1 },
+        {  1,  1 },
+        {  1,  1 },
+        {  1,  1 },
+        {  1,  1 },
+
+        {  0,  1 },
+        {  0,  1 },
+        {  0,  1 },
+        {  0,  1 },
+        {  0,  1 },
+
+        {  1,  1 },
+        {  1,  1 },
+        {  1,  1 },
+        {  1,  1 },
+        {  1,  1 },
+
+        {  1,  0 },
+        {  1,  0 },
+        {  1,  0 },
+        {  1,  0 },
+        {  1,  0 },
+
+        {  1,  1 },
+        {  1,  1 },
+        {  1,  1 },
+        {  1,  1 },
+        {  1,  1 },
     };
 }
 

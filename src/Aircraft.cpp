@@ -4,6 +4,7 @@
 /// \date 2021-04-02
 #include "Aircraft.hpp"
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 Aircraft::Aircraft(sf::Texture& texture, const sf::IntRect& sizeRect)
     : SceneNode(texture, sizeRect)
@@ -49,6 +50,12 @@ int Aircraft::getHealth() const
 const sf::Vector2i& Aircraft::getNextStep()
 {
     const sf::Vector2i& step = _steps[_curStep];
-    _curStep = (_curStep + 1) % _steps.size();
+    if (count % 200 == 0) 
+        _curStep = (_curStep + 1) % _steps.size();
+
+    if (count > 1000)
+        count = 0;
+
+    count++;
     return step;
 }

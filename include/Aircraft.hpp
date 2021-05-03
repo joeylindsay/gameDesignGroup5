@@ -24,11 +24,11 @@ public:
     int getHealth() const;
     void updateCurrent(sf::Time dt) override;
     void damage(int damagePt) override final;
-
     const sf::Vector2i& getNextStep();
 
 protected:
     int _health { 100 };
+    int count = 0;
     /// Time interval allowed between fire
     sf::Time _fireInterval { sf::seconds(0.2f) };
     /// Countdown time for time allowed before next fire

@@ -16,11 +16,11 @@ AIView::AIView(SceneNode*& enemies, PlayerAircraft*& player, SceneNode*& bullets
 {   
 
     _schedule = std::vector<SpawnSchedule> {
-        { EnemyType::Screamer, { 300.0f, 48900.0f }},
-        { EnemyType::Bogey,    { 600.0f, 48800.0f }},
-        { EnemyType::Screamer, { 200.0f, 48600.0f }},
-        { EnemyType::Screamer, { 700.0f, 48600.0f }},
-        { EnemyType::Bogey,    { 400.0f, 48500.0f }},
+        { EnemyType::Bogey,     { 300.0f, 48900.0f }},
+        { EnemyType::Bogey,     { 600.0f, 48800.0f }},
+        { EnemyType::Screamer,  { 200.0f, 48600.0f }},
+        { EnemyType::Screamer,  { 700.0f, 48600.0f }},
+        { EnemyType::Bogey,     { 100.0f, 48200.0f }},
     };
     _nextToSpawn = _schedule.begin();
 }
