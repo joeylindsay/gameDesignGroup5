@@ -6,8 +6,9 @@
 #pragma once
 
 #include "Context.hpp"
-#include "FontHolder.hpp"
+#include "KeyStringMapping.hpp"
 #include "Game.hpp"
+#include "FontHolder.hpp"
 #include "TextureHolder.hpp"
 #include <SFML/Graphics.hpp>
 
@@ -24,5 +25,7 @@ private:
     FontHolder _fonts;
     Context _context;
     Game _gameLogic;
+    KeyStringMapping _keyMap;
+    int _score = 0;
     std::vector<sf::Event> _eventQueue;
 };

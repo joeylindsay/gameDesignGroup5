@@ -8,7 +8,7 @@
 class Bogey : public Aircraft
 {
 public:
-    Bogey(TextureHolder& textures);
+    Bogey(Context& context);
     void fireAction(std::vector<PendingChange>& changeQueue) override final;
 
 private:

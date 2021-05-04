@@ -4,9 +4,9 @@
 #include "TextureHolder.hpp"
 #include <SFML/Graphics.hpp>
 
-Screamer::Screamer(TextureHolder& textures)
-    : Aircraft { textures.get(TextureHolder::ID::Screamer), sf::IntRect { 0, 0, 100, 108 } }
-    , _bulletTexture { textures.get(TextureHolder::ID::EnemyBullet) }
+Screamer::Screamer(Context& context)
+    : Aircraft { context.textures.get(TextureHolder::ID::Screamer), sf::IntRect { 0, 0, 100, 108 }, context}
+    , _bulletTexture { context.textures.get(TextureHolder::ID::EnemyBullet) }
 {
     _unitVelocity = 200.0f;
     _fireInterval = sf::seconds(0.4f);

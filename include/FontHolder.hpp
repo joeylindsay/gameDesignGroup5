@@ -9,7 +9,9 @@ class FontHolder
 public:
     enum class ID {
         Arcade,
-        Sandation
+        Sandation,
+        Arial,
+        IDcount
     };
     FontHolder();
     /// Returns a reference to the font by ID.

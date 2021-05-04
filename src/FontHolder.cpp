@@ -3,11 +3,12 @@
 #include <vector>
 
 FontHolder::FontHolder()
-    : _fonts(2)
+    : _fonts(static_cast<size_t>(ID::IDcount))
 {
     const std::vector<std::string> filenames {
         "ArcadeClassic.ttf",
-        "Sansation.ttf"
+        "Sansation.ttf",
+        "Arial.ttf"
     };
     for (int i { 0 }; i < _fonts.size(); ++i)
         if (!_fonts[i].loadFromFile("../assets/" + filenames[i]))

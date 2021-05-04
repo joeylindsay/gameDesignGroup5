@@ -2,5 +2,6 @@
 
 enum class EnemyType {
     Screamer,
-    Bogey
+    Bogey,
+    Flagship
 };

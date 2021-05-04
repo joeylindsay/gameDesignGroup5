@@ -6,19 +6,6 @@
  */
 
 #include "Game.hpp"
-#include "AIView.hpp"
-#include "Context.hpp"
-#include "EnemyType.hpp"
-#include "MenuView.hpp"
-#include "PendingChange.hpp"
-#include "PlayerAircraft.hpp"
-#include "PlayerView.hpp"
-#include "SceneNode.hpp"
-#include "Screamer.hpp"
-#include "Bogey.hpp"
-#include "SpriteNode.hpp"
-#include <SFML/Graphics.hpp>
-#include <queue>
 
 Game::Game(Context& context, std::vector<sf::Event>& eventQueue)
     : _context { context }
@@ -33,7 +20,8 @@ Game::Game(Context& context, std::vector<sf::Event>& eventQueue)
 
     // Register views
     _viewList.emplace_back(std::make_unique<PlayerView>(_context, _sceneGraph, _world, eventQueue, _maxHeight, player_craft));
-    _viewList.emplace_back(std::make_unique<MenuView>(_context));
+    _viewList.emplace_back(std::make_unique<MenuView>(_context, _world));
+    _viewList.emplace_back(std::make_unique<OptionsView>(_context, _world));
     _viewList.emplace_back(std::make_unique<AIView>(_sceneGraphLayers[static_cast<size_t>(SceneLayer::Enemies)], player_craft, _sceneGraphLayers[static_cast<size_t>(SceneLayer::Bullets)]));
 }
 
@@ -44,95 +32,142 @@ void Game::changeState(GameStateID newState)
 
 void Game::update(sf::Time dt)
 {
+    // a container to hold the commandQueue, processed differently based on the state
+    std::vector<Command> commandQueue;
+    std::vector<PendingChange> changeQueue;
+    
     // state specifics
     switch (_state) {
     case GameStateID::Menu:
-        for (auto event : _eventQueue)
-            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Enter) {
-                changeState(GameStateID::Play);
-                break;
-            }
-        break;
-    case GameStateID::Play:
-        _world.move(0.0f, -50.0f * dt.asSeconds());
         _context.window.setView(_world);
-
+    	//update the last view on the list, the options view
+    	//no command queue processing is necessary, because the options view
+    	//handles all input internally, since it requires such different i/o
+    	_viewList.at(1)->update(dt, _state, getViewBounds(), commandQueue);
+    	//display changes
+    	_context.window.display();
+    	//execute commands, these will only be state changes
+    	for (auto& cmd : commandQueue){
+    		switch (cmd.type){
+    			case Command::Type::Options:
+    				changeState(GameStateID::Options);
+    				break;
+    			case Command::Type::Play:
+    				changeState(GameStateID::Play);
+    				break;
+    			default:
+    				break;
+    		}
+    	}
+        break;
+        
+    case GameStateID::Play:
+    	//scroll the world view and update the screen accordingly
+        _world.move(0.0f, _scrollSpeed * dt.asSeconds());
+        _context.window.setView(_world);
+        
+        //update the player and AI views
+		_viewList.front()->update(dt, _state, getViewBounds(), commandQueue);
+		_viewList.back()->update(dt, _state, getViewBounds(), commandQueue);
+    	_context.window.display();
+    
+    	//if the player is dead, go to game over
         if (player_craft->isDestroyed())
             changeState(GameStateID::Over);
+        
+        //complete game state specific commands
+    	_sceneGraphLayers[static_cast<size_t>(SceneLayer::Enemies)]->resetVelocity();
+    	_sceneGraphLayers[static_cast<size_t>(SceneLayer::Player)]->resetVelocity();
+    	for (auto& cmd : commandQueue)
+    	    switch (cmd.type) {
+    	    case Command::Type::MoveLeft:
+    	        cmd.entity->setUnitVelocity(-1, 0);
+    	        break;
+    	    case Command::Type::MoveRight:
+   	         	 cmd.entity->setUnitVelocity(1, 0);
+       	 		 break;
+	    	case Command::Type::MoveUp:
+       	 		 cmd.entity->setUnitVelocity(0, -1);
+      	      	 break;
+            case Command::Type::MoveDown:
+            	 cmd.entity->setUnitVelocity(0, 1);
+            	 break;
+            case Command::Type::Fire:
+            	 static_cast<Aircraft*>(cmd.entity)->fire(changeQueue);
+            	 break;
+            case Command::Type::AddEnemy: {
+            	std::unique_ptr<SceneNode> newNode;
+            	switch (cmd.newEnemyType) {
+            		case EnemyType::Screamer:
+                		newNode = std::make_unique<Screamer>(_context);
+                		break;
+                	case EnemyType::Bogey:
+                		newNode = std::make_unique<Bogey>(_context);
+                		break;
+            		default:
+               	 	break;
+            	}
+            
+            	newNode->setPosition(cmd.position);
+            	_sceneGraphLayers[static_cast<size_t>(SceneLayer::Enemies)]->attach(std::move(newNode));
+        	} break;
+
+            default:
+            	break;
+            }
+
+    	// Apply changes to the bullets onscreen
+    	for (auto& change : changeQueue)
+        	switch (change.type) {
+        		case PendingChange::Type::AddBullet:
+            			for (auto& newBullet : change.newBullets)
+                		_sceneGraphLayers[static_cast<size_t>(SceneLayer::Bullets)]->attach(std::move(newBullet));
+            			break;
+        		default:
+            			break;
+        	}
+		
+		//adjust the velocities
+    	_sceneGraphLayers[static_cast<size_t>(SceneLayer::Enemies)]->adaptVelocity();
+    	_sceneGraphLayers[static_cast<size_t>(SceneLayer::Player)]->adaptVelocity();
+		
+		//detect collision, update the graph of everything onscreen, and cleanup
+    	collisionDetection();
+    	_sceneGraph.update(dt);
+    	cleanUp();
+    	
         break;
+        
     case GameStateID::Pause:
         break;
     case GameStateID::Over:
         break;
+    case GameStateID::Options:
+    	//update the view in case of a resize event
+    	_context.window.setView(_world);
+    	//update the last view on the list, the options view
+    	//no command queue processing is necessary, because the options view
+    	//handles all input internally, since it requires such different i/o
+    	_viewList.at(2)->update(dt, _state, getViewBounds(), commandQueue);
+    	//display changes
+    	_context.window.display();
+    	//execute commands, these will only be state changes
+    	if (!sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+    		for (auto& cmd : commandQueue){
+    			switch (cmd.type){
+    				case Command::Type::Menu:
+    					_viewList.front()->remapKeys();
+    					changeState(GameStateID::Menu);
+    					break;
+    				default:
+    					break;
+    			}
+    		}
+    	}
+    	break;
     default:
         break;
     }
-
-    // update all views
-    std::vector<Command> commandQueue;
-    for (auto& view : _viewList)
-        view->update(dt, _state, getViewBounds(), commandQueue);
-    _context.window.display();
-    
-    // complete requested commands
-    std::vector<PendingChange> changeQueue;
-    _sceneGraphLayers[static_cast<size_t>(SceneLayer::Enemies)]->resetVelocity();
-    _sceneGraphLayers[static_cast<size_t>(SceneLayer::Player)]->resetVelocity();
-    for (auto& cmd : commandQueue)
-        switch (cmd.type) {
-        case Command::Type::MoveLeft:
-            cmd.entity->setUnitVelocity(-1, 0);
-            break;
-        case Command::Type::MoveRight:
-            cmd.entity->setUnitVelocity(1, 0);
-            break;
-        case Command::Type::MoveUp:
-            cmd.entity->setUnitVelocity(0, -1);
-            break;
-        case Command::Type::MoveDown:
-            cmd.entity->setUnitVelocity(0, 1);
-            break;
-        case Command::Type::Fire:
-            static_cast<Aircraft*>(cmd.entity)->fire(changeQueue);
-            break;
-        case Command::Type::AddEnemy: {
-            std::unique_ptr<SceneNode> newNode;
-            switch (cmd.newEnemyType) {
-            case EnemyType::Screamer:
-                newNode = std::make_unique<Screamer>(_context.textures);
-                break;
-            case EnemyType::Bogey:
-                newNode = std::make_unique<Bogey>(_context.textures);
-                break;
-            default:
-                break;
-            }
-            newNode->setPosition(cmd.position);
-            _sceneGraphLayers[static_cast<size_t>(SceneLayer::Enemies)]->attach(std::move(newNode));
-        } break;
-
-        default:
-            break;
-        }
-
-    // Apply pending changes
-    for (auto& change : changeQueue)
-        switch (change.type) {
-        case PendingChange::Type::AddBullet:
-            for (auto& newBullet : change.newBullets)
-                _sceneGraphLayers[static_cast<size_t>(SceneLayer::Bullets)]->attach(std::move(newBullet));
-            break;
-
-        default:
-            break;
-        }
-
-    _sceneGraphLayers[static_cast<size_t>(SceneLayer::Enemies)]->adaptVelocity();
-    _sceneGraphLayers[static_cast<size_t>(SceneLayer::Player)]->adaptVelocity();
-
-    collisionDetection();
-    _sceneGraph.update(dt);
-    cleanUp();
 }
 
 void Game::buildScene()
@@ -152,7 +187,7 @@ void Game::buildScene()
     _sceneGraphLayers[static_cast<size_t>(SceneLayer::Background)]->attach(std::move(background));
 
     // Attach player
-    auto playerAircraft = std::make_unique<PlayerAircraft>(_context.textures, _scrollSpeed);
+    auto playerAircraft = std::make_unique<PlayerAircraft>(_scrollSpeed, _context);
     playerAircraft->setPosition(_spawnPosition);
     player_craft = playerAircraft.get();
     _sceneGraphLayers[static_cast<size_t>(SceneLayer::Player)]->attach(std::move(playerAircraft));

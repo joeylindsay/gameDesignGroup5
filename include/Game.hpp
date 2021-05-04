@@ -11,10 +11,22 @@
 #include "Command.hpp"
 #include "GameStateID.hpp"
 #include "GameView.hpp"
-#include "PlayerAircraft.hpp"
 #include "SceneNode.hpp"
+#include "AIView.hpp"
+#include "EnemyType.hpp"
+#include "MenuView.hpp"
+#include "PendingChange.hpp"
+#include "PlayerAircraft.hpp"
+#include "PlayerView.hpp"
+#include "OptionsView.hpp"
+#include "SceneNode.hpp"
+#include "Screamer.hpp"
+#include "Bogey.hpp"
+#include "SpriteNode.hpp"
 #include <SFML/Graphics.hpp>
+#include <queue>
 #include <vector>
+#include <iostream>
 
 /**
  * @brief Implements the actual Interceptors game.
@@ -41,7 +53,7 @@ private:
     sf::FloatRect getViewBounds() const;
     sf::FloatRect getWorldBounds() const;
     void collisionDetection();
-    GameStateID _state { GameStateID::Play };
+    GameStateID _state { GameStateID::Menu };
     std::vector<std::unique_ptr<GameView>> _viewList;
     Context& _context;
     SceneNode _sceneGraph { };

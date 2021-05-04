@@ -12,6 +12,8 @@ TextureHolder::TextureHolder()
         "bullet.png",
         "enemy_bullet.png",
         "screamer.png",
+        "cockpit.png",
+        "keyPressPrompt.png",
         "bogey.png"
     };
     for (int i { 0 }; i < textures.size(); ++i)

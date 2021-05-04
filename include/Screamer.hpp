@@ -8,7 +8,7 @@
 class Screamer : public Aircraft
 {
 public:
-    Screamer(TextureHolder& textures);
+    Screamer(Context& context);
     void fireAction(std::vector<PendingChange>& changeQueue) override final;
 
 private:

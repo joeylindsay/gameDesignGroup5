@@ -5,7 +5,9 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "Context.hpp"
 #include <list>
+#include <cmath>
 
 /// A node of the scene graph. Renders and updates with hierachy.
 class SceneNode : public sf::Drawable, public sf::Transformable, private sf::NonCopyable {

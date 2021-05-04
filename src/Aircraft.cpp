@@ -3,11 +3,10 @@
 /// \brief Source file for the Application class
 /// \date 2021-04-02
 #include "Aircraft.hpp"
-#include <SFML/Graphics.hpp>
-#include <iostream>
 
-Aircraft::Aircraft(sf::Texture& texture, const sf::IntRect& sizeRect)
+Aircraft::Aircraft(sf::Texture& texture, const sf::IntRect& sizeRect, Context& context)
     : SceneNode(texture, sizeRect)
+    , _context{ context }
 {
 }
 
@@ -38,8 +37,10 @@ void Aircraft::drawCurrent(sf::RenderTarget& target, sf::RenderStates state) con
 void Aircraft::damage(int damageValue)
 {
     _health -= damageValue;
-    if (_health <= 0)
+    if (_health <= 0){
         destroy();
+        _context.score += 100;
+    }
 }
 
 int Aircraft::getHealth() const

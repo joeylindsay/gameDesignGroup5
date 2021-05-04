@@ -15,8 +15,13 @@ struct Command {
         Fire,
         TimeStop,
         AddEnemy,
+        Pause,
+        Options,
+        Play,
+        Menu
     };
     Command(Type type, SceneNode* entity);
+    Command(Type type);
     Type type;
     SceneNode* entity;
     EnemyType newEnemyType;

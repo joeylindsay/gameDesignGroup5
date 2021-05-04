@@ -4,9 +4,9 @@
 #include "TextureHolder.hpp"
 #include <SFML/Graphics.hpp>
 
-Bogey::Bogey(TextureHolder& textures)
-    : Aircraft { textures.get(TextureHolder::ID::Bogey), sf::IntRect { 0, 0, 125, 56 } }
-    , _bulletTexture { textures.get(TextureHolder::ID::EnemyBullet) }
+Bogey::Bogey(Context& context)
+    : Aircraft { context.textures.get(TextureHolder::ID::Bogey), sf::IntRect { 0, 0, 125, 56 }, context }
+    , _bulletTexture { context.textures.get(TextureHolder::ID::EnemyBullet) }
 {
     _unitVelocity = 300.0f;
     _fireInterval = sf::seconds(0.4f);

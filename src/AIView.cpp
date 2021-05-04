@@ -55,3 +55,6 @@ void AIView::updateEnemy(SceneNode* cur, std::vector<Command>& commandQueue)
         commandQueue.emplace_back(Command::Type::MoveUp, cur);
     
 }
+
+//dummy function
+void AIView::remapKeys(){}

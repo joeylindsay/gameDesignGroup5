@@ -14,6 +14,8 @@ public:
         Bullet,
         EnemyBullet,
         Screamer,
+        Cockpit,
+        keyPressPrompt,
         Bogey,
         IDSize
     };

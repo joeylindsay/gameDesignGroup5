@@ -5,7 +5,6 @@
 #define _USE_MATH_DEFINES // switch to <numbers> in C++20
 
 #include "SceneNode.hpp"
-#include <cmath>
 
 SceneNode::SceneNode()
 {

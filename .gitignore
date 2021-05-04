@@ -20,6 +20,11 @@
 *.tar
 *.zip
 
+# IntelliJ #
+############
+.idea
+
+
 # Logs and databases #
 ######################
 *.log
@@ -37,7 +42,7 @@ ehthumbs.db
 Thumbs.db
 
 # CMAKE files #
-##########################
+###############
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles
@@ -49,5 +54,10 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 _deps
+
+# Project files #
+###############
+build/Interceptors
+build/libinterceptors_core.a
 
 #credit to this page: https://github.com/github/gitignore
