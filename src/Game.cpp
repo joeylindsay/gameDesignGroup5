@@ -13,6 +13,7 @@ Game::Game(Context& context, std::vector<sf::Event>& eventQueue)
     , _sceneGraphLayers(static_cast<size_t>(SceneLayer::LayerCount))
     , _world { sf::Vector2f(0.0f, 0.0f), sf::Vector2f(_worldSize.x, _worldSize.y) }
     , _spawnPosition { _world.getSize().x / 2.0f, _maxHeight - _world.getSize().y / 2.0f }
+	, _music { context.music }
 {
     _world.setCenter(_spawnPosition);
 
@@ -25,11 +26,18 @@ Game::Game(Context& context, std::vector<sf::Event>& eventQueue)
     _viewList.emplace_back(std::make_unique<MenuView>(_context, _world));
     _viewList.emplace_back(std::make_unique<OptionsView>(_context, _world));
     _viewList.emplace_back(std::make_unique<AIView>(_sceneGraphLayers[static_cast<size_t>(SceneLayer::Enemies)], player_craft, _sceneGraphLayers[static_cast<size_t>(SceneLayer::Bullets)]));
+
+	_music.play(MusicPlayer::ID::Menu);
 }
 
 void Game::changeState(GameStateID newState)
 {
     _state = newState;
+
+	if (newState == GameStateID::Play)
+		_music.play(MusicPlayer::ID::Game);
+	else if (newState == GameStateID::Menu)
+		_music.play(MusicPlayer::ID::Menu);
 }
 
 void Game::update(sf::Time dt)
