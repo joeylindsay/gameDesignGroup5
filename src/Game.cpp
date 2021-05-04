@@ -258,7 +258,8 @@ void Game::collisionDetection()
         // player bullet. check for enemies.
         if (bullet->getVelocity().y < 0) {
             for (auto& enemy : _sceneGraphLayers[static_cast<size_t>(SceneLayer::Enemies)]->getChildren())
-                if (enemy->checkCollision(bullet->getBoundingRect(), bullet->getDamageValue())) {
+                if (enemy->getBoundingRect().intersects(getViewBounds())
+					&& enemy->checkCollision(bullet->getBoundingRect(), bullet->getDamageValue())) {
                     bullet->destroy();
                 }
         } else { // bullet from enemy. check for player
