@@ -17,6 +17,7 @@ public:
         Cockpit,
         keyPressPrompt,
         Bogey,
+        Flagship,
         IDSize
     };
     /// Returns a reference to the texture by ID.

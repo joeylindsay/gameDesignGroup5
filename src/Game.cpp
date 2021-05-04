@@ -17,6 +17,8 @@ Game::Game(Context& context, std::vector<sf::Event>& eventQueue)
     _world.setCenter(_spawnPosition);
 
     buildScene();
+    
+    _context.worldTop = _maxHeight - _world.getSize().y;
 
     // Register views
     _viewList.emplace_back(std::make_unique<PlayerView>(_context, _sceneGraph, _world, eventQueue, _maxHeight, player_craft));
@@ -64,6 +66,7 @@ void Game::update(sf::Time dt)
     case GameStateID::Play:
     	//scroll the world view and update the screen accordingly
         _world.move(0.0f, _scrollSpeed * dt.asSeconds());
+        _context.worldTop += (_scrollSpeed * dt.asSeconds());
         _context.window.setView(_world);
         
         //update the player and AI views
@@ -104,6 +107,9 @@ void Game::update(sf::Time dt)
                 	case EnemyType::Bogey:
                 		newNode = std::make_unique<Bogey>(_context);
                 		break;
+                	case EnemyType::Flagship:
+                		newNode = std::make_unique<Flagship>(_context);
+                		break;
             		default:
                	 	break;
             	}
@@ -115,7 +121,7 @@ void Game::update(sf::Time dt)
             default:
             	break;
             }
-
+           
     	// Apply changes to the bullets onscreen
     	for (auto& change : changeQueue)
         	switch (change.type) {
@@ -126,6 +132,19 @@ void Game::update(sf::Time dt)
         		default:
             			break;
         	}
+		
+		//keep the player within the y scope of the view
+		if (player_craft->getBoundingRect().top < _context.worldTop){
+			player_craft->setPosition(player_craft->getPosition().x, (_context.worldTop + 54));
+		} else if ((player_craft->getBoundingRect().top + 108) > (_context.worldTop + _worldSize.y)){
+			player_craft->setPosition(player_craft->getPosition().x, ((_context.worldTop + _worldSize.y) - 54));
+		}
+		//keep the player within the x scope of the view
+		if (player_craft->getBoundingRect().left < 0){
+			player_craft->setPosition(35, player_craft->getPosition().y);
+		} else if ((player_craft->getBoundingRect().left + 70) > _worldSize.x){
+			player_craft->setPosition(_worldSize.x - 35, player_craft->getPosition().y);
+		}
 		
 		//adjust the velocities
     	_sceneGraphLayers[static_cast<size_t>(SceneLayer::Enemies)]->adaptVelocity();

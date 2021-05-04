@@ -25,7 +25,7 @@ public:
     int getHealth() const;
     void updateCurrent(sf::Time dt) override;
     void damage(int damagePt) override final;
-    const sf::Vector2i& getNextStep();
+    virtual const sf::Vector2i& getNextStep();
 
 protected:
     int _health { 100 };

@@ -27,5 +27,6 @@ private:
     Game _gameLogic;
     KeyStringMapping _keyMap;
     int _score = 0;
+    float _worldTop;
     std::vector<sf::Event> _eventQueue;
 };

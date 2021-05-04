@@ -1,6 +1,4 @@
 #include "TextureHolder.hpp"
-#include <SFML/Graphics.hpp>
-#include <vector>
 
 TextureHolder::TextureHolder()
     : textures(static_cast<size_t>(ID::IDSize))
@@ -14,7 +12,8 @@ TextureHolder::TextureHolder()
         "screamer.png",
         "cockpit.png",
         "keyPressPrompt.png",
-        "bogey.png"
+        "bogey.png",
+        "flagship.png"
     };
     for (int i { 0 }; i < textures.size(); ++i)
         if (!textures[i].loadFromFile("../assets/" + filenames[i]))

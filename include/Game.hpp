@@ -22,6 +22,7 @@
 #include "SceneNode.hpp"
 #include "Screamer.hpp"
 #include "Bogey.hpp"
+#include "Flagship.hpp"
 #include "SpriteNode.hpp"
 #include <SFML/Graphics.hpp>
 #include <queue>

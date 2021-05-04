@@ -11,7 +11,6 @@ PlayerAircraft::PlayerAircraft(float scrollSpeed, Context& context)
 {
     _unitVelocity = 300.0f;
     _velocity.y = -50.0f;
-
     sf::FloatRect bounds { _sprite.getLocalBounds()};
     _sprite.setOrigin(bounds.width / 2.0f, bounds.height / 2.0f);
 }
