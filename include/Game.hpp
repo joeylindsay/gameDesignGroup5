@@ -54,6 +54,8 @@ private:
     sf::FloatRect getViewBounds() const;
     sf::FloatRect getWorldBounds() const;
     void collisionDetection();
+    void timeStop();
+    void checkTimeStop(const sf::Time dt);
     GameStateID _state { GameStateID::Menu };
     std::vector<std::unique_ptr<GameView>> _viewList;
     Context& _context;
@@ -66,4 +68,7 @@ private:
     float _scrollSpeed = -50.0f;
     sf::View _world;
     sf::Vector2f _spawnPosition;
+    bool _timeStopOn { false };
+    sf::Time _timeSinceLastTimestop { sf::Time::Zero };
+    sf::Time _timeStopTimer { sf::Time::Zero };
 };

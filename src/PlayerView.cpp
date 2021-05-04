@@ -77,12 +77,14 @@ void PlayerView::remapKeys(){
     std::string right = node->value();
     node = node->next_sibling();
     std::string shoot = node->value();
+    node = node->next_sibling();
+    const std::string timeStop = node->value();
     
     //apply all of the keymappings
 	keyMapping[_context.keyMap.stringToKey(up)] = Command::Type::MoveUp;
     keyMapping[_context.keyMap.stringToKey(left)] = Command::Type::MoveLeft;
     keyMapping[_context.keyMap.stringToKey(down)] = Command::Type::MoveDown;
     keyMapping[_context.keyMap.stringToKey(right)] = Command::Type::MoveRight;
-    keyMapping[sf::Keyboard::I] = Command::Type::TimeStop;
+    keyMapping[_context.keyMap.stringToKey(timeStop)] = Command::Type::TimeStop;
     keyMapping[_context.keyMap.stringToKey(shoot)] = Command::Type::Fire;
 }
