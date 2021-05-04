@@ -15,6 +15,7 @@ public:
         EnemyBullet,
         Screamer,
         Cockpit,
+        keyPressPrompt,
         IDSize
     };
     /// Returns a reference to the texture by ID.

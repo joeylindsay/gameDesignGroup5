@@ -23,14 +23,18 @@ class OptionsView : public GameView
 	public:
 		//base constructor, will setup the whole menu and draw it to screen
 		OptionsView(Context& context, sf::View& view);
-		void handleInput(std::vector<Command>& commandQueue);
 		//update the screen
 		void update(sf::Time dt, GameStateID state, const sf::FloatRect& worldBounds, std::vector<Command>& commandQueue) override;
 		//reload all of the text onscreen
 		void reloadText();
 		//write the new key into the xml file
 		void writeFile();
+		//dummy function
+		void remapKeys() override;
 	private:
+		//handle the input to the view
+		void handleInput(std::vector<Command>& commandQueue);
+		
 		//containers to hold the context and view
 		Context& _context;
 		sf::View& _view;
@@ -46,6 +50,7 @@ class OptionsView : public GameView
 		float m_winsizeX;
 		float m_winsizeY;
 		sf::Sprite _optionsSprite;
+		sf::Sprite _keyPressSprite;
 		
 		//variables to store the different onscreen elements
 		sf::Text _up_button;
@@ -53,6 +58,7 @@ class OptionsView : public GameView
     	sf::Text _left_button;
     	sf::Text _right_button;
     	sf::Text _shoot_button;
+    	sf::Text _back_button;
     	
     	//rectangles to sit behind the onscreen text
     	sf::RectangleShape _upRect;
@@ -60,4 +66,6 @@ class OptionsView : public GameView
     	sf::RectangleShape _leftRect;
     	sf::RectangleShape _rightRect;
     	sf::RectangleShape _shootRect;
+    	sf::RectangleShape _backRect;
+    	
 };

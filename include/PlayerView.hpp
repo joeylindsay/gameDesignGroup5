@@ -17,7 +17,7 @@ class PlayerView : public GameView
 public:
     PlayerView(Context& context, SceneNode& sceneGraph, sf::View& world, std::vector<sf::Event>& eventQueue, int maxHeight, PlayerAircraft*& playerAircraft);
     void update(sf::Time dt, GameStateID state, const sf::FloatRect& worldBounds, std::vector<Command>& commandQueue) override;
-    void remapKeys();
+    void remapKeys() override;
 
 private:
     void render(sf::Time dt, GameStateID state);
