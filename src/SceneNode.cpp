@@ -140,12 +140,17 @@ bool SceneNode::isDestroyed() const
 
 bool SceneNode::checkCollision(const sf::FloatRect& rhs, int damageValue)
 {
-    if (getBoundingRect().intersects(rhs)) {
+    float new_left = rhs.left * 0.75f;
+    float new_top = rhs.top * 0.75f;
+    float new_width = rhs.width * 0.75f;
+    float new_height = rhs.height * 0.75f;
+    sf::FloatRect space(new_left, new_top, new_width, new_height);
+    if (getBoundingRect().intersects(space)) {
         damage(damageValue);
         return true;
     }
     for (auto& child : _children)
-        if (child->checkCollision(rhs, damageValue))
+        if (child->checkCollision(space, damageValue))
             return true;
     return false;
 }
