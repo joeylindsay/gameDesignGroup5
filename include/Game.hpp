@@ -17,6 +17,7 @@
 #include "GameView.hpp"
 #include "MenuView.hpp"
 #include "MusicPlayer.hpp"
+#include "SoundPlayer.hpp"
 #include "OptionsView.hpp"
 #include "PendingChange.hpp"
 #include "PlayerAircraft.hpp"
@@ -73,4 +74,5 @@ private:
     sf::Time _timeSinceLastTimestop { sf::Time::Zero };
     sf::Time _timeStopTimer { sf::Time::Zero };
     MusicPlayer& _music;
+    SoundPlayer& _sounds;
 };

@@ -11,7 +11,6 @@ public:
     };
     MusicPlayer();
     void play(ID id);
-    void stop();
 
 private:
     std::vector<std::string> _fileNames;

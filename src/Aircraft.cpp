@@ -10,12 +10,14 @@ Aircraft::Aircraft(sf::Texture& texture, const sf::IntRect& sizeRect, Context& c
 {
 }
 
-void Aircraft::fire(std::vector<PendingChange>& changeQueue)
+bool Aircraft::fire(std::vector<PendingChange>& changeQueue)
 {
     if (_fireCountdown <= sf::Time::Zero) {
         fireAction(changeQueue);
         _fireCountdown = _fireInterval;
+        return true;
     }
+    return false;
 }
 
 void Aircraft::fireAction(std::vector<PendingChange>& changeQueue)

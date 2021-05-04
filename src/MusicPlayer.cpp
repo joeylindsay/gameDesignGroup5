@@ -17,8 +17,3 @@ void MusicPlayer::play(ID id)
     _music.setLoop(true);
     _music.play();
 }
-
-void MusicPlayer::stop()
-{
-    _music.stop();
-}

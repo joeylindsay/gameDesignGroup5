@@ -9,6 +9,7 @@
 #include "FontHolder.hpp"
 #include "Game.hpp"
 #include "KeyStringMapping.hpp"
+#include "SoundPlayer.hpp"
 #include "MusicPlayer.hpp"
 #include "TextureHolder.hpp"
 #include <SFML/Graphics.hpp>
@@ -25,6 +26,7 @@ private:
     TextureHolder _textures;
     FontHolder _fonts;
     MusicPlayer _music;
+    SoundPlayer _sounds;
     Context _context;
     Game _gameLogic;
     KeyStringMapping _keyMap;

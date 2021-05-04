@@ -14,6 +14,7 @@ Game::Game(Context& context, std::vector<sf::Event>& eventQueue)
     , _world { sf::Vector2f(0.0f, 0.0f), sf::Vector2f(_worldSize.x, _worldSize.y) }
     , _spawnPosition { _world.getSize().x / 2.0f, _maxHeight - _world.getSize().y / 2.0f }
 	, _music { context.music }
+	, _sounds { context.sounds }
 {
     _world.setCenter(_spawnPosition);
 
@@ -107,7 +108,8 @@ void Game::update(sf::Time dt)
                 cmd.entity->setUnitVelocity(0, 1);
                 break;
             case Command::Type::Fire:
-                static_cast<Aircraft*>(cmd.entity)->fire(changeQueue);
+                if (static_cast<Aircraft*>(cmd.entity)->fire(changeQueue))
+					_sounds.play(SoundPlayer::ID::Gunshot);
                 break;
             case Command::Type::AddEnemy: {
                 std::unique_ptr<SceneNode> newNode;
@@ -200,6 +202,8 @@ void Game::update(sf::Time dt)
     default:
         break;
     }
+
+	_sounds.cleanUp();
 }
 
 void Game::buildScene()
