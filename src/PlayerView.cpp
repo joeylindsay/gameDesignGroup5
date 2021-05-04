@@ -9,6 +9,7 @@ PlayerView::PlayerView(Context& context, SceneNode& sceneGraph, sf::View& world,
     , _playerAircraft { playerAircraft }
     , _playerHealth { "", _context.fonts.get(FontHolder::ID::Arcade) }
     , _score { std::to_string(_context.score), _context.fonts.get(FontHolder::ID::Arcade), 55}
+    , _pausedText { "", _context.fonts.get(FontHolder::ID::Arcade), 50}
 {
     //pause key is immutable
     keyMapping[sf::Keyboard::Escape] = Command::Type::Pause;
@@ -21,6 +22,15 @@ PlayerView::PlayerView(Context& context, SceneNode& sceneGraph, sf::View& world,
     
     //set the initial location of the score text
     _score.setPosition(_world.getCenter().x - 525, _world.getCenter().y - 550);
+
+        // pause text
+    _pausedText.setString("Paused! Press Enter to Resume");
+    _pausedText.setOrigin(_pausedText.getLocalBounds().width / 2.0f, _pausedText.getLocalBounds().height / 2.0f);
+	_pausedText.setPosition(_world.getCenter().x, _world.getCenter().y);
+
+    _pausedRect.setSize(sf::Vector2f(_world.getSize()));
+    _pausedRect.setFillColor(sf::Color(0,0,0,150));
+	_pausedRect.setPosition(_world.getCenter().x - 540, _world.getCenter().y - 540);
 }
 
 void PlayerView::update(sf::Time dt, GameStateID state, const sf::FloatRect& worldBounds, std::vector<Command>& commandQueue)
@@ -40,9 +50,15 @@ void PlayerView::render(sf::Time dt, GameStateID state)
     _playerHealth.setPosition(pos);
     _context.window.draw(_playerHealth);
     
-    //draw the score
-    _score.setString(std::to_string(_context.score));
-    _score.move(0.0f, -50.0f * dt.asSeconds());
+    if (state == GameStateID::Pause) {
+        _context.window.draw(_pausedRect);
+        _context.window.draw(_pausedText);
+    } else {
+        _score.setString(std::to_string(_context.score));
+        _score.move(0.0f, -50.0f * dt.asSeconds());
+        _pausedText.move(0.0f, -50.0f * dt.asSeconds());
+        _pausedRect.move(0.0f, -50.0f * dt.asSeconds());
+    }
     _context.window.draw(_score);
 }
 

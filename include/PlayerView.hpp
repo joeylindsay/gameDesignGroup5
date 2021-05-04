@@ -30,4 +30,6 @@ private:
     Context& _context;
     sf::Text _playerHealth;
     sf::Text _score;
+    sf::Text _pausedText;
+    sf::RectangleShape _pausedRect;
 };

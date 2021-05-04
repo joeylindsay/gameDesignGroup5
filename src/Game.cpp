@@ -80,6 +80,9 @@ void Game::update(sf::Time dt)
     	_sceneGraphLayers[static_cast<size_t>(SceneLayer::Player)]->resetVelocity();
     	for (auto& cmd : commandQueue)
     	    switch (cmd.type) {
+			case Command::Type::Pause:
+				changeState(GameStateID::Pause);
+				break;
     	    case Command::Type::MoveLeft:
     	        cmd.entity->setUnitVelocity(-1, 0);
     	        break;
@@ -139,7 +142,13 @@ void Game::update(sf::Time dt)
         break;
         
     case GameStateID::Pause:
-        break;
+        _context.window.setView(_world);
+		_viewList.front()->update(dt, _state, getViewBounds(), commandQueue);
+		_context.window.display();
+
+		if(sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
+			changeState(GameStateID::Play);
+		break;
     case GameStateID::Over:
         break;
     case GameStateID::Options:
