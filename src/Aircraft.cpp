@@ -22,11 +22,11 @@ void Aircraft::fireAction(std::vector<PendingChange>& changeQueue)
 {
 }
 
-void Aircraft::updateCurrent(sf::Time dt)
+void Aircraft::updateCurrent(sf::Time dt, bool timeStop)
 {
     if (_fireCountdown > sf::Time::Zero)
         _fireCountdown -= dt;
-    SceneNode::updateCurrent(dt);
+    SceneNode::updateCurrent(dt, timeStop);
 }
 
 void Aircraft::drawCurrent(sf::RenderTarget& target, sf::RenderStates state) const

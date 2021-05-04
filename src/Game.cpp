@@ -157,7 +157,7 @@ void Game::update(sf::Time dt)
 
         //detect collision, update the graph of everything onscreen, and cleanup
         collisionDetection();
-        _sceneGraph.update(dt);
+        _sceneGraph.update(dt, _timeStopOn);
         cleanUp();
 
         break;

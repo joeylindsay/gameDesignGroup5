@@ -23,7 +23,7 @@ public:
     void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const override final;
     /// Returns the current HP value.
     int getHealth() const;
-    void updateCurrent(sf::Time dt) override;
+    void updateCurrent(sf::Time dt, bool timeStop) override;
     void damage(int damagePt) override final;
     virtual const sf::Vector2i& getNextStep();
 

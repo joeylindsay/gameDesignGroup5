@@ -22,7 +22,7 @@ public:
     void attach(std::unique_ptr<SceneNode> ptr);
     std::list<std::unique_ptr<SceneNode>>& getChildren();
     /// Update subtree for moves, etc.
-    void update(sf::Time dt);
+    void update(sf::Time dt, bool timeStop);
     /// Clear the velocity to 0
     void resetVelocity();
     /// Set velocity. Wait for adaptVelocity to change for concrete value.
@@ -50,7 +50,7 @@ public:
 
 protected:
     virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
-    virtual void updateCurrent(sf::Time dt);
+    virtual void updateCurrent(sf::Time dt, bool timeStop);
     sf::Sprite _sprite;
     std::list<std::unique_ptr<SceneNode>> _children;
     SceneNode* _parent { nullptr };

@@ -10,7 +10,7 @@ class PlayerAircraft : public Aircraft
 {
 public:
     PlayerAircraft(float scrollSpeed, Context& context);
-    void updateCurrent(sf::Time dt) override final;
+    void updateCurrent(sf::Time dt, bool timeStop) override final;
     void fireAction(std::vector<PendingChange>& changeQueue) override final;
 
 private:

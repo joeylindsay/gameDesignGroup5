@@ -15,10 +15,10 @@ PlayerAircraft::PlayerAircraft(float scrollSpeed, Context& context)
     _sprite.setOrigin(bounds.width / 2.0f, bounds.height / 2.0f);
 }
 
-void PlayerAircraft::updateCurrent(sf::Time dt)
+void PlayerAircraft::updateCurrent(sf::Time dt, bool timeStop)
 {
     _velocity.y += _scrollSpeed;
-    Aircraft::updateCurrent(dt);
+    Aircraft::updateCurrent(dt, timeStop);
 }
 
 void PlayerAircraft::fireAction(std::vector<PendingChange>& changeQueue)

@@ -67,14 +67,14 @@ void SceneNode::adaptVelocity()
         child->adaptVelocity();
 }
 
-void SceneNode::update(sf::Time dt)
+void SceneNode::update(sf::Time dt, bool timeStop)
 {
-    updateCurrent(dt);
+    updateCurrent(dt, timeStop);
     for (auto& child : _children)
-        child->update(dt);
+        child->update(dt, timeStop);
 }
 
-void SceneNode::updateCurrent(sf::Time dt)
+void SceneNode::updateCurrent(sf::Time dt, bool timeStop)
 {
     move(_velocity * dt.asSeconds());
 }
