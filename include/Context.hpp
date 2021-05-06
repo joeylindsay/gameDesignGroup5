@@ -6,6 +6,7 @@
 #include "MusicPlayer.hpp"
 #include "SoundPlayer.hpp"
 #include <SFML/Graphics.hpp>
+#include "SceneNode.hpp"
 
 struct Context
 {

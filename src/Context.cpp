@@ -1,5 +1,4 @@
 #include "Context.hpp"
-#include <SFML/Graphics.hpp>
 
 Context::Context(sf::RenderWindow& window, TextureHolder& textures, FontHolder& fonts, MusicPlayer& music, SoundPlayer& sounds, KeyStringMapping& keyMap, int& score, float& worldTop)
     : window { window }

@@ -26,6 +26,7 @@ Game::Game(Context& context, std::vector<sf::Event>& eventQueue)
     _viewList.emplace_back(std::make_unique<PlayerView>(_context, _sceneGraph, _world, eventQueue, _maxHeight, player_craft));
     _viewList.emplace_back(std::make_unique<MenuView>(_context, _world));
     _viewList.emplace_back(std::make_unique<OptionsView>(_context, _world));
+    _viewList.emplace_back(std::make_unique<EndView>(_context, _world));
     _viewList.emplace_back(std::make_unique<AIView>(_sceneGraphLayers[static_cast<size_t>(SceneLayer::Enemies)], player_craft, _sceneGraphLayers[static_cast<size_t>(SceneLayer::Bullets)]));
 
 	_music.play(MusicPlayer::ID::Menu);
@@ -33,12 +34,12 @@ Game::Game(Context& context, std::vector<sf::Event>& eventQueue)
 
 void Game::changeState(GameStateID newState)
 {
-    _state = newState;
-
-	if (newState == GameStateID::Play)
+	if (newState == GameStateID::Play && _state != GameStateID::Pause )
 		_music.play(MusicPlayer::ID::Game);
 	else if (newState == GameStateID::Menu)
 		_music.play(MusicPlayer::ID::Menu);
+		
+    _state = newState;
 }
 
 void Game::update(sf::Time dt)
@@ -95,6 +96,9 @@ void Game::update(sf::Time dt)
         _sceneGraphLayers[static_cast<size_t>(SceneLayer::Player)]->resetVelocity();
         for (auto& cmd : commandQueue)
             switch (cmd.type) {
+            case Command::Type::Pause:
+				changeState(GameStateID::Pause);
+				break;
             case Command::Type::MoveLeft:
                 cmd.entity->setUnitVelocity(-1, 0);
                 break;
@@ -173,9 +177,33 @@ void Game::update(sf::Time dt)
         break;
 
     case GameStateID::Pause:
+  		//pause is just a subset of player view, so continue to update that
+    	_context.window.setView(_world);
+		_viewList.front()->update(dt, _state, getViewBounds(), commandQueue);
+		_context.window.display();
+
+		if(sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
+			changeState(GameStateID::Play);
         break;
+        
     case GameStateID::Over:
+    	_context.window.setView(_world);
+         _viewList.at(3)->update(dt, _state, getViewBounds(), commandQueue);
+         _context.window.display();
+         
+         //handle the transition back to menu
+         for (auto& cmd : commandQueue){
+         	switch (cmd.type){
+    				case Command::Type::Menu:
+						reset();
+						changeState(GameStateID::Menu);
+    					break;
+    				default:
+    					break;
+         	}
+         }
         break;
+        
     case GameStateID::Options:
         //update the view in case of a resize event
         _context.window.setView(_world);
@@ -288,22 +316,56 @@ void Game::resize()
     _context.window.clear(sf::Color::Black);
 }
 
+//compute the time stop logic
 void Game::timeStop()
 {
-	if (!_timeStopOn && _timeSinceLastTimestop > sf::seconds(3.0f))
+	if (!_timeStopOn && _timeSinceLastTimestop > sf::seconds(15.0f))
 		_timeStopOn = true;
 }
 
+//check the time stop state
 void Game::checkTimeStop(const sf::Time dt)
 {
 	if (_timeStopOn) {
 		_timeStopTimer += dt;
-		if (_timeStopTimer > sf::seconds(5.0f)) {
+		if (_timeStopTimer > sf::seconds(3.0f)) {
 			_timeStopOn = false;
 			_timeStopTimer = sf::Time::Zero;
 			_timeSinceLastTimestop = sf::Time::Zero;
 		}
+	} else if (_timeSinceLastTimestop > sf::seconds(15.0f)){
+		_timeSinceLastTimestop += dt;
+		_viewList.front()->stopIndic(true);
 	} else {
 		_timeSinceLastTimestop += dt;
+		_viewList.front()->stopIndic(false);
 	}
+}
+
+//reset the whole game
+void Game::reset(){
+	//reset the view position
+	_world = sf::View(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(_worldSize.x, _worldSize.y));
+	_world.setCenter(_spawnPosition);
+	
+	//reset the scene
+	_sceneGraphLayers = std::vector<SceneNode*>(static_cast<size_t>(SceneLayer::LayerCount));
+    buildScene();
+	
+	//setup the world top again
+    _context.worldTop = _maxHeight - _world.getSize().y;
+	
+	//reset the score
+	_context.score = 0;
+	
+    //re-register views
+    _viewList.clear();
+    _viewList.emplace_back(std::make_unique<PlayerView>(_context, _sceneGraph, _world, _eventQueue, _maxHeight, player_craft));
+    _viewList.emplace_back(std::make_unique<MenuView>(_context, _world));
+    _viewList.emplace_back(std::make_unique<OptionsView>(_context, _world));
+    _viewList.emplace_back(std::make_unique<EndView>(_context, _world));
+    _viewList.emplace_back(std::make_unique<AIView>(_sceneGraphLayers[static_cast<size_t>(SceneLayer::Enemies)], player_craft, _sceneGraphLayers[static_cast<size_t>(SceneLayer::Bullets)]));
+
+	_music.play(MusicPlayer::ID::Menu);
+	
 }

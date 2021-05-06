@@ -14,6 +14,7 @@ OptionsView::OptionsView(Context& context, sf::View& world)
     , _left_button { "", _context.fonts.get(FontHolder::ID::Arial), 24}
     , _right_button { "", _context.fonts.get(FontHolder::ID::Arial), 24}
     , _shoot_button { "", _context.fonts.get(FontHolder::ID::Arial), 24}
+    , _time_stop_button { "", _context.fonts.get(FontHolder::ID::Arial), 24 }
     , _back_button { "BACK", _context.fonts.get(FontHolder::ID::Arcade), 55}
     , _optionsSprite { _context.textures.get(TextureHolder::ID::Cockpit) }
     , _keyPressSprite { _context.textures.get(TextureHolder::ID::keyPressPrompt) }
@@ -43,12 +44,16 @@ OptionsView::OptionsView(Context& context, sf::View& world)
     node = node->next_sibling();
     _stringVec.push_back(node->value());
     
+    node = node->next_sibling();
+    _stringVec.push_back(node->value());
+    
     //set the positions of the onscreen elements
     _up_button.setPosition(_view.getCenter().x - 200, _view.getCenter().y);
     _down_button.setPosition(_view.getCenter().x - 200, _view.getCenter().y + 75);
     _left_button.setPosition(_view.getCenter().x + 75, _view.getCenter().y);
     _right_button.setPosition(_view.getCenter().x + 75, _view.getCenter().y + 75);
-    _shoot_button.setPosition(_view.getCenter().x - 65, _view.getCenter().y + 150);
+    _shoot_button.setPosition(_view.getCenter().x - 200, _view.getCenter().y + 150);
+    _time_stop_button.setPosition(_view.getCenter().x + 75, _view.getCenter().y + 150);
     _back_button.setPosition(_view.getCenter().x - 475, _view.getCenter().y + 380);
     _optionsSprite.setPosition(0, _view.getCenter().y - (_view.getSize().y/2));
     _keyPressSprite.setOrigin(220.0f, 220.0f);
@@ -151,6 +156,7 @@ void OptionsView::reloadText(){
     _left_button.setString("Left: " + _stringVec.at(2));
     _right_button.setString("Right: " + _stringVec.at(3));
     _shoot_button.setString("Fire: " + _stringVec.at(4));
+    _time_stop_button.setString("Stop Time: " + _stringVec.at(5));
     
     //setup the onscreen rectangles
     _upRect.setSize(sf::Vector2f(_up_button.getGlobalBounds().width + 10, _up_button.getGlobalBounds().height + 10));
@@ -183,6 +189,12 @@ void OptionsView::reloadText(){
     _shootRect.setOutlineColor(sf::Color::Cyan);
     _shootRect.setOutlineThickness(2);
     
+    _timeStopRect.setSize(sf::Vector2f(_time_stop_button.getGlobalBounds().width + 10, _time_stop_button.getGlobalBounds().height + 10));
+    _timeStopRect.setPosition(_time_stop_button.getPosition() + sf::Vector2f(-3, 3));
+    _timeStopRect.setFillColor(sf::Color::Blue);
+    _timeStopRect.setOutlineColor(sf::Color::Cyan);
+    _timeStopRect.setOutlineThickness(2);
+    
     //push the rectangles onto a vector
     recVec.clear();
     recVec[0] = _upRect;
@@ -190,6 +202,7 @@ void OptionsView::reloadText(){
     recVec[2] = _leftRect;
     recVec[3] = _rightRect;
     recVec[4] = _shootRect;
+    recVec[5] = _timeStopRect;
 }
 
 //update all of the onscreen elements and process input
@@ -204,14 +217,16 @@ void OptionsView::update(sf::Time dt, GameStateID state, const sf::FloatRect& wo
 	_context.window.draw(_leftRect);
 	_context.window.draw(_rightRect);
 	_context.window.draw(_shootRect);
-	_context.window.draw(_shootRect);
+	_context.window.draw(_timeStopRect);
 	_context.window.draw(_backRect);
 	_context.window.draw(_up_button);
     _context.window.draw(_down_button);
     _context.window.draw(_left_button);
     _context.window.draw(_right_button);
     _context.window.draw(_shoot_button);
+    _context.window.draw(_time_stop_button);
     _context.window.draw(_back_button);   	
 }
-//dummy function
+//dummy functions
 void OptionsView::remapKeys(){}
+void OptionsView::stopIndic(bool b){}

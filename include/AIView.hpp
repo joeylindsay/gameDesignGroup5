@@ -9,8 +9,10 @@
 #include "EnemyType.hpp"
 #include "SceneNode.hpp"
 #include "PlayerAircraft.hpp"
+#include <stdlib.h>
 #include "Command.hpp"
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 /// AI's view on the game. Use AI's strategyes to control the enemys.
 class AIView : public GameView
@@ -18,8 +20,9 @@ class AIView : public GameView
 public:
     AIView(SceneNode*& enemies, PlayerAircraft*& player, SceneNode*& bullets);
     void update(sf::Time dt, GameStateID state, const sf::FloatRect& worldBounds, std::vector<Command>& commandQueue) override;
-    //dummy function
+    //dummy functions
     void remapKeys() override;
+    void stopIndic(bool b) override;
 private:
     struct SpawnSchedule {
         EnemyType type;
@@ -33,4 +36,7 @@ private:
     SceneNode*& _enemies;
     SceneNode*& _bullets;
     PlayerAircraft*& _player;
+    //for when the player reaches the end of the level
+    int randPos = -1;
+    sf::Time endTimes { sf::Time::Zero };
 };

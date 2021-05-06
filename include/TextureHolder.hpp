@@ -18,6 +18,8 @@ public:
         keyPressPrompt,
         Bogey,
         Flagship,
+        StopActive,
+        StopInactive,
         IDSize
     };
     /// Returns a reference to the texture by ID.

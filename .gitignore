@@ -57,7 +57,7 @@ _deps
 
 # Project files #
 ###############
-build
-.vscode
+build/Interceptors
+build/libinterceptors_core.a
 
 #credit to this page: https://github.com/github/gitignore

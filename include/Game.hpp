@@ -16,6 +16,7 @@
 #include "GameStateID.hpp"
 #include "GameView.hpp"
 #include "MenuView.hpp"
+#include "EndView.hpp"
 #include "MusicPlayer.hpp"
 #include "SoundPlayer.hpp"
 #include "OptionsView.hpp"
@@ -58,6 +59,8 @@ private:
     void collisionDetection();
     void timeStop();
     void checkTimeStop(const sf::Time dt);
+    void reset();
+    
     GameStateID _state { GameStateID::Menu };
     std::vector<std::unique_ptr<GameView>> _viewList;
     Context& _context;
