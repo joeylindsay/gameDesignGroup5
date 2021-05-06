@@ -29,8 +29,9 @@ class OptionsView : public GameView
 		void reloadText();
 		//write the new key into the xml file
 		void writeFile();
-		//dummy function
+		//dummy functions
 		void remapKeys() override;
+		void stopIndic(bool b) override;
 	private:
 		//handle the input to the view
 		void handleInput(std::vector<Command>& commandQueue);
@@ -58,6 +59,7 @@ class OptionsView : public GameView
     	sf::Text _left_button;
     	sf::Text _right_button;
     	sf::Text _shoot_button;
+    	sf::Text _time_stop_button;
     	sf::Text _back_button;
     	
     	//rectangles to sit behind the onscreen text
@@ -66,6 +68,7 @@ class OptionsView : public GameView
     	sf::RectangleShape _leftRect;
     	sf::RectangleShape _rightRect;
     	sf::RectangleShape _shootRect;
+    	sf::RectangleShape _timeStopRect;
     	sf::RectangleShape _backRect;
     	
 };

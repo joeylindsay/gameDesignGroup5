@@ -7,27 +7,30 @@
 
 #pragma once
 
-#include "Context.hpp"
+#include "AIView.hpp"
+#include "Bogey.hpp"
 #include "Command.hpp"
+#include "Context.hpp"
+#include "EnemyType.hpp"
+#include "Flagship.hpp"
 #include "GameStateID.hpp"
 #include "GameView.hpp"
-#include "SceneNode.hpp"
-#include "AIView.hpp"
-#include "EnemyType.hpp"
 #include "MenuView.hpp"
+#include "EndView.hpp"
+#include "MusicPlayer.hpp"
+#include "SoundPlayer.hpp"
+#include "OptionsView.hpp"
 #include "PendingChange.hpp"
 #include "PlayerAircraft.hpp"
 #include "PlayerView.hpp"
-#include "OptionsView.hpp"
 #include "SceneNode.hpp"
 #include "Screamer.hpp"
-#include "Bogey.hpp"
-#include "Flagship.hpp"
 #include "SpriteNode.hpp"
+#include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
+#include <iostream>
 #include <queue>
 #include <vector>
-#include <iostream>
 
 /**
  * @brief Implements the actual Interceptors game.
@@ -54,10 +57,14 @@ private:
     sf::FloatRect getViewBounds() const;
     sf::FloatRect getWorldBounds() const;
     void collisionDetection();
+    void timeStop();
+    void checkTimeStop(const sf::Time dt);
+    void reset();
+    
     GameStateID _state { GameStateID::Menu };
     std::vector<std::unique_ptr<GameView>> _viewList;
     Context& _context;
-    SceneNode _sceneGraph { };
+    SceneNode _sceneGraph {};
     std::vector<SceneNode*> _sceneGraphLayers;
     sf::Vector2i _worldSize { 1080, 1080 };
     int _maxHeight { 50000 };
@@ -66,4 +73,9 @@ private:
     float _scrollSpeed = -50.0f;
     sf::View _world;
     sf::Vector2f _spawnPosition;
+    bool _timeStopOn { false };
+    sf::Time _timeSinceLastTimestop { sf::Time::Zero };
+    sf::Time _timeStopTimer { sf::Time::Zero };
+    MusicPlayer& _music;
+    SoundPlayer& _sounds;
 };

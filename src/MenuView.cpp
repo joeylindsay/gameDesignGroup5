@@ -66,5 +66,6 @@ void MenuView::update(sf::Time dt, GameStateID state, const sf::FloatRect& world
     window.draw(_optionsText);
 }
 
-//dummy function
+//dummy functions
 void MenuView::remapKeys(){}
+void MenuView::stopIndic(bool b){}

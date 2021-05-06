@@ -13,7 +13,7 @@
 project(csci437)
 
 # Minimum Cmake Version
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.9)
 
 #####################
 # Setup Environment #

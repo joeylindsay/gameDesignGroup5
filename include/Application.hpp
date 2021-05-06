@@ -5,10 +5,11 @@
 
 #pragma once
 
-#include "Context.hpp"
-#include "KeyStringMapping.hpp"
-#include "Game.hpp"
 #include "FontHolder.hpp"
+#include "Game.hpp"
+#include "KeyStringMapping.hpp"
+#include "SoundPlayer.hpp"
+#include "MusicPlayer.hpp"
 #include "TextureHolder.hpp"
 #include <SFML/Graphics.hpp>
 
@@ -20,9 +21,11 @@ public:
     void run();
 
 private:
-    sf::RenderWindow _window {sf::VideoMode::getDesktopMode(), "Interceptors"};
+    sf::RenderWindow _window { sf::VideoMode::getDesktopMode(), "Interceptors" };
     TextureHolder _textures;
     FontHolder _fonts;
+    MusicPlayer _music;
+    SoundPlayer _sounds;
     Context _context;
     Game _gameLogic;
     KeyStringMapping _keyMap;

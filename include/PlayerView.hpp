@@ -18,6 +18,7 @@ public:
     PlayerView(Context& context, SceneNode& sceneGraph, sf::View& world, std::vector<sf::Event>& eventQueue, int maxHeight, PlayerAircraft*& playerAircraft);
     void update(sf::Time dt, GameStateID state, const sf::FloatRect& worldBounds, std::vector<Command>& commandQueue) override;
     void remapKeys() override;
+    void stopIndic(bool b) override;
 
 private:
     void render(sf::Time dt, GameStateID state);
@@ -30,4 +31,7 @@ private:
     Context& _context;
     sf::Text _playerHealth;
     sf::Text _score;
+    sf::Text _pausedText;
+    sf::RectangleShape _pausedRect;
+    sf::Sprite _stopIndicator;
 };

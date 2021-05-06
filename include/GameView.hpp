@@ -11,4 +11,5 @@ public:
     GameView();
     virtual void update(sf::Time dt, GameStateID state, const sf::FloatRect& worldBounds, std::vector<Command>& commandQueue) = 0;
     virtual void remapKeys() = 0;
+    virtual void stopIndic(bool b) = 0;
 };

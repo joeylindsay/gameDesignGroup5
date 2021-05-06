@@ -9,6 +9,7 @@ public:
     Bullet(sf::Texture& texture, int power, float verticalVelocity);
     void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const override final;
     int getDamageValue() const override final;
+    void updateCurrent(sf::Time dt, bool timeStop) override final;
 
 private:
     int _power;

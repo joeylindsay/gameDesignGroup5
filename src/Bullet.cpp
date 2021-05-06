@@ -19,3 +19,9 @@ int Bullet::getDamageValue() const
 {
     return _power;
 }
+
+void Bullet::updateCurrent(sf::Time dt, bool timeStop)
+{
+    if (_velocity.y < 0 || !timeStop)
+        move(_velocity * dt.asSeconds());
+}

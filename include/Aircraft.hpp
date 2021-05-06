@@ -17,13 +17,13 @@ class Aircraft : public SceneNode {
 public:
     Aircraft(sf::Texture& texture, const sf::IntRect& sizeRect, Context& context);
     /// Check if within fire interval. If so, issue fire command.
-    void fire(std::vector<PendingChange>& changeQueue);
+    bool fire(std::vector<PendingChange>& changeQueue);
     /// Concrete fire commands.
     virtual void fireAction(std::vector<PendingChange>& changeQueue);
     void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const override final;
     /// Returns the current HP value.
     int getHealth() const;
-    void updateCurrent(sf::Time dt) override;
+    void updateCurrent(sf::Time dt, bool timeStop) override;
     void damage(int damagePt) override final;
     virtual const sf::Vector2i& getNextStep();
 

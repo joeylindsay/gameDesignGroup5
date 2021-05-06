@@ -13,7 +13,9 @@ TextureHolder::TextureHolder()
         "cockpit.png",
         "keyPressPrompt.png",
         "bogey.png",
-        "flagship.png"
+        "flagship.png",
+        "stopActive.png",
+        "stopInactive.png"
     };
     for (int i { 0 }; i < textures.size(); ++i)
         if (!textures[i].loadFromFile("../assets/" + filenames[i]))
